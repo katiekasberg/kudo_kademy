@@ -1,17 +1,9 @@
 package com.techelevator.model.kudo;
 
-public class KudoType {
-    private int id;
+public class NewKudoType {
+
     private String description;
     private int value;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getDescription() {
         return description;

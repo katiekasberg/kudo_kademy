@@ -2,7 +2,7 @@ package com.techelevator.model.school;
 
 import java.sql.Time;
 
-public class class_info {
+public class ClassInfo {
     private int id;
     private String name;
     private int teacherId;
