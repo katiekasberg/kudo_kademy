@@ -1,6 +1,6 @@
 <template>
   <div id="login" class="text-center">
-    <img src="resources\school-icon-9.png" alt="school-logo">
+    <img src="../../resources/school-icon-9.png" alt="school-logo" />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
