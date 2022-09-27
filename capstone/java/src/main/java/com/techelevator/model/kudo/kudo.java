@@ -2,7 +2,7 @@ package com.techelevator.model.kudo;
 
 public class Kudo {
     private int id;
-    private int staffId;
+    private int teacherId;
     private int studentId;
     private String message;
     private int typeId;
@@ -17,11 +17,11 @@ public class Kudo {
     }
 
     public int getTeacherId() {
-        return staffId;
+        return teacherId;
     }
 
     public void setTeacherId(int teacherId) {
-        this.staffId = teacherId;
+        this.teacherId = teacherId;
     }
 
     public int getStudentId() {

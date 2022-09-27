@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.exceptions.KudoNotFoundException;
 import com.techelevator.model.kudo.Kudo;
 import com.techelevator.model.kudo.KudoRequest;
 import com.techelevator.model.kudo.KudoType;
@@ -11,7 +12,7 @@ public interface KudoDao {
 
 
     //get kudo by id
-    Kudo getKudoById(int kudoId);
+    Kudo getKudoById(int kudoId) throws KudoNotFoundException;
 
     //get list of kudos by student id
     List<Kudo> getStudentKudos(int StudentId);
@@ -33,7 +34,7 @@ public interface KudoDao {
     KudoType createKudoType(NewKudoType newKudoType);
 
     //submit a kudo request to student
-    Kudo submitKudo(KudoRequest newKudoRequest);
+    Kudo submitKudo(int teacherId, KudoRequest newKudoRequest);
 
 
 
