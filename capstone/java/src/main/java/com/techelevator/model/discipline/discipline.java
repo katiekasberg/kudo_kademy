@@ -1,7 +1,6 @@
 package com.techelevator.model.discipline;
 
 public class Discipline {
-
     private int id;
     private int teacherId;
     private int studentId;

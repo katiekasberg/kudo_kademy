@@ -1,4 +1,4 @@
 package com.techelevator.dao;
 
-public class TeacherDao {
+public class JdbcKudoDao {
 }

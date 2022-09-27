@@ -1,7 +1,6 @@
 package com.techelevator.model.profile;
 
-public class Student extends Profile {
-
+public class Student {
     private int schoolId;
     private int graduationYear;
 
