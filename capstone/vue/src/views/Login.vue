@@ -1,5 +1,6 @@
 <template>
   <div id="login" class="text-center">
+    <img src="../../resources/school-icon-9.png" alt="school-logo" />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
@@ -74,3 +75,12 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .form-signin{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 7px;
+  }
+
+</style>

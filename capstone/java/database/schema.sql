@@ -88,7 +88,7 @@ CREATE TABLE kudo_type(
 );
 
 CREATE TABLE kudo_student(
-    id INTEGER NOT NULL,
+    id SERIAL,
     teacher_id INTEGER NOT NULL,
     student_id INTEGER NOT NULL,
     message VARCHAR(255) NOT NULL,
