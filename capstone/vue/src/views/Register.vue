@@ -104,13 +104,14 @@ import authService from "../services/AuthService";
 
 export default {
   name: "register",
+  components:{},
   data() {
     return {
       user: {
         username: "",
         password: "",
         confirmPassword: "",
-        role: "user",
+        role: "teacher",
       },
 
       registrationErrors: false,
@@ -165,6 +166,7 @@ export default {
   width: 200px;
 }
 
+
 #role-names {
 }
 img.logo {
@@ -179,5 +181,6 @@ h1 {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
+
 }
 </style>
