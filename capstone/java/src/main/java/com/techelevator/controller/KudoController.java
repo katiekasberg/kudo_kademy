@@ -4,6 +4,7 @@ import com.techelevator.dao.KudoDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.kudo.Kudo;
 import com.techelevator.model.kudo.KudoRequest;
+import com.techelevator.model.kudo.KudoType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,13 +30,37 @@ public class KudoController {
         return kudoDao.getKudoById(id);
     }
 
-    //get all kudos related user's student id
+    //get all kudos related for a user's student id
     @RequestMapping(path = "/kudos" , method= RequestMethod.GET)
     public List<Kudo> listUserKudos(Principal principal){
         int userId = userDao.findIdByUsername(principal.getName());
         return kudoDao.getStudentKudos(userId);
     }
 
+    //TODO: edit endpoint paths
+    //get all kudos for a class id
+    @RequestMapping(path = "/class-kudos/{classId}" , method= RequestMethod.GET)
+    public List<Kudo> listClassKudos(@PathVariable int classId){
+        return kudoDao.getClassKudos(classId);
+    }
+
+    //get all kudos for all students
+    @RequestMapping(path = "/student-kudos" , method= RequestMethod.GET)
+    public List<Kudo> listAllKudos(){
+        return kudoDao.getAllKudos();
+    }
+
+    //get list of kudo types
+    @RequestMapping(path = "/kudo-types" , method= RequestMethod.GET)
+    public List<KudoType> listKudoTypes(){
+        return kudoDao.getTypesOfKudos();
+    }
+
+    //create new kudo type
+    @RequestMapping(path = "/kudo-types" , method= RequestMethod.POST)
+    public KudoType createNewKudoType(@RequestBody KudoType newKudoType){
+        return kudoDao.createKudoType(newKudoType);
+    }
 
     //send kudos to a student
     @RequestMapping(path = "/kudos" , method= RequestMethod.POST)
@@ -43,5 +68,9 @@ public class KudoController {
         int userId = userDao.findIdByUsername(principal.getName());
         return kudoDao.submitKudo(userId, kudoRequest);
     }
+
+
+
+
 
 }

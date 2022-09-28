@@ -166,9 +166,6 @@ export default {
   width: 200px;
 }
 
-
-#role-names {
-}
 img.logo {
   margin: auto;
   display: block;
