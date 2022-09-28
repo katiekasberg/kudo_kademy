@@ -42,7 +42,7 @@ export default new Vuex.Store({
     },
     SET_KUDO_TYPES(state, data) {
       state.kudoTypes = data;
-    }
+    },
     SET_STUDENT_PROFILES(state, data) {
       state.studentProfiles = data;
     }

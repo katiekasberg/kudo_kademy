@@ -6,13 +6,18 @@
     <h2 class="h3 mb-3 font-weight-normal">Send A Kudo!</h2>
 
     <form v-on:submit.prevent action="submit">
-      <label for="StudentId">Student Id:</label><br />
-      <input
-        v-model="kudo.studentId"
-        type="text"
-        id="StudentId"
-        name="StudentId"
-      />
+      <label for="StudentId"
+        >Student Name:
+        <select v-model="kudo.studentId" id="StudentId" name="StudentId">
+          <option
+            v-for="student in this.$store.state.studentProfiles"
+            v-bind:key="student.id"
+            v-bind:value="student.id"
+          >
+            {{ student.firstName }} {{ student.lastName }}
+          </option>
+        </select>
+      </label>
       <label for="kudoType" class="sr-only"
         >Kudo Type:
 
@@ -27,13 +32,14 @@
         </select>
       </label>
 
-      <label for="Comments">Comments:</label><br />
-      <input
-        v-model="kudo.message"
-        type="text"
-        id="Comments"
-        name="Comments"
-      /><br />
+      <label for="Comments"
+        >Comments:
+        <input
+          v-model="kudo.message"
+          type="text"
+          id="Comments"
+          name="Comments" /><br
+      /></label>
       <button type="submit" v-on:click="saveKudo()">Send</button>
     </form>
   </div>
@@ -41,6 +47,8 @@
 
   <script>
 import kudoService from "../services/KudosService";
+import studentService from "../services/StudentService";
+
 export default {
   data() {
     return {
@@ -54,7 +62,7 @@ export default {
   methods: {
     saveKudo() {
       kudoService.SendKudos(this.kudo).then((response) => {
-        if (response.status === 200) {
+        if (response.status === 201) {
           this.kudo.studentId = "";
           this.kudo.typeId = false;
           this.kudo.message = "";
@@ -67,9 +75,15 @@ export default {
         this.$store.commit("SET_KUDO_TYPES", response.data);
       });
     },
+    getStudentProfiles() {
+      studentService.getStudentProfiles().then((response) => {
+        this.$store.commit("SET_STUDENT_PROFILES", response.data);
+      });
+    },
   },
   created() {
     this.getKudoTypes();
+    this.getStudentProfiles();
   },
 };
 </script>
