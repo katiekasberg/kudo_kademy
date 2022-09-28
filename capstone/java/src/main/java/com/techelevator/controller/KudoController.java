@@ -64,6 +64,12 @@ public class KudoController {
         return kudoDao.createKudoType(newKudoType);
     }
 
+    //edit a kudo type
+    @RequestMapping(path = "/kudo-types/{kudoTypeId}" , method= RequestMethod.PUT)
+    public KudoType editKudoType(@RequestBody KudoType updatedKudoType, @PathVariable int kudoTypeId){
+        return kudoDao.updateKudoType(updatedKudoType, kudoTypeId);
+    }
+
     //send kudos to a student
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/kudos" , method= RequestMethod.POST)
