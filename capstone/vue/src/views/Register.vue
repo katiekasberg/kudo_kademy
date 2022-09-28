@@ -98,13 +98,14 @@ import authService from "../services/AuthService";
 
 export default {
   name: "register",
+  components:{},
   data() {
     return {
       user: {
         username: "",
         password: "",
         confirmPassword: "",
-        role: "user",
+        role: "teacher",
       },
 
       registrationErrors: false,
@@ -159,7 +160,10 @@ export default {
   width: 200px;
 }
 
-#role-names{
-  
+img{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: auto;
 }
 </style>
