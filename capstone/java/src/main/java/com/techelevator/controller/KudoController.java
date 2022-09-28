@@ -5,6 +5,7 @@ import com.techelevator.dao.UserDao;
 import com.techelevator.model.kudo.Kudo;
 import com.techelevator.model.kudo.KudoRequest;
 import com.techelevator.model.kudo.KudoType;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -57,12 +58,14 @@ public class KudoController {
     }
 
     //create new kudo type
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/kudo-types" , method= RequestMethod.POST)
     public KudoType createNewKudoType(@RequestBody KudoType newKudoType){
         return kudoDao.createKudoType(newKudoType);
     }
 
     //send kudos to a student
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/kudos" , method= RequestMethod.POST)
     public Kudo sendKudos(Principal principal, @RequestBody KudoRequest kudoRequest){
         int userId = userDao.findIdByUsername(principal.getName());

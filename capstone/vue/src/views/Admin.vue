@@ -1,6 +1,5 @@
 <template>
-  <div>
-     <div class="home">
+  <div class="home">
     <div class="container">
       <div class="Aside-nav">
         <aside>
@@ -37,28 +36,24 @@
       </div>
       <div class="Announcements">
         <h2>Announcements</h2>
-        <input type="text" 
-        id="makeAnnouncement" 
-        placeholder="Enter Announcement" />
+        <input
+          type="text"
+          id="makeAnnouncement"
+          placeholder="Enter Announcement"
+        />
         <button type="submit" class="submitBtn">Submit</button>
       </div>
       <div class="search">
         <h2>Search Students</h2>
-        <input type="text"
-        id="searchStudent"
-        placeholder="Search Student"
-        />
+        <input type="text" id="searchStudent" placeholder="Search Student" />
         <button type="submit" class="submitBtn">Search</button>
       </div>
     </div>
-  </div> 
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
@@ -112,7 +107,7 @@ export default {
   grid-area: Announcements;
 }
 
-#makeAnnouncement{
+#makeAnnouncement {
   margin: auto;
   display: block;
   width: 50%;
@@ -120,12 +115,12 @@ export default {
   text-align: center;
 }
 
-#searchStudent{
-  margin:auto;
+#searchStudent {
+  margin: auto;
   display: block;
 }
 
-.submitBtn{
+.submitBtn {
   margin: auto;
   display: block;
 }
@@ -156,24 +151,23 @@ p {
   color: rgb(216, 150, 69);
 }
 
-aside{
-  display:grid;
-  position:fixed;
+aside {
+  display: grid;
+  position: fixed;
   border-collapse: separate;
   border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid lightgray;;
+  border-right: 1px solid lightgray;
   height: 100%;
   width: 200px;
-
 }
 
-ul{
+ul {
   text-align: center;
   margin: 0;
   padding: 0;
 }
 
-ul>li{
+ul > li {
   display: block;
   text-align: center;
   text-transform: uppercase;
@@ -183,6 +177,5 @@ ul>li{
   border-bottom: 1px solid rgba(0, 173, 238, 0.4);
   list-style: none;
   width: 95%;
-
 }
 </style>
