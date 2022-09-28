@@ -1,8 +1,13 @@
 <template>
   <div id="register" class="text-center">
-    <img src="../../resources/school-icon-9.png" alt="school-logo" />
+    <h1>SCHOOL COMMUNICATION</h1>
+    <img
+      class="logo"
+      src="../../resources/school-icon-9.png"
+      alt="school-logo"
+    />
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h2 class="h3 mb-3 font-weight-normal">Create Account</h2>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
@@ -75,14 +80,15 @@
         required
       />
 
-      <label for="roleMenu" class="sr-only">Role: 
+      <label for="roleMenu" class="sr-only"
+        >Role:
 
-      <select name="role-names" id="role-names">
-        <option value="parent">Parent</option>
-        <option value="student">Student</option>
-        <option value="Teacher">Teacher</option>
-        <option value="Administrator">Admin</option>
-      </select>
+        <select name="role-names" id="role-names">
+          <option value="parent">Parent</option>
+          <option value="student">Student</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Administrator">Admin</option>
+        </select>
       </label>
 
       <router-link :to="{ name: 'login' }">Have an account?</router-link>
@@ -160,10 +166,21 @@ export default {
   width: 200px;
 }
 
-img{
-  display: flex;
-  justify-content: center; 
-  align-items: center;
+
+#role-names {
+}
+img.logo {
+  margin: auto;
+  display: block;
+  width: 200px;
   height: auto;
+}
+h1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorange;
+
 }
 </style>
