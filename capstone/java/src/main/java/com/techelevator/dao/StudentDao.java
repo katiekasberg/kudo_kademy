@@ -13,4 +13,6 @@ public interface StudentDao {
     //get teacher profile
     Profile getTeacherProfile(int teacherId);
 
+    List<Profile> getAllStudents();
+
 }

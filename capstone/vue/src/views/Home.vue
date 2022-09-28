@@ -6,10 +6,13 @@
           <nav>
             <ul>
               <li><a href="#">Home</a></li>
-              <li><a href="#">Send Kudos</a></li>
+              <li><router-link to="/SendKudos">Send Kudos</router-link></li>
               <li><a href="#">Behavioral Report</a></li>
               <li><a href="#">Search Students</a></li>
               <li><a href="#">Make Announcements</a></li>
+              <li><a href="#">Add/Remove Student</a></li>
+              <li><a href="#">Add/Remove Teacher</a></li>
+              <li><a href="#">Set Kudo Values</a></li>
             </ul>
           </nav>
         </aside>
@@ -32,9 +35,18 @@
       </div>
       <div class="Announcements">
         <h2>Announcements</h2>
+        <input type="text" 
+        id="makeAnnouncement" 
+        placeholder="Enter Announcement" />
+        <button type="submit" class="submitBtn">Submit</button>
       </div>
       <div class="search">
         <h2>Search Students</h2>
+        <input type="text"
+        id="searchStudent"
+        placeholder="Search Student"
+        />
+        <button type="submit" class="submitBtn">Search</button>
       </div>
     </div>
   </div>
@@ -49,8 +61,8 @@ export default {
 <style scoped>
 .container {
   display: grid;
-  grid-template-columns: 0.6fr 1.2fr 1.2fr;
-  grid-template-rows: 0.7fr 0.7fr 0.7fr 1fr;
+  grid-template-columns: 0.7fr 1.2fr 1.2fr;
+  grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -97,6 +109,24 @@ export default {
   grid-area: Announcements;
 }
 
+#makeAnnouncement{
+  margin: auto;
+  display: block;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+}
+
+#searchStudent{
+  margin:auto;
+  display: block;
+}
+
+.submitBtn{
+  margin: auto;
+  display: block;
+}
+
 .search {
   grid-area: search;
 }
@@ -124,10 +154,11 @@ p {
 }
 
 aside{
+  display:grid;
   position:fixed;
   border-collapse: separate;
   border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid rgba(174, 238, 0, 0.4);
+  border-right: 1px solid lightgray;;
   height: 100%;
   width: 200px;
 
@@ -143,6 +174,7 @@ ul>li{
   display: block;
   text-align: center;
   text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
   border-color: rgba(0, 173, 238, 0.4);
   padding: 15px;
   border-bottom: 1px solid rgba(0, 173, 238, 0.4);
