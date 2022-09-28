@@ -55,7 +55,6 @@ export default {
     saveKudo() {
       kudoService.SendKudos(this.kudo).then((response) => {
         if (response.status === 200) {
-          //this.$router.push("/SendKudos");
           this.kudo.studentId = "";
           this.kudo.typeId = false;
           this.kudo.message = "";
