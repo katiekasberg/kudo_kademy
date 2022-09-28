@@ -5,11 +5,11 @@
       <img class="logo" src="../../resources/school-icon-9.png" alt="" />
       <nav>
         <button router-link:on="../teacher">Home</button>
-        <button router-link:on="SendKudos">Send Kudos</button>
+        <button href="/SendKudos">Send Kudos</button>
         <button>Behavioral Report</button>
         <button>Search Students</button>
+        <button>Classes</button>
       </nav>
-
       <h2>House Cup Leader Board</h2>
       <table></table>
     </body>
