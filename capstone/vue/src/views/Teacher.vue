@@ -10,13 +10,22 @@
         <button>Search Students</button>
         <button>Classes</button>
       </nav>
+      <student-list />
       <h2>House Cup Leader Board</h2>
+
       <table></table>
     </body>
   </div>
 </template>
 
-<script></script>
+<script>
+import StudentList from "../components/StudentList";
+export default {
+  components: {
+    StudentList,
+  },
+};
+</script>
 
 <style scoped>
 img.logo {
@@ -48,6 +57,11 @@ nav {
 }
 button {
   margin-bottom: 20px;
+}
+student-list {
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 </style>
   
