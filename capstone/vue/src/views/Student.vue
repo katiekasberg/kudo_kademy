@@ -1,65 +1,52 @@
 <template>
-  <div class="home">
-    <div class="container">
-      <div class="Aside-nav">
-        <aside>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><router-link to="/SendKudos">Send Kudos</router-link></li>
-              <li><a href="#">Behavioral Report</a></li>
-              <li><a href="#">Search Students</a></li>
-              <li><a href="#">Make Announcements</a></li>
-              <li><a href="#">Add/Remove Student</a></li>
-              <li><a href="#">Add/Remove Teacher</a></li>
-              <li><a href="#">Set Kudo Values</a></li>
-              <li><router-link to="/logout"> Logout </router-link></li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-      <div class="Header">
-        <div class="app-name">
-          <h1>School Communication</h1>
+  <div>
+    <div class="home">
+      <div class="container">
+        <div class="Aside-nav">
+          <aside>
+            <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Kudo Report</a></li>
+                <li><a href="#">Leaderboard</a></li>
+                <li><a href="#">See Kudo Values</a></li>
+                <li><router-link to="/logout"> Logout </router-link></li>
+              </ul>
+            </nav>
+          </aside>
         </div>
-        <div class="logo">
-          <img
-            class="logo"
-            src="../../resources/school-icon-9.png"
-            alt="school-logo"
-          />
-          <p>You must be authenticated to see this</p>
+        <div class="Header">
+          <div class="app-name">
+            <h1>School Communication</h1>
+          </div>
+          <div class="logo">
+            <img
+              class="logo"
+              src="../../resources/school-icon-9.png"
+              alt="school-logo"
+            />
+            <p>You must be authenticated to see this</p>
+          </div>
         </div>
-      </div>
-      <div class="Welcome-User">
-        <h1>Welcome</h1>
-      </div>
-      <div class="Announcements">
-        <h2>Announcements</h2>
-        <input type="text" 
-        id="makeAnnouncement" 
-        placeholder="Enter Announcement" />
-        <button type="submit" class="submitBtn">Submit</button>
-      </div>
-      <div class="search">
-        <h2>Search Students</h2>
-        <input type="text"
-        id="searchStudent"
-        placeholder="Search Student"
-        />
-        <button type="submit" class="submitBtn">Search</button>
+        <div class="Welcome-User">
+          <h1>Welcome</h1>
+        </div>
+        <div class="Announcements">
+          <h2>Announcements</h2>
+        </div>
+        <div class="House-Cup">
+          <h2>House Cup Leaderboard</h2>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "home",
-};
+export default {};
 </script>
 
-<style scoped>
+<style>
 .container {
   display: grid;
   grid-template-columns: 0.7fr 1.2fr 1.2fr;
@@ -70,7 +57,7 @@ export default {
     "Aside-nav Header Header"
     "Aside-nav Welcome-User Welcome-User"
     "Aside-nav Announcements Announcements"
-    "Aside-nav search search";
+    "Aside-nav House-Cup House-Cup";
 }
 
 .Aside-nav {
@@ -106,11 +93,15 @@ export default {
   grid-area: Welcome-User;
 }
 
+.House-Cup {
+  grid-area: House-Cup;
+}
+
 .Announcements {
   grid-area: Announcements;
 }
 
-#makeAnnouncement{
+#makeAnnouncement {
   margin: auto;
   display: block;
   width: 50%;
@@ -118,12 +109,12 @@ export default {
   text-align: center;
 }
 
-#searchStudent{
-  margin:auto;
+#searchStudent {
+  margin: auto;
   display: block;
 }
 
-.submitBtn{
+.submitBtn {
   margin: auto;
   display: block;
 }
@@ -154,24 +145,23 @@ p {
   color: rgb(216, 150, 69);
 }
 
-aside{
-  display:grid;
-  position:fixed;
+aside {
+  display: grid;
+  position: fixed;
   border-collapse: separate;
   border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid lightgray;;
+  border-right: 1px solid lightgray;
   height: 100%;
   width: 200px;
-
 }
 
-ul{
+ul {
   text-align: center;
   margin: 0;
   padding: 0;
 }
 
-ul>li{
+ul > li {
   display: block;
   text-align: center;
   text-transform: uppercase;
@@ -181,6 +171,5 @@ ul>li{
   border-bottom: 1px solid rgba(0, 173, 238, 0.4);
   list-style: none;
   width: 95%;
-
 }
 </style>
