@@ -1,7 +1,7 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.kudo.Kudo;
 import com.techelevator.model.profile.Profile;
+import com.techelevator.model.profile.StudentProfile;
 
 import java.util.List;
 
@@ -13,6 +13,6 @@ public interface StudentDao {
     //get teacher profile
     Profile getTeacherProfile(int teacherId);
 
-    List<Profile> getAllStudents();
+    List<StudentProfile> getAllStudentProfiles();
 
 }
