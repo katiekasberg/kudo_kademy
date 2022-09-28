@@ -1,12 +1,10 @@
 <template>
   <div>
-    <img
-      src="C:\Users\Student\workspace\school-communication-app-final-capstone\capstone\vue\resources\school-icon-9.png"
-      alt=""
-    />
+    <h1>SCHOOL COMMUNICATION</h1>
+    <img class="logo" src="../../resources/school-icon-9.png" alt="" />
     <nav><router-link>Home</router-link></nav>
     <form class="send-kudo">
-      <h1 class="h3 mb-3 font-weight-normal">Send A Kudo!</h1>
+      <h2 class="h3 mb-3 font-weight-normal">Send A Kudo!</h2>
       <label for="firstName" class="sr-only">First Name</label>
       <input
         type="text"
@@ -72,6 +70,19 @@
   align-items: center;
   justify-content: center;
   grid-gap: 7px;
+}
+img.logo {
+  margin: auto;
+  display: block;
+  width: 200px;
+  height: auto;
+}
+h1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorange;
 }
 </style>
   

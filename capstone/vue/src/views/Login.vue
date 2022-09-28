@@ -1,18 +1,23 @@
 <template>
   <div id="login" class="text-center">
-    <img src="resources\school-icon-9.png" alt="school-logo">
+    <h1>SCHOOL COMMUNICATION</h1>
+    <img
+      class="logo"
+      src="../../resources/school-icon-9.png"
+      alt="school-logo"
+    />
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
-      <div
-        class="alert alert-danger"
-        role="alert"
-        v-if="invalidCredentials"
-      >Invalid username and password!</div>
+      <h2 class="h3 mb-3 font-weight-normal">Please Sign In</h2>
+      <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
+        Invalid username and password!
+      </div>
       <div
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.registration"
-      >Thank you for registering, please sign in.</div>
+      >
+        Thank you for registering, please sign in.
+      </div>
       <label for="username" class="sr-only">Username</label>
       <input
         type="text"
@@ -48,39 +53,51 @@ export default {
     return {
       user: {
         username: "",
-        password: ""
+        password: "",
       },
-      invalidCredentials: false
+      invalidCredentials: false,
     };
   },
   methods: {
     login() {
       authService
         .login(this.user)
-        .then(response => {
+        .then((response) => {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
             this.$router.push("/");
           }
         })
-        .catch(error => {
+        .catch((error) => {
           const response = error.response;
 
           if (response.status === 401) {
             this.invalidCredentials = true;
           }
         });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
-  .form-signin{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 7px;
-  }
-
+.form-signin {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 7px;
+}
+img.logo {
+  margin: auto;
+  display: block;
+  width: 200px;
+  height: auto;
+}
+h1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorange;
+}
 </style>
