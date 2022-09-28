@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div>
+     <div class="home">
     <div class="container">
       <div class="Aside-nav">
         <aside>
@@ -50,16 +51,17 @@
         <button type="submit" class="submitBtn">Search</button>
       </div>
     </div>
+  </div> 
   </div>
 </template>
 
 <script>
 export default {
-  name: "home",
-};
+
+}
 </script>
 
-<style scoped>
+<style>
 .container {
   display: grid;
   grid-template-columns: 0.7fr 1.2fr 1.2fr;

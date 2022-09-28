@@ -15,8 +15,10 @@
     </body>
   </div>
 </template>
+
 <script></script>
-    <style scoped>
+
+<style scoped>
 img.logo {
   margin: auto;
   display: block;
