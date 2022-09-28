@@ -14,7 +14,7 @@
         Teacher View
       </router-link>
       <router-link
-        v-bind="{ name: 'SendKudos' }"
+        v-bind:to="{ name: 'SendKudos' }"
         v-if="$store.state.token != ''"
         >Send Kudos</router-link
       >
