@@ -1,11 +1,15 @@
 <template>
   <div id="register" class="text-center">
+<<<<<<< HEAD
     <h1>SCHOOL COMMUNICATION</h1>
     <img
       class="logo"
       src="../../resources/school-icon-9.png"
       alt="school-logo"
     />
+=======
+    <img src="../../resources/school-icon-9.png" alt="school-logo" />
+>>>>>>> main
     <form class="form-register" @submit.prevent="register">
       <h2 class="h3 mb-3 font-weight-normal">Create Account</h2>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
@@ -112,6 +116,7 @@ export default {
         confirmPassword: "",
         role: "user",
       },
+
       registrationErrors: false,
       registrationErrorMsg: "There were problems registering this user.",
     };

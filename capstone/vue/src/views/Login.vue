@@ -1,11 +1,15 @@
 <template>
   <div id="login" class="text-center">
+<<<<<<< HEAD
     <h1>SCHOOL COMMUNICATION</h1>
     <img
       class="logo"
       src="../../resources/school-icon-9.png"
       alt="school-logo"
     />
+=======
+    <img src="../../resources/school-icon-9.png" alt="school-logo" />
+>>>>>>> main
     <form class="form-signin" @submit.prevent="login">
       <h2 class="h3 mb-3 font-weight-normal">Please Sign In</h2>
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">

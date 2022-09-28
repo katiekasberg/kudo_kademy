@@ -8,10 +8,12 @@ import com.techelevator.model.kudo.NewKudoType;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JdbcKudoDao implements KudoDao{
 
     private JdbcTemplate jdbcTemplate;

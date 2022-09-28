@@ -1,0 +1,63 @@
+SELECT *
+FROM kudo_student;
+
+--LIST of all kudos given out with kudo details--
+SELECT kudo_student.id, teacher_id, student_id, message, type_id, approval_status, kudo_type.name, kudo_type.description, kudo_type.value
+FROM kudo_student
+JOIN kudo_type on kudo_type.id = kudo_student.type_id;
+
+--LIST of all kudos given out to a specific student--
+SELECT kudo_student.id, teacher_id, student_id, message, type_id, approval_status, kudo_type.name, kudo_type.description, kudo_type.value
+FROM kudo_student
+JOIN kudo_type on kudo_type.id = kudo_student.type_id
+WHERE kudo_student.student_id = 1;
+
+
+SELECT *
+FROM student;
+
+SELECT *
+FROM profile
+JOIN student on student.id = profile.id
+JOIN users on users.user_id = profile.id;
+
+SELECT *
+FROM profile
+JOIN users on users.user_id = profile.id
+WHERE users.role LIKE 'ROLE_TEACHER';
+
+--SELECT profile.id, first_name, last_name, email, 
+--FROM profile
+
+SELECT *
+FROM class_info;
+
+--LIST of classes with their respective students for a specific teacher--
+SELECT *
+FROM class_info
+JOIN class_info_student on class_info_student.class_id = class_info.id
+JOIN profile on profile.id = class_info_student.student_id
+WHERE teacher_id = 2;
+
+--LIST of students within a specific class--
+SELECT *
+FROM class_info
+JOIN class_info_student on class_info_student.class_id = class_info.id
+JOIN profile on profile.id = class_info_student.student_id
+WHERE class_info.id = 1;
+
+--LIST of all students within the school--
+SELECT *
+FROM profile
+JOIN student on student.id = profile.id;
+
+
+SELECT *
+FROM profile
+JOIN class_info on class_info.teacher_id = profile.id
+JOIN class_info_student on class_info_student.class_id = class_info.id
+JOIN student on student.id = profile.id;
+
+
+SELECT *
+FROM users;
