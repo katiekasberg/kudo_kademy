@@ -12,21 +12,21 @@
         type="text"
         id="StudentId"
         name="StudentId"
-      /><br />
-      <input
-        v-model="kudo.typeId"
-        value="1"
-        type="radio"
-        id="KudosTypeA"
-        name="KudosType"
       />
-      <label for="KudosTypeA">Kudos Type A</label><br />
-      <input type="radio" id="KudosTypeB" name="KudosType" />
-      <label for="KudosTypeB">Kudos Type B</label><br />
-      <input type="radio" id="KudosTypeC" name="KudosType" />
-      <label for="KudosTypeC">Kudos Type C</label><br />
-      <input type="radio" id="KudosTypeD" name="KudosType" />
-      <label for="KudosTypeD">Kudos Type D</label><br />
+      <label for="kudoType" class="sr-only"
+        >Kudo Type:
+
+        <select v-model="kudo.typeId" name="kudo-type" id="kudo-type">
+          <option
+            v-for="kudoType in this.$store.state.kudoTypes"
+            v-bind:key="kudoType.id"
+            v-bind:value="kudoType.id"
+          >
+            {{ kudoType.name }} Points: {{ kudoType.value }}
+          </option>
+        </select>
+      </label>
+
       <label for="Comments">Comments:</label><br />
       <input
         v-model="kudo.message"
@@ -61,6 +61,15 @@ export default {
         }
       });
     },
+    getKudoTypes() {
+      kudoService.getKudoTypes().then((response) => {
+        // if (response.status === 200) {
+        this.$store.commit("SET_KUDO_TYPES", response.data);
+      });
+    },
+  },
+  created() {
+    this.getKudoTypes();
   },
 };
 </script>
