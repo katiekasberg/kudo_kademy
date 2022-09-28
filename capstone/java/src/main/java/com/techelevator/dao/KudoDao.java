@@ -13,20 +13,26 @@ public interface KudoDao {
     //get kudo by id
     Kudo getKudoById(int kudoId) throws KudoNotFoundException;
 
-
     //get list of kudos by student id
     List<Kudo> getStudentKudos(int StudentId);
 
     //get list of kudos by class
     List<Kudo> getClassKudos(int classId);
 
+    //get list of kudos for all students
+    List<Kudo> getAllKudos();
+
     //get list of kudo types
     List<KudoType> getTypesOfKudos();
 
-    //get list of last 10 kudos per student id
+    //TODO: get list of last 10 kudos per student id
 
     //create a kudo type
-    KudoType createKudoType(NewKudoType newKudoType);
+    KudoType createKudoType(KudoType kudoType);
+
+//    //create a kudo type
+//    KudoType createKudoType(NewKudoType newKudoType);
+    //^^Do we need to differentiate between KudoType and NewKudoType?
 
     //submit a kudo request to student
     Kudo submitKudo(int teacherId, KudoRequest newKudoRequest);

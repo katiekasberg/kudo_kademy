@@ -2,6 +2,7 @@ package com.techelevator.model.kudo;
 
 public class KudoType {
     private int id;
+    private String name;
     private String description;
     private int value;
 
@@ -11,6 +12,14 @@ public class KudoType {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {

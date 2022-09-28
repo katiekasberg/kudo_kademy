@@ -1,4 +1,4 @@
 package com.techelevator.dao;
 
-public class JdbcTeacherDao {
+public class JdbcTeacherDao implements TeacherDao{
 }

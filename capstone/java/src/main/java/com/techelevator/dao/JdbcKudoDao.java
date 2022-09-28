@@ -27,7 +27,7 @@ public class JdbcKudoDao implements KudoDao{
         Kudo kudo = null;
         String sql = "SELECT id, teacher_id, student_id, message, type_id, approval_status " +
                      "FROM kudo_student " +
-                     "WHERE id = ?";
+                     "WHERE id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, kudoId);
 
         if(results.next()){
@@ -41,7 +41,7 @@ public class JdbcKudoDao implements KudoDao{
         List<Kudo> kudos = new ArrayList<>();
         String sql = "SELECT id, teacher_id, student_id, message, type_id, approval_status " +
                      "FROM kudo_student " +
-                     "WHERE student_id = ?";
+                     "WHERE student_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, studentId);
 
         while(results.next()){
@@ -52,18 +52,66 @@ public class JdbcKudoDao implements KudoDao{
 
     @Override
     public List<Kudo> getClassKudos(int classId) {
-        return null;
+        List<Kudo> kudos = new ArrayList<>();
+        String sql =
+        "SELECT kudo_student.id, kudo_student.teacher_id, kudo_student.student_id, kudo_student.message, kudo_student.type_id, kudo_student.approval_status " +
+        "FROM kudo_student " +
+        "JOIN class_info_student ON kudo_student.student_id = class_info_student.student_id " +
+        "WHERE class_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, classId);
+
+        while(results.next()){
+            kudos.add(mapRowToKudo(results));
+        }
+        return kudos;
+    }
+
+    @Override
+    public List<Kudo> getAllKudos() {
+        List<Kudo> kudos = new ArrayList<>();
+        String sql = "SELECT id, teacher_id, student_id, message, type_id, approval_status " +
+                "FROM kudo_student ;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+
+        while(results.next()){
+            kudos.add(mapRowToKudo(results));
+        }
+        return kudos;
     }
 
     @Override
     public List<KudoType> getTypesOfKudos() {
-        return null;
+        List<KudoType> kudoTypes = new ArrayList<>();
+        String sql = "SELECT id, name, description, value " +
+                "FROM kudo_type;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+
+        while(results.next()){
+            kudoTypes.add(mapRowToKudoType(results));
+        }
+        return kudoTypes;
     }
 
     @Override
-    public KudoType createKudoType(NewKudoType newKudoType) {
-        return null;
+    public KudoType createKudoType(KudoType newKudoType) {
+        String sql = "INSERT INTO kudo_type (name, description, value) " +
+                "VALUES (?, ?, ?) " +
+                "RETURNING id;";
+        Integer newKudoTypeId;
+        try{
+            newKudoTypeId = jdbcTemplate.queryForObject(sql, Integer.class, newKudoType.getName(),
+                    newKudoType.getDescription(), newKudoType.getValue());
+            newKudoType.setId(newKudoTypeId);
+        } catch (DataAccessException e){
+            System.out.println("Kudo database access exception");
+        }
+        return newKudoType;
     }
+
+//    @Override
+//    public KudoType createKudoType(NewKudoType newKudoType) {
+//        return null;
+//    }
 
     @Override
     public Kudo submitKudo(int teacherId, KudoRequest newKudoRequest) {
@@ -92,5 +140,13 @@ public class JdbcKudoDao implements KudoDao{
         return kudo;
     }
 
+    private KudoType mapRowToKudoType(SqlRowSet rs){
+        KudoType kudoType = new KudoType();
+        kudoType.setId(rs.getInt("id"));
+        kudoType.setName(rs.getString("name"));
+        kudoType.setDescription(rs.getString("description"));
+        kudoType.setValue(rs.getInt("value"));
+        return kudoType;
+    }
 
 }

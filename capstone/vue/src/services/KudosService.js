@@ -2,12 +2,12 @@ import axios from 'axios';
 
 export default {
 
-    teacher(user) {
-        return axios.post('/teacher', user)
+    teacher() {
+        return axios.get('/teacher')
     },
 
-    SendKudos(user) {
-        return axios.post('/SendKudos', user)
+    SendKudos(kudo) {
+        return axios.post('/kudos', kudo)
     }
 
 }
