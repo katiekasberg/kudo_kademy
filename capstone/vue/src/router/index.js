@@ -7,6 +7,9 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import Teacher from '../views/Teacher.vue'
 import SendKudos from '../views/SendKudos.vue'
+import Admin from '../views/Admin.vue'
+import Parent from '../views/Parent.vue'
+import Student from '../views/Student.vue'
 
 Vue.use(Router)
 
@@ -70,7 +73,31 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
-    }
+    },
+    {
+      path: "/admin",
+      name: "admin",
+      component: Admin,
+      meta:{
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/parent",
+      name: "parent",
+      component: Parent,
+      meta:{
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/student",
+      name: "student",
+      component: Student,
+      meta:{
+        requiresAuth: true
+      }
+    },
   ]
 })
 

@@ -1,18 +1,15 @@
 <template>
-  <div class="home">
+  <div>
+     <div class="home">
     <div class="container">
       <div class="Aside-nav">
         <aside>
           <nav>
             <ul>
               <li><a href="#">Home</a></li>
-              <li><router-link to="/SendKudos">Send Kudos</router-link></li>
-              <li><a href="#">Behavioral Report</a></li>
-              <li><a href="#">Search Students</a></li>
-              <li><a href="#">Make Announcements</a></li>
-              <li><a href="#">Add/Remove Student</a></li>
-              <li><a href="#">Add/Remove Teacher</a></li>
-              <li><a href="#">Set Kudo Values</a></li>
+              <li><a href="#">Student Report</a></li>
+              <li><a href="#">See Kudo Values</a></li>
+              <li><a href="#">Contact Teacher</a></li>
               <li><router-link to="/logout"> Logout </router-link></li>
             </ul>
           </nav>
@@ -35,31 +32,24 @@
         <h1>Welcome</h1>
       </div>
       <div class="Announcements">
-        <h2>Announcements</h2>
-        <input type="text" 
-        id="makeAnnouncement" 
-        placeholder="Enter Announcement" />
-        <button type="submit" class="submitBtn">Submit</button>
+        <h2>See Announcements</h2>
+
       </div>
       <div class="search">
-        <h2>Search Students</h2>
-        <input type="text"
-        id="searchStudent"
-        placeholder="Search Student"
-        />
-        <button type="submit" class="submitBtn">Search</button>
+        <h2>View Student Report</h2>
       </div>
     </div>
+  </div> 
   </div>
 </template>
 
 <script>
 export default {
-  name: "home",
-};
+
+}
 </script>
 
-<style scoped>
+<style>
 .container {
   display: grid;
   grid-template-columns: 0.7fr 1.2fr 1.2fr;
@@ -108,24 +98,6 @@ export default {
 
 .Announcements {
   grid-area: Announcements;
-}
-
-#makeAnnouncement{
-  margin: auto;
-  display: block;
-  width: 50%;
-  height: 50%;
-  text-align: center;
-}
-
-#searchStudent{
-  margin:auto;
-  display: block;
-}
-
-.submitBtn{
-  margin: auto;
-  display: block;
 }
 
 .search {
