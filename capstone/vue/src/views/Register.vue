@@ -156,11 +156,19 @@ export default {
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-gap: 7px;
+  grid-gap: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+  font-size: 22pt;
+   text-shadow: 1px 0px 0px black,
+  -1px 0px 0px black,
+  0px 1px 0px black,
+  0px -1px 0px black;
+  letter-spacing: 2px;
 }
 .form-control {
   float: right;
   width: auto;
+  height: auto;
 }
 #confirmPassword {
   width: 200px;
@@ -178,6 +186,31 @@ h1 {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
+  text-decoration: underline;
+  text-shadow: 
+  1px 0px 0px black,
+  -1px 0px 0px black,
+  0px 1px 0px black,
+  0px -1px 0px black;
+  letter-spacing: 2px;
+}
 
+#register{
+  background: linear-gradient(
+    360deg,
+    white,
+    #ffc93c 10%,
+    #ff9a3c 30%,
+    #ff6f3c,
+    #155263 100%
+  );
+  display: 100%;
+}
+
+.sr-only{
+  color:darkorange
+}
+button{
+  height:150%;
 }
 </style>

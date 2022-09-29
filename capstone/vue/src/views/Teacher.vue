@@ -43,31 +43,12 @@
         <button type="submit" class="submitBtn">Submit</button>
       </div>
       <div class="search-student">
-        <h2>Search Students</h2>
-        <input type="text" id="searchStudent" placeholder="Search Student" />
-        <button type="submit" class="submitBtn">Search</button>
+        <student-list />
+        
       </div>
     </div>
   </div>
-  <!-- <div>
-    <body>
-      <h1>SCHOOL COMMUNICATION</h1>
-      <img class="logo" src="../../resources/school-icon-9.png" alt="" />
-      <nav class="sidebar">
-        <button router-link:on="../teacher">Home</button>
-        <button href="/SendKudos">Send Kudos</button>
-        <button>Behavioral Report</button>
-        <button>Search Students</button>
-        <button>Classes</button>
-      </nav>
-      <student-list class="student-list" />
-      <h2>House Cup Leader Board</h2>
-
-      <table></table>
-    </body>
-  </div> -->
 </template>
-
 <script>
 import StudentList from "../components/StudentList";
 export default {
@@ -76,7 +57,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .container {
   display: grid;
@@ -110,11 +90,9 @@ export default {
 .logo {
   grid-area: logo;
 }
-
 .Welcome-User {
   grid-area: Welcome-User;
 }
-
 .Announcements {
   grid-area: Announcements;
 }
@@ -129,7 +107,6 @@ img.logo {
   width: 200px;
   height: auto;
 }
-
 h1,
 h2 {
   display: grid;
@@ -139,11 +116,8 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  text-shadow: 
-  1px 0px 0px black,
-  -1px 0px 0px black,
-  0px 1px 0px black,
-  0px -1px 0px black;
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
+    0px -1px 0px black;
 }
 p {
   display: grid;
@@ -152,9 +126,8 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
 }
-
 aside {
-  position:fixed;
+  position: fixed;
   margin-left: 0.5%;
   margin-right: 0.5%;
   padding-top: 100%;
@@ -166,37 +139,34 @@ aside {
   border-radius: 5px;
   border-width: 3px;
   /* border-radius: 20%; */
-  border-color:darkorange;
-  background-color:black;
+  border-color: darkorange;
+  background-color: black;
   opacity: 0.5;
-
 }
-ul{
+ul {
   display: grid;
   align-items: center;
-  color: darkorange; 
+  color: darkorange;
   /* color is not showing up?? */
-   justify-items: center;
+  justify-items: center;
   justify-content: center;
 }
-ul>li{
+ul > li {
   font-size: 20px;
   font-weight: bold;
   border-bottom: 1px solid;
 }
-
 .home {
   background: linear-gradient(
     360deg,
     white,
-    #ffc93c 10%,
-    #ff9a3c 30%,
-    #ff6f3c,
+    #FFC93C 10%,
+    #FF9A3C 30%,
+    #FF6F3C,
     #155263 90%
   );
   display: 100%;
 }
-
 button {
   margin-bottom: 20px;
 }
@@ -229,4 +199,3 @@ button {
   justify-content: center;
 }
 </style>
-  
