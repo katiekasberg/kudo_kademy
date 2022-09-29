@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class JdbcTeacherDao implements TeacherDao{
+public class JdbcTeacherDao implements TeacherDao {
 
     private JdbcTemplate jdbcTemplate;
-    public JdbcTeacherDao(JdbcTemplate jdbcTemplate){
+
+    public JdbcTeacherDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -41,6 +42,24 @@ public class JdbcTeacherDao implements TeacherDao{
             classes.add(mapRowToClassInfo(results));
         }
         return classes;
+    }
+
+    //Possible edits: make school year auto fill to current school year, have teacher_id and school_id pulled in from Principal
+    @Override
+    public ClassInfo createNewClass(ClassInfo newClassInfo) {
+        String sql = "INSERT INTO class_info (name, subject, teacher_id, school_id, description, period, start_time, end_time, school_year) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+                "RETURNING id;";
+        Integer newClassInfoId;
+        try {
+            newClassInfoId = jdbcTemplate.queryForObject(sql, Integer.class, newClassInfo.getName(), newClassInfo.getSubject(),
+                    newClassInfo.getTeacherId(), newClassInfo.getSchoolId(), newClassInfo.getDescription(), newClassInfo.getPeriod(),
+                    newClassInfo.getStartTime(), newClassInfo.getEndTime(), newClassInfo.getSchoolYear());
+            newClassInfo.setId(newClassInfoId);
+        } catch (DataAccessException e) {
+            System.out.println("Database access exception");
+        }
+        return newClassInfo;
     }
 
     private ClassInfo mapRowToClassInfo(SqlRowSet rs) {

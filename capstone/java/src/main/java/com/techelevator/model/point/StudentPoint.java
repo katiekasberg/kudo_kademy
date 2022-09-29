@@ -2,13 +2,13 @@ package com.techelevator.model.point;
 
 public class StudentPoint extends Point{
 
-    private int studentId;
+    private String fullName;
 
-    public int getStudentId() {
-        return studentId;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

@@ -112,7 +112,6 @@ INSERT INTO kudo_student (teacher_id, student_id, message, type_id) VALUES (1004
 INSERT INTO kudo_student (teacher_id, student_id, message, type_id) VALUES (1004, 1013, 'Wow, Jillian put in 5 outside hours of work making her sculpture look amazing!', 3);
 INSERT INTO kudo_student (teacher_id, student_id, message, type_id) VALUES (1004, 1017, 'Thanks for all of the wonderful compliments you gave to other students! You really made them feel special!', 2);
 
-
 --INSERT INTO discipline_type () VALUES ();
 --
 --INSERT INTO discipline student () VALUES ();
