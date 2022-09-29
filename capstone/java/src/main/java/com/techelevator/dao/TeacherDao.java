@@ -1,13 +1,19 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.school.ClassInfo;
 import com.techelevator.model.school.ClassInfoStudent;
+
+import java.util.List;
 
 public interface TeacherDao {
 
     //teacher can associate students with a class
     void addStudentToAClass(ClassInfoStudent classInfoStudent);
 
+    //teacher can get a list of their own classes
+    List<ClassInfo> getClassesAsTeacher(int teacherId);
 
+    //teacher can create a class
 
     //TODO: add all my students (what does this mean?)
     //get a list of all teachers

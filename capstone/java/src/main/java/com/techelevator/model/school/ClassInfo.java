@@ -5,6 +5,7 @@ import java.sql.Time;
 public class ClassInfo {
     private int id;
     private String name;
+    private String subject;
     private int teacherId;
     private int schoolId;
     private String description;
@@ -23,6 +24,14 @@ public class ClassInfo {
 
     public String getName() {
         return name;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public void setName(String name) {
