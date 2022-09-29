@@ -1,43 +1,57 @@
 <template>
-  <div class="home">
-    <div class="container">
-      <div class="Aside-nav">
-        <aside>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Kudo Report</a></li>
-              <li><a href="#">Leaderboard</a></li>
-              <li><a href="#">See Kudo Values</a></li>
-              <li><router-link to="/logout"> Logout </router-link></li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-      <div class="Header">
-        <div class="app-name">
-          <h1>School Communication</h1>
+  <body>
+    <div class="home">
+      <div class="container">
+        <div class="Aside-nav">
+          <aside>
+            <nav>
+              <ul>
+                <li>
+                  <button><a href="#">Home</a></button>
+                </li>
+                <li>
+                  <button><a href="#">Kudo Report</a></button>
+                </li>
+                <li>
+                  <button><a href="#">Leaderboard</a></button>
+                </li>
+                <li>
+                  <button><a href="#">See Kudo Values</a></button>
+                </li>
+                <li>
+                  <button>
+                    <router-link to="/logout"> Logout </router-link>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </aside>
         </div>
-        <div class="logo">
-          <img
-            class="logo"
-            src="../../resources/school-icon-9.png"
-            alt="school-logo"
-          />
-          <p>You must be authenticated to see this</p>
+        <div class="Header">
+          <div class="app-name">
+            <h1>School Communication</h1>
+          </div>
+          <div class="logo">
+            <img
+              class="logo"
+              src="../../resources/school-icon-9.png"
+              alt="school-logo"
+            />
+            <p>You must be authenticated to see this</p>
+          </div>
         </div>
-      </div>
-      <div class="Welcome-User">
-        <h1>Welcome</h1>
-      </div>
-      <div class="Announcements">
-        <h2>Announcements</h2>
-      </div>
-      <div class="House-Cup">
-        <h2>House Cup Leaderboard</h2>
+        <div class="Welcome-User">
+          <h1>Welcome</h1>
+        </div>
+        <div class="Announcements">
+          <h2>Announcements</h2>
+        </div>
+        <div class="House-Cup">
+          <h2>House Cup Leaderboard</h2>
+        </div>
       </div>
     </div>
-  </div>
+  </body>
 </template>
 
 <script>
@@ -108,11 +122,8 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  text-shadow: 
-  1px 0px 0px black,
-  -1px 0px 0px black, 
-  0px 1px 0px black,
-  0px -1px 0px black;
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
+    0px -1px 0px black;
 }
 p {
   display: grid;
@@ -124,25 +135,25 @@ p {
 
 aside {
   position: fixed;
-  margin-left:0.5%;
+  margin-left: 0.5%;
   margin-right: 0.5%;
   padding-top: 100%;
-  padding: 20px;
-  width: 20%;
+  padding: 10px;
+  width: 15%;
   float: right;
   overflow: auto;
   border-radius: 5px;
   border-width: 3px;
   border-color: darkorange;
-  background-color:black;
+  background-color: #ffc83c57;
+  opacity: 100%;
   height: 100%;
-  opacity: 0.5;
 }
 
 ul {
   display: grid;
   align-items: center;
-  color:darkorange;
+  color: darkorange;
   justify-items: center;
   justify-content: center;
   margin: 0;
@@ -166,11 +177,22 @@ li {
   background: linear-gradient(
     360deg,
     white,
-    #ffc93c 10%,
-    #ff9a3c 30%,
-    #ff6f3c,
-    #155263 90%
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
   );
   display: 100%;
+}
+button {
+  padding: 10px;
+  margin-left: 20px;
+  background-color: rgb(253, 223, 158);
+  border-radius: 10%;
+  border-color: orange;
+}
+a {
+  text-decoration: none;
+  color: rgb(83, 40, 3);
+  font-weight: bold;
 }
 </style>

@@ -1,37 +1,37 @@
 <template>
-  <div>
-    <table class="student-list">
-      <p>Search by Student</p>
-      <tr>
-        <th>&nbsp;</th>
-        <th>First Name:</th>
-        <th>Last Name:</th>
-        <th>Class of:</th>
-      </tr>
-      <tr>
-        <td>
-          <input id="firstName" type="text" v-model="filter.firstName" />
-        </td>
-        <td>
-          <input id="lastName" type="text" v-model="filter.lastName" />
-        </td>
-        <td>
-          <input type="number" id="classOf" v-model="filter.graduationYear" />
-        </td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr
-        v-for="student in filteredList"
-        v-bind:key="student.id"
-        v-bind:value="student.id"
-      >
-        <td>&nbsp;</td>
-        <td>{{ student.firstName }}</td>
-        <td>{{ student.lastName }}</td>
-        <td>{{ student.graduationYear }}</td>
-      </tr>
-    </table>
-  </div>
+  <body>
+    <div>
+      <table class="student-list">
+        <p>Search by Student</p>
+        <tr>
+          <th>First Name:</th>
+          <th>Last Name:</th>
+          <th>Class of:</th>
+        </tr>
+        <tr>
+          <td>
+            <input id="firstName" type="text" v-model="filter.firstName" />
+          </td>
+          <td>
+            <input id="lastName" type="text" v-model="filter.lastName" />
+          </td>
+          <td>
+            <input type="number" id="classOf" v-model="filter.graduationYear" />
+          </td>
+        </tr>
+        <tr
+          v-for="student in filteredList"
+          v-bind:key="student.id"
+          v-bind:value="student.id"
+          class="col-centered"
+        >
+          <td class="col-centered">{{ student.firstName }}</td>
+          <td class="col-centered">{{ student.lastName }}</td>
+          <td class="col-centered">{{ student.graduationYear }}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
 </template>
 <script>
 import studentService from "../services/StudentService";
@@ -88,8 +88,28 @@ export default {
   display: grid;
   align-items: center;
   justify-content: center;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-block: black 5px;
 }
 th {
   padding-right: 100px;
+}
+p {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.col-centered {
+  margin: 0 auto;
+  float: none;
+  padding-right: 115px;
+}
+body {
+  padding: 10px;
+  margin-left: 500px;
+  margin-right: 500px;
+  color: black;
+  border: black 5px;
 }
 </style>

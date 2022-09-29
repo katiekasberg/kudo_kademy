@@ -1,63 +1,83 @@
 <template>
-  <div class="home">
+  <body>
     <div class="container">
-      <div class="Aside-nav">
-        <aside>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><router-link to="/SendKudos">Send Kudos</router-link></li>
-              <li><a href="#">Behavioral Report</a></li>
-              <li><a href="#">Search Students</a></li>
-              <li><a href="#">Make Announcements</a></li>
-              <li><a href="#">Add/Remove Student</a></li>
-              <li><a href="#">Classes</a></li>
-              <li><router-link to="/logout"> Logout </router-link></li>
-            </ul>
-          </nav>
-        </aside>
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <button><a href="#">Home</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/SendKudos">Send Kudos</router-link>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Behavioral Report</a></button>
+            </li>
+            <li>
+              <button><a href="#">Search Students</a></button>
+            </li>
+            <li>
+              <button><a href="#">Make Announcements</a></button>
+            </li>
+            <li>
+              <button><a href="#">Add/Remove Student</a></button>
+            </li>
+            <li>
+              <button><a href="#">Classes</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/logout"> Logout </router-link>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div class="Header">
+      <div class="app-name">
+        <h1>School Communication</h1>
       </div>
-      <div class="Header">
-        <div class="app-name">
-          <h1>School Communication</h1>
-        </div>
-        <div class="logo">
-          <img
-            class="logo"
-            src="../../resources/school-icon-9.png"
-            alt="school-logo"
-          />
-          <p>You must be authenticated to see this</p>
-        </div>
-      </div>
-      <div class="Welcome-User">
-        <h1>Welcome</h1>
-      </div>
-      <div class="Announcements">
-        <h2>Announcements</h2>
-        <input
-          type="text"
-          id="makeAnnouncement"
-          placeholder="Enter Announcement"
+      <div class="logo">
+        <img
+          class="logo"
+          src="../../resources/school-icon-9.png"
+          alt="school-logo"
         />
         <button type="submit" class="submitBtn">Submit</button>
       </div>
       <div class="search-student">
         <student-list />
-        
       </div>
     </div>
-  </div>
+    <div class="Welcome-User">
+      <h1>Welcome Teacher!</h1>
+    </div>
+    <div class="Announcements">
+      <h3>Create an Announcements</h3>
+      <input
+        type="text"
+        id="makeAnnouncement"
+        placeholder="Enter Announcement"
+      />
+      <button type="submit" class="submitBtn">Submit</button>
+    </div>
+    <div class="search">
+      <student-list />
+    </div>
+  </body>
 </template>
-<script>
-import StudentList from "../components/StudentList";
 
+<script>
+import StudentList from "../components/StudentList.vue";
 export default {
-  components: {
-    StudentList,
-  },
+  components: { StudentList },
+  name: "home",
 };
 </script>
+
 <style scoped>
 .container {
   display: grid;
@@ -66,12 +86,13 @@ export default {
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "Aside-nav  Header"
+    "Aside-nav Header "
     "Aside-nav Welcome-User"
-    "Aside-nav Announcements"
-    "Aside-nav search-student";
+    "Aside-nav Announcements "
+    "Aside-nav search";
 }
-/* .Header {
+
+.Header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -83,26 +104,55 @@ export default {
     "logo logo logo";
   grid-area: Header;
   justify-content: center;
-} */
+}
+
 .app-name {
   grid-area: app-name;
   justify-items: center;
+  text-decoration: underline;
+  color: darkorange;
 }
+
 .logo {
   grid-area: logo;
 }
+
 .Welcome-User {
   grid-area: Welcome-User;
 }
+
 .Announcements {
   grid-area: Announcements;
+  color: black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+#makeAnnouncement {
+  margin: auto;
+  display: block;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  padding-bottom: 100px;
+  margin-bottom: 5px;
+}
+
+#searchStudent {
+  margin: auto;
+  display: block;
+}
+
+.submitBtn {
+  margin: auto;
+  display: block;
+}
+
 .search {
   grid-area: search;
 }
+
 img.logo {
-  grid-area: "header";
-  margin-bottom: 0;
   margin: auto;
   display: block;
   width: 200px;
@@ -111,92 +161,71 @@ img.logo {
 h1,
 h2 {
   display: grid;
-  grid-area: header;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
-    0px -1px 0px black;
 }
+
 p {
   display: grid;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(216, 150, 69);
+  color: rgba(216, 150, 69, 0.644);
 }
+
 aside {
-  position: fixed;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-  padding-top: 100%;
-  padding: 20px;
-  width: 20%;
-  /* filter: invert(1); */
-  float: right;
-  overflow: auto;
-  border-radius: 5px;
-  border-width: 3px;
-  /* border-radius: 20%; */
-  border-color: darkorange;
-  background-color: black;
-  opacity: 0.5;
-}
-ul {
   display: grid;
-  align-items: center;
-  color: darkorange;
-  /* color is not showing up?? */
-  justify-items: center;
-  justify-content: center;
+  position: fixed;
+  border-collapse: separate;
+  border-color: rgba(243, 1, 1, 0.815);
+  border-right: 1px solid rgb(211, 211, 211);
+  height: 100%;
+  width: 200px;
+  background-color: #ffc83c57;
+  opacity: 100%;
 }
+
+ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
 ul > li {
-  font-size: 20px;
-  font-weight: bold;
-  border-bottom: 1px solid;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  border-color: rgba(0, 173, 238, 0.4);
+  padding: 15px;
+
+  list-style: none;
+  width: 95%;
 }
-.home {
+body {
   background: linear-gradient(
     360deg,
     white,
-    #FFC93C 10%,
-    #FF9A3C 30%,
-    #FF6F3C,
-    #155263 90%
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
   );
-  display: 100%;
-}
-button {
-  margin-bottom: 20px;
-}
-student-list {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-}
-.container {
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "header header header"
-    "sidebar content content"
-    "footer footer footer";
-  background-color: rgb(253, 223, 158);
-}
-.sidebar {
-  flex-direction: column;
-  align-items: left;
 }
 button {
   padding: 10px;
   margin-left: 20px;
-  background-color: rgb(253, 223, 158);
+  background-color: white;
   border-radius: 10%;
   border-color: orange;
+  opacity: 100%;
 }
-.student-list {
-  align-items: center;
-  justify-content: center;
+a {
+  text-decoration: none;
+  color: black;
+  opacity: 100%;
+  font-weight: bold;
 }
 </style>

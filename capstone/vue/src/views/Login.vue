@@ -90,13 +90,11 @@ export default {
   grid-gap: 18px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22pt;
-   text-shadow: 1px 0px 0px black,
-  -1px 0px 0px black,
-  0px 1px 0px black,
-  0px -1px 0px black;
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
+    0px -1px 0px black;
   letter-spacing: 2px;
 }
-.form-control{
+.form-control {
   display: grid;
   width: 100%;
   height: 150%;
@@ -105,7 +103,7 @@ img.logo {
   margin: auto;
   display: block;
   width: 200px;
-  height: auto; 
+  height: auto;
 }
 
 h1 {
@@ -115,21 +113,25 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(223, 126, 8);
   text-decoration: underline;
-  text-shadow: 
-  1px 0px 0px black,
-  -1px 0px 0px black,
-  0px 1px 0px black,
-  0px -1px 0px black;
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
+    0px -1px 0px black;
   letter-spacing: 2px;
 }
-#login{
-  background: linear-gradient(360deg,white 0%, #FFC93C 10%, #FF9A3C 30%, #FF6F3C, #155263 90%);
+#login {
+  background: linear-gradient(
+    360deg,
+    white,
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
+  );
+
   display: 100%;
 }
-.sr-only{
+.sr-only {
   color: darkorange;
 }
-button{
+button {
   width: 100%;
   height: 150%;
 }
