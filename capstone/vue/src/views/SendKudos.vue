@@ -40,7 +40,13 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  background-color: rgb(253, 223, 158);
+  background: linear-gradient(
+    360deg,
+    white,
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
+  );
 }
 new-kudos {
   padding-bottom: 200px;

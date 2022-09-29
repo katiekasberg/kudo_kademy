@@ -4,7 +4,7 @@
       <h1>SCHOOL COMMUNICATION</h1>
       <img class="logo" src="../../resources/school-icon-9.png" alt="" />
 
-      <h2 class="h3 mb-3 font-weight-normal">Send A Kudo!</h2>
+      <h2>Send A Kudo!</h2>
 
       <form v-on:submit.prevent action="submit">
         <label for="StudentId"
@@ -115,6 +115,8 @@ h2 {
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-weight: normal;
 }
 form {
   display: grid;
@@ -128,17 +130,22 @@ label {
   float: left;
   clear: none;
   display: block;
-  padding: 0px 0em 0px 20px;
+  padding: 0px 0em 20px 20px;
 }
 
-input[type="radio"],
-input.radio {
-  float: left;
-  clear: none;
-  margin: 0px 200px 0px 0px;
+input {
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 0px 0px;
 }
 body {
-  background-color: rgb(253, 223, 158);
+  background: linear-gradient(
+    360deg,
+    white,
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
+  );
   padding-bottom: 400px;
 }
 </style>
