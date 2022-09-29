@@ -28,16 +28,17 @@ public interface KudoDao {
     //TODO: get list of last 10 kudos per student id
 
     //create a kudo type
-    KudoType createKudoType(KudoType kudoType);
+    KudoType createKudoType(KudoType newKudoType);
 
 //    //create a kudo type
 //    KudoType createKudoType(NewKudoType newKudoType);
     //^^Do we need to differentiate between KudoType and NewKudoType?
 
+    //update a kudo type
+    KudoType updateKudoType(KudoType updatedKudoType, int kudoTypeId);
+
     //submit a kudo request to student
     Kudo submitKudo(int teacherId, KudoRequest newKudoRequest);
-
-
 
 
 }
