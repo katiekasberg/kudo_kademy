@@ -46,7 +46,15 @@
           src="../../resources/school-icon-9.png"
           alt="school-logo"
         />
+<<<<<<< HEAD
         <!-- <p>You must be authenticated to see this</p> -->
+=======
+        <button type="submit" class="submitBtn">Submit</button>
+      </div>
+      <div class="search-student">
+        <student-list />
+        
+>>>>>>> main
       </div>
     </div>
     <div class="Welcome-User">
