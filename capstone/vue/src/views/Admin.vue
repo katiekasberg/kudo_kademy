@@ -48,12 +48,20 @@
         <input type="text" id="searchStudent" placeholder="Search Student" />
         <button type="submit" class="submitBtn">Search</button>
       </div>
+      <new-kudo-type/>
+      <rewards/>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import NewKudoType from '../components/NewKudoType.vue';
+import Rewards from '../components/Rewards.vue';
+export default {
+  components: { Rewards,
+       NewKudoType
+},
+  };
 </script>
 
 <style scoped>
@@ -179,4 +187,5 @@ ul > li {
   list-style: none;
   width: 95%;
 }
+
 </style>
