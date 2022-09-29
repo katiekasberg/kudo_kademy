@@ -1,48 +1,50 @@
 <template>
-  <div>
-    <h1>SCHOOL COMMUNICATION</h1>
-    <img class="logo" src="../../resources/school-icon-9.png" alt="" />
+  <body>
+    <div>
+      <h1>SCHOOL COMMUNICATION</h1>
+      <img class="logo" src="../../resources/school-icon-9.png" alt="" />
 
-    <h2 class="h3 mb-3 font-weight-normal">Send A Kudo!</h2>
+      <h2 class="h3 mb-3 font-weight-normal">Send A Kudo!</h2>
 
-    <form v-on:submit.prevent action="submit">
-      <label for="StudentId"
-        >Student Name:
-        <select v-model="kudo.studentId" id="StudentId" name="StudentId">
-          <option
-            v-for="student in this.$store.state.studentProfiles"
-            v-bind:key="student.id"
-            v-bind:value="student.id"
-          >
-            {{ student.firstName }} {{ student.lastName }}
-          </option>
-        </select>
-      </label>
-      <label for="kudoType" class="sr-only"
-        >Kudo Type:
+      <form v-on:submit.prevent action="submit">
+        <label for="StudentId"
+          >Student Name:
+          <select v-model="kudo.studentId" id="StudentId" name="StudentId">
+            <option
+              v-for="student in this.$store.state.studentProfiles"
+              v-bind:key="student.id"
+              v-bind:value="student.id"
+            >
+              {{ student.firstName }} {{ student.lastName }}
+            </option>
+          </select>
+        </label>
+        <label for="kudoType" class="sr-only"
+          >Kudo Type:
 
-        <select v-model="kudo.typeId" name="kudo-type" id="kudo-type">
-          <option
-            v-for="kudoType in this.$store.state.kudoTypes"
-            v-bind:key="kudoType.id"
-            v-bind:value="kudoType.id"
-          >
-            {{ kudoType.name }} Points: {{ kudoType.value }}
-          </option>
-        </select>
-      </label>
+          <select v-model="kudo.typeId" name="kudo-type" id="kudo-type">
+            <option
+              v-for="kudoType in this.$store.state.kudoTypes"
+              v-bind:key="kudoType.id"
+              v-bind:value="kudoType.id"
+            >
+              {{ kudoType.name }} Points: {{ kudoType.value }}
+            </option>
+          </select>
+        </label>
 
-      <label for="Comments"
-        >Comments:
-        <input
-          v-model="kudo.message"
-          type="text"
-          id="Comments"
-          name="Comments" /><br
-      /></label>
-      <button type="submit" v-on:click="saveKudo()">Send</button>
-    </form>
-  </div>
+        <label for="Comments"
+          >Comments:
+          <input
+            v-model="kudo.message"
+            type="text"
+            id="Comments"
+            name="Comments" /><br
+        /></label>
+        <button type="submit" v-on:click="saveKudo()">Send</button>
+      </form>
+    </div>
+  </body>
 </template>
 
   <script>
@@ -134,6 +136,10 @@ input.radio {
   float: left;
   clear: none;
   margin: 0px 200px 0px 0px;
+}
+body {
+  background-color: rgb(253, 223, 158);
+  padding-bottom: 400px;
 }
 </style>
   

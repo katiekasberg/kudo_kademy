@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table>
+    <table class="student-list">
       <p>Search by Student</p>
       <tr>
         <th>First Name:</th>
@@ -69,4 +69,12 @@ export default {
 };
 </script>
 <style scoped>
+.student-list {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+th {
+  padding-right: 100px;
+}
 </style>
