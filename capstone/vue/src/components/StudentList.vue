@@ -3,6 +3,7 @@
     <table class="student-list">
       <p>Search by Student</p>
       <tr>
+        <th>&nbsp;</th>
         <th>First Name:</th>
         <th>Last Name:</th>
         <th>Class of:</th>
@@ -15,14 +16,16 @@
           <input id="lastName" type="text" v-model="filter.lastName" />
         </td>
         <td>
-          <input id="classOf" type="text" v-model="filter.graduationYear" />
+          <input type="number" id="classOf" v-model="filter.graduationYear" />
         </td>
+        <td>&nbsp;</td>
       </tr>
       <tr
         v-for="student in filteredList"
         v-bind:key="student.id"
         v-bind:value="student.id"
       >
+        <td>&nbsp;</td>
         <td>{{ student.firstName }}</td>
         <td>{{ student.lastName }}</td>
         <td>{{ student.graduationYear }}</td>
@@ -47,11 +50,23 @@ export default {
     filteredList() {
       let filteredStudents = this.$store.state.studentProfiles;
       if (this.filter.firstName != "") {
-        filteredStudents = filteredStudents.filter((student) => {
+        filteredStudents = filteredStudents.filter((student) =>
           student.firstName
             .toLowerCase()
-            .includes(this.filter.firstName.toLowerCase);
-        });
+            .includes(this.filter.firstName.toLowerCase())
+        );
+      }
+      if (this.filter.lastName != "") {
+        filteredStudents = filteredStudents.filter((student) =>
+          student.lastName
+            .toLowerCase()
+            .includes(this.filter.lastName.toLowerCase())
+        );
+      }
+      if (this.filter.graduationYear != "") {
+        filteredStudents = filteredStudents.filter(
+          (student) => student.graduationYear == this.filter.graduationYear
+        );
       }
       return filteredStudents;
     },
