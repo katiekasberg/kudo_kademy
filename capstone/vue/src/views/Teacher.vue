@@ -43,15 +43,19 @@
         <button type="submit" class="submitBtn">Submit</button>
       </div>
       <div class="search-student">
+<<<<<<< HEAD
         <h2>Search Students</h2>
         <student-list />
         <input type="text" id="searchStudent" placeholder="Search Student" />
         <button type="submit" class="submitBtn">Search</button>
+=======
+        <student-list />
+        
+>>>>>>> main
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import StudentList from "../components/StudentList";
 
@@ -61,7 +65,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .container {
   display: grid;
@@ -95,11 +98,9 @@ export default {
 .logo {
   grid-area: logo;
 }
-
 .Welcome-User {
   grid-area: Welcome-User;
 }
-
 .Announcements {
   grid-area: Announcements;
 }
@@ -114,7 +115,6 @@ img.logo {
   width: 200px;
   height: auto;
 }
-
 h1,
 h2 {
   display: grid;
@@ -134,7 +134,6 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
 }
-
 aside {
   position: fixed;
   margin-left: 0.5%;
@@ -165,19 +164,17 @@ ul > li {
   font-weight: bold;
   border-bottom: 1px solid;
 }
-
 .home {
   background: linear-gradient(
     360deg,
     white,
-    #ffc93c 10%,
-    #ff9a3c 30%,
-    #ff6f3c,
+    #FFC93C 10%,
+    #FF9A3C 30%,
+    #FF6F3C,
     #155263 90%
   );
   display: 100%;
 }
-
 button {
   margin-bottom: 20px;
 }
@@ -210,4 +207,3 @@ button {
   justify-content: center;
 }
 </style>
-  
