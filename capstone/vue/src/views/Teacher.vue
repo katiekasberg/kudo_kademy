@@ -43,15 +43,8 @@
         <button type="submit" class="submitBtn">Submit</button>
       </div>
       <div class="search-student">
-<<<<<<< HEAD
-        <h2>Search Students</h2>
-        <student-list />
-        <input type="text" id="searchStudent" placeholder="Search Student" />
-        <button type="submit" class="submitBtn">Search</button>
-=======
         <student-list />
         
->>>>>>> main
       </div>
     </div>
   </div>
