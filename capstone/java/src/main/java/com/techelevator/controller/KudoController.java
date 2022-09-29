@@ -58,6 +58,7 @@ public class KudoController {
     }
 
     //create new kudo type
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/kudo-types" , method= RequestMethod.POST)
     public KudoType createNewKudoType(@RequestBody KudoType newKudoType){
@@ -65,12 +66,14 @@ public class KudoController {
     }
 
     //edit a kudo type
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(path = "/kudo-types/{kudoTypeId}" , method= RequestMethod.PUT)
     public KudoType editKudoType(@RequestBody KudoType updatedKudoType, @PathVariable int kudoTypeId){
         return kudoDao.updateKudoType(updatedKudoType, kudoTypeId);
     }
 
     //send kudos to a student
+//    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_TEACHER')")
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/kudos" , method= RequestMethod.POST)
     public Kudo sendKudos(Principal principal, @RequestBody KudoRequest kudoRequest){
