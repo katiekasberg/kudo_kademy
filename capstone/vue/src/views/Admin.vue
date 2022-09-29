@@ -51,8 +51,8 @@
         />
         <!-- <p>You must be authenticated to see this</p> -->
       </div>
-      <new-kudo-type/>
-      <rewards/>
+      <new-kudo-type />
+      <rewards />
     </div>
     <div class="Welcome-User">
       <h1>Welcome Administrator!</h1>
@@ -74,8 +74,10 @@
 
 <script>
 import StudentList from "../components/StudentList.vue";
+import NewKudoType from "../components/NewKudoType.vue";
+import Rewards from "../components/Rewards.vue";
 export default {
-  components: { StudentList },
+  components: { StudentList, Rewards, NewKudoType },
   name: "home",
 };
 </script>
