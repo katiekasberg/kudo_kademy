@@ -44,32 +44,17 @@
       </div>
       <div class="search-student">
         <h2>Search Students</h2>
+        <student-list />
         <input type="text" id="searchStudent" placeholder="Search Student" />
         <button type="submit" class="submitBtn">Search</button>
       </div>
     </div>
   </div>
-  <!-- <div>
-    <body>
-      <h1>SCHOOL COMMUNICATION</h1>
-      <img class="logo" src="../../resources/school-icon-9.png" alt="" />
-      <nav class="sidebar">
-        <button router-link:on="../teacher">Home</button>
-        <button href="/SendKudos">Send Kudos</button>
-        <button>Behavioral Report</button>
-        <button>Search Students</button>
-        <button>Classes</button>
-      </nav>
-      <student-list class="student-list" />
-      <h2>House Cup Leader Board</h2>
-
-      <table></table>
-    </body>
-  </div> -->
 </template>
 
 <script>
 import StudentList from "../components/StudentList";
+
 export default {
   components: {
     StudentList,
@@ -139,11 +124,8 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  text-shadow: 
-  1px 0px 0px black,
-  -1px 0px 0px black,
-  0px 1px 0px black,
-  0px -1px 0px black;
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
+    0px -1px 0px black;
 }
 p {
   display: grid;
@@ -154,7 +136,7 @@ p {
 }
 
 aside {
-  position:fixed;
+  position: fixed;
   margin-left: 0.5%;
   margin-right: 0.5%;
   padding-top: 100%;
@@ -166,20 +148,19 @@ aside {
   border-radius: 5px;
   border-width: 3px;
   /* border-radius: 20%; */
-  border-color:darkorange;
-  background-color:black;
+  border-color: darkorange;
+  background-color: black;
   opacity: 0.5;
-
 }
-ul{
+ul {
   display: grid;
   align-items: center;
-  color: darkorange; 
+  color: darkorange;
   /* color is not showing up?? */
-   justify-items: center;
+  justify-items: center;
   justify-content: center;
 }
-ul>li{
+ul > li {
   font-size: 20px;
   font-weight: bold;
   border-bottom: 1px solid;
