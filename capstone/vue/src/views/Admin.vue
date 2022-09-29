@@ -51,8 +51,8 @@
         />
         <!-- <p>You must be authenticated to see this</p> -->
       </div>
-      <new-kudo-type/>
-      <rewards/>
+      <new-kudo-type />
+      <rewards />
     </div>
     <div class="Welcome-User">
       <h1>Welcome Administrator!</h1>
@@ -73,21 +73,13 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import StudentList from "../components/StudentList.vue";
+import NewKudoType from "../components/NewKudoType.vue";
+import Rewards from "../components/Rewards.vue";
 export default {
-  components: { StudentList },
+  components: { StudentList, Rewards, NewKudoType },
   name: "home",
 };
-=======
-import NewKudoType from '../components/NewKudoType.vue';
-import Rewards from '../components/Rewards.vue';
-export default {
-  components: { Rewards,
-       NewKudoType
-},
-  };
->>>>>>> main
 </script>
 
 <style scoped>
@@ -217,7 +209,6 @@ ul > li {
   list-style: none;
   width: 95%;
 }
-<<<<<<< HEAD
 body {
   background: linear-gradient(
     360deg,
@@ -239,7 +230,4 @@ a {
   color: black;
   font-weight: bold;
 }
-=======
-
->>>>>>> main
 </style>
