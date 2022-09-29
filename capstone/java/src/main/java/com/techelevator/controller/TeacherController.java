@@ -1,10 +1,15 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.TeacherDao;
+import com.techelevator.dao.UserDao;
+import com.techelevator.model.school.ClassInfo;
 import com.techelevator.model.school.ClassInfoStudent;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -12,9 +17,11 @@ import org.springframework.web.bind.annotation.*;
 public class TeacherController {
 
     private TeacherDao teacherDao;
+    private UserDao userDao;
 
-    public TeacherController(TeacherDao teacherDao) {
+    public TeacherController(TeacherDao teacherDao, UserDao userDao) {
         this.teacherDao = teacherDao;
+        this.userDao = userDao;
     }
 
     //add student to a class
@@ -22,6 +29,13 @@ public class TeacherController {
     @RequestMapping(path = "/class-roster" , method= RequestMethod.POST)
     public void addStudentToClass(@RequestBody ClassInfoStudent classInfoStudent){
         teacherDao.addStudentToAClass(classInfoStudent);
+    }
+
+    //get a list of own classes as a teacher
+    @RequestMapping(path = "/classes" , method= RequestMethod.GET)
+    public List<ClassInfo> listClassesAsTeacher(Principal principal){
+        int teacherId = userDao.findIdByUsername(principal.getName());
+        return teacherDao.getClassesAsTeacher(teacherId);
     }
 
 }
