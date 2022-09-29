@@ -56,7 +56,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .container {
   display: grid;
   grid-template-columns: 0.7fr 1.2fr 1.2fr;
@@ -74,6 +74,7 @@ export default {};
   grid-area: Aside-nav;
   justify-self: stretch;
   align-self: stretch;
+  
 }
 
 .Header {

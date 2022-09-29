@@ -3,7 +3,6 @@
     <div class="container">
       <div class="Aside-nav">
         <aside>
-          <nav>
             <ul>
               <li><a href="#">Home</a></li>
               <li><router-link to="/SendKudos">Send Kudos</router-link></li>
@@ -15,12 +14,11 @@
               <li><a href="#">Set Kudo Values</a></li>
               <li><router-link to="/logout"> Logout </router-link></li>
             </ul>
-          </nav>
         </aside>
       </div>
       <div class="Header">
         <div class="app-name">
-          <h1>School Communication</h1>
+          <h1>SCHOOL COMMUNICATION</h1>
         </div>
         <div class="logo">
           <img
@@ -62,21 +60,15 @@ export default {
 <style scoped>
 .container {
   display: grid;
-  grid-template-columns: 0.7fr 1.2fr 1.2fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "Aside-nav Header Header"
-    "Aside-nav Welcome-User Welcome-User"
-    "Aside-nav Announcements Announcements"
-    "Aside-nav search search";
-}
-
-.Aside-nav {
-  grid-area: Aside-nav;
-  justify-self: stretch;
-  align-self: stretch;
+    "Aside-nav Header "
+    "Aside-nav Welcome-User"
+    "Aside-nav Announcements "
+    "Aside-nav search";
 }
 
 .Header {
@@ -96,6 +88,8 @@ export default {
 .app-name {
   grid-area: app-name;
   justify-items: center;
+  text-decoration: underline;
+  color: darkorange;
 }
 
 .logo {
@@ -145,6 +139,12 @@ h2 {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
+  letter-spacing: 2px;
+  text-shadow: 
+  1px 0px 0px black,
+  -1px 0px 0px black,
+  0px 1px 0px black,
+  0px -1px 0px black;
 }
 p {
   display: grid;
@@ -152,35 +152,44 @@ p {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
+  
 }
 
-aside{
-  display:grid;
+
+aside {
   position:fixed;
-  border-collapse: separate;
-  border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid lightgray;;
-  height: 100%;
-  width: 200px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  padding-top: 100%;
+  padding: 20px;
+  width: 20%;
+  /* filter: invert(1); */
+  float: right;
+  overflow: auto;
+  border-radius: 5px;
+  border-width: 3px;
+  /* border-radius: 20%; */
+  border-color:darkorange;
+  background-color:black;
+  opacity: 0.5;
 
 }
-
 ul{
-  text-align: center;
-  margin: 0;
-  padding: 0;
+  display: grid;
+  align-items: center;
+  color: darkorange; 
+  /* color is not showing up?? */
+  justify-items: center;
+  justify-content: center;
+}
+ul>li{
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid;
 }
 
-ul>li{
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  border-color: rgba(0, 173, 238, 0.4);
-  padding: 15px;
-  border-bottom: 1px solid rgba(0, 173, 238, 0.4);
-  list-style: none;
-  width: 95%;
-
+.home{
+  background: linear-gradient(360deg,white, #FFC93C 10%, #FF9A3C 30%, #FF6F3C, #155263 90%);
+  display: 100%;
 }
 </style>
