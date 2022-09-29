@@ -1,80 +1,95 @@
 <template>
-  <div class="home">
+  <body>
     <div class="container">
-      <div class="Aside-nav">
-        <aside>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><router-link to="/SendKudos">Send Kudos</router-link></li>
-              <li><a href="#">Behavioral Report</a></li>
-              <li><a href="#">Search Students</a></li>
-              <li><a href="#">Make Announcements</a></li>
-              <li><a href="#">Add/Remove Student</a></li>
-              <li><a href="#">Add/Remove Teacher</a></li>
-              <li><a href="#">Set Kudo Values</a></li>
-              <li><router-link to="/logout"> Logout </router-link></li>
-            </ul>
-          </nav>
-        </aside>
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <button><a href="#">Home</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/SendKudos">Send Kudos</router-link>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Behavioral Report</a></button>
+            </li>
+            <li>
+              <button><a href="#">Search Students</a></button>
+            </li>
+            <li>
+              <button><a href="#">Make Announcements</a></button>
+            </li>
+            <li>
+              <button><a href="#">Add/Remove Student</a></button>
+            </li>
+            <li>
+              <button><a href="#">Add/Remove Teacher</a></button>
+            </li>
+            <li>
+              <button><a href="#">Set Kudo Values</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/logout"> Logout </router-link>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div class="Header">
+      <div class="app-name">
+        <h1>School Communication</h1>
       </div>
-      <div class="Header">
-        <div class="app-name">
-          <h1>School Communication</h1>
-        </div>
-        <div class="logo">
-          <img
-            class="logo"
-            src="../../resources/school-icon-9.png"
-            alt="school-logo"
-          />
-          <p>You must be authenticated to see this</p>
-        </div>
-      </div>
-      <div class="Welcome-User">
-        <h1>Welcome</h1>
-      </div>
-      <div class="Announcements">
-        <h2>Announcements</h2>
-        <input
-          type="text"
-          id="makeAnnouncement"
-          placeholder="Enter Announcement"
+      <div class="logo">
+        <img
+          class="logo"
+          src="../../resources/school-icon-9.png"
+          alt="school-logo"
         />
-        <button type="submit" class="submitBtn">Submit</button>
-      </div>
-      <div class="search">
-        <h2>Search Students</h2>
-        <input type="text" id="searchStudent" placeholder="Search Student" />
-        <button type="submit" class="submitBtn">Search</button>
+        <!-- <p>You must be authenticated to see this</p> -->
       </div>
     </div>
-  </div>
+    <div class="Welcome-User">
+      <h1>Welcome Administrator!</h1>
+    </div>
+    <div class="Announcements">
+      <h3>Create an Announcements</h3>
+      <input
+        type="text"
+        id="makeAnnouncement"
+        placeholder="Enter Announcement"
+      />
+      <button type="submit" class="submitBtn">Submit</button>
+    </div>
+    <div class="search">
+      <student-list />
+    </div>
+  </body>
 </template>
 
 <script>
-export default {};
+import StudentList from "../components/StudentList.vue";
+export default {
+  components: { StudentList },
+  name: "home",
+};
 </script>
 
 <style scoped>
 .container {
   display: grid;
-  grid-template-columns: 0.7fr 1.2fr 1.2fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "Aside-nav Header Header"
-    "Aside-nav Welcome-User Welcome-User"
-    "Aside-nav Announcements Announcements"
-    "Aside-nav search search";
-}
-
-.Aside-nav {
-  grid-area: Aside-nav;
-  justify-self: stretch;
-  align-self: stretch;
-  
+    "Aside-nav Header "
+    "Aside-nav Welcome-User"
+    "Aside-nav Announcements "
+    "Aside-nav search";
 }
 
 .Header {
@@ -94,6 +109,8 @@ export default {};
 .app-name {
   grid-area: app-name;
   justify-items: center;
+  text-decoration: underline;
+  color: darkorange;
 }
 
 .logo {
@@ -106,6 +123,9 @@ export default {};
 
 .Announcements {
   grid-area: Announcements;
+  color: black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #makeAnnouncement {
@@ -114,6 +134,8 @@ export default {};
   width: 50%;
   height: 50%;
   text-align: center;
+  padding-bottom: 100px;
+  margin-bottom: 5px;
 }
 
 #searchStudent {
@@ -143,7 +165,9 @@ h2 {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
+  letter-spacing: 2px;
 }
+
 p {
   display: grid;
   align-items: center;
@@ -157,9 +181,11 @@ aside {
   position: fixed;
   border-collapse: separate;
   border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid lightgray;
+  border-right: 1px solid rgb(211, 211, 211);
   height: 100%;
   width: 200px;
+  background-color: #ffc83c57;
+  opacity: 100%;
 }
 
 ul {
@@ -175,8 +201,29 @@ ul > li {
   font-family: Arial, Helvetica, sans-serif;
   border-color: rgba(0, 173, 238, 0.4);
   padding: 15px;
-  border-bottom: 1px solid rgba(0, 173, 238, 0.4);
+
   list-style: none;
   width: 95%;
+}
+body {
+  background: linear-gradient(
+    360deg,
+    white,
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
+  );
+}
+button {
+  padding: 10px;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 10%;
+  border-color: orange;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 </style>

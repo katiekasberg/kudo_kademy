@@ -1,83 +1,79 @@
 <template>
   <body>
-    <div class="home">
-      <div class="container">
-        <div class="Aside-nav">
-          <aside>
-            <nav>
-              <ul>
-                <li>
-                  <button><a href="#">Home</a></button>
-                </li>
-                <li>
-                  <button>
-                    <router-link to="/SendKudos">Send Kudos</router-link>
-                  </button>
-                </li>
-                <li>
-                  <button><a href="#">Behavioral Report</a></button>
-                </li>
-                <li>
-                  <button><a href="#">Search Students</a></button>
-                </li>
-                <li>
-                  <button><a href="#">Make Announcements</a></button>
-                </li>
-                <li>
-                  <button><a href="#">Add/Remove Student</a></button>
-                </li>
-                <li>
-                  <button><a href="#">Add/Remove Teacher</a></button>
-                </li>
-                <li>
-                  <button><a href="#">Set Kudo Values</a></button>
-                </li>
-                <li>
-                  <button>
-                    <router-link to="/logout"> Logout </router-link>
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </aside>
-        </div>
-        <div class="Header">
-          <div class="app-name">
-            <h1>School Communication</h1>
-          </div>
-          <div class="logo">
-            <img
-              class="logo"
-              src="../../resources/school-icon-9.png"
-              alt="school-logo"
-            />
-            <p>You must be authenticated to see this</p>
-          </div>
-        </div>
-        <div class="Welcome-User">
-          <h1>Welcome</h1>
-        </div>
-        <div class="Announcements">
-          <h2>Announcements</h2>
-          <input
-            type="text"
-            id="makeAnnouncement"
-            placeholder="Enter Announcement"
-          />
-          <button type="submit" class="submitBtn">Submit</button>
-        </div>
-        <div class="search">
-          <h2>Search Students</h2>
-          <input type="text" id="searchStudent" placeholder="Search Student" />
-          <button type="submit" class="submitBtn">Search</button>
-        </div>
+    <div class="container">
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <button><a href="#">Home</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/SendKudos">Send Kudos</router-link>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Behavioral Report</a></button>
+            </li>
+            <li>
+              <button><a href="#">Search Students</a></button>
+            </li>
+            <li>
+              <button><a href="#">Make Announcements</a></button>
+            </li>
+            <li>
+              <button><a href="#">Add/Remove Student</a></button>
+            </li>
+            <li>
+              <button><a href="#">Add/Remove Teacher</a></button>
+            </li>
+            <li>
+              <button><a href="#">Set Kudo Values</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/logout"> Logout </router-link>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div class="Header">
+      <div class="app-name">
+        <h1>School Communication</h1>
       </div>
+      <div class="logo">
+        <img
+          class="logo"
+          src="../../resources/school-icon-9.png"
+          alt="school-logo"
+        />
+        <!-- <p>You must be authenticated to see this</p> -->
+      </div>
+    </div>
+    <div class="Welcome-User">
+      <h1>Welcome {{ user }}!</h1>
+    </div>
+    <div class="Announcements">
+      <h3>Announcements</h3>
+      <input
+        type="text"
+        id="makeAnnouncement"
+        placeholder="Enter Announcement"
+      />
+      <button type="submit" class="submitBtn">Submit</button>
+    </div>
+    <div class="search">
+      <student-list />
     </div>
   </body>
 </template>
 
 <script>
+import StudentList from "../components/StudentList.vue";
 export default {
+  components: { StudentList },
   name: "home",
 };
 </script>
@@ -127,6 +123,9 @@ export default {
 
 .Announcements {
   grid-area: Announcements;
+  color: black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #makeAnnouncement {
@@ -135,6 +134,7 @@ export default {
   width: 50%;
   height: 50%;
   text-align: center;
+  padding-bottom: 100px;
 }
 
 #searchStudent {
@@ -165,19 +165,14 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  text-shadow: 
-  1px 0px 0px black,
-  -1px 0px 0px black,
-  0px 1px 0px black,
-  0px -1px 0px black;
 }
+
 p {
   display: grid;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
-  
 }
 
 aside {
@@ -185,7 +180,7 @@ aside {
   position: fixed;
   border-collapse: separate;
   border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid lightgray;
+  border-right: 1px solid rgb(211, 211, 211);
   height: 100%;
   width: 200px;
 }
@@ -203,12 +198,18 @@ ul > li {
   font-family: Arial, Helvetica, sans-serif;
   border-color: rgba(0, 173, 238, 0.4);
   padding: 15px;
-  /* border-bottom: 1px solid rgba(0, 173, 238, 0.4); */
+
   list-style: none;
   width: 95%;
 }
 body {
-  background-color: rgb(253, 223, 158);
+  background: linear-gradient(
+    360deg,
+    white,
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
+  );
 }
 button {
   padding: 10px;

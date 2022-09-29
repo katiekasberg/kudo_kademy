@@ -78,15 +78,15 @@ const router = new Router({
       path: "/admin",
       name: "admin",
       component: Admin,
-      meta:{
-        requiresAuth: true
+      meta: {
+        requiresAuth: false
       }
     },
     {
       path: "/parent",
       name: "parent",
       component: Parent,
-      meta:{
+      meta: {
         requiresAuth: true
       }
     },
@@ -94,7 +94,7 @@ const router = new Router({
       path: "/student",
       name: "student",
       component: Student,
-      meta:{
+      meta: {
         requiresAuth: true
       }
     },

@@ -1,18 +1,13 @@
 <template>
-  <div>
-      
-  </div>
+  <div></div>
 </template>
 
 <script>
 // import kudoService from "../services/KudosService";
 export default {
-  data(){
-
-  }
-}
+  data() {},
+};
 </script>
 
 <style>
-
 </style>

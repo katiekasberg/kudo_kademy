@@ -5,11 +5,23 @@
         <aside>
           <nav>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Student Report</a></li>
-              <li><a href="#">See Kudo Values</a></li>
-              <li><a href="#">Contact Teacher</a></li>
-              <li><router-link to="/logout"> Logout </router-link></li>
+              <li>
+                <button><a href="#">Home</a></button>
+              </li>
+              <li>
+                <button><a href="#">Student Report</a></button>
+              </li>
+              <li>
+                <button><a href="#">See Kudo Values</a></button>
+              </li>
+              <li>
+                <button><a href="#">Contact Teacher</a></button>
+              </li>
+              <li>
+                <button>
+                  <router-link to="/logout"> Logout </router-link>
+                </button>
+              </li>
             </ul>
           </nav>
         </aside>
@@ -28,20 +40,24 @@
         </div>
       </div>
       <div class="Welcome-User">
-        <h1>Welcome</h1>
+        <h1>Welcome Parent!</h1>
       </div>
       <div class="Announcements">
         <h2>See Announcements</h2>
       </div>
       <div class="View-Report">
         <h2>View Student Report</h2>
+        <student-list />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import StudentList from "../components/StudentList.vue";
+export default {
+  components: { StudentList },
+};
 </script>
 
 <style scoped>
@@ -100,19 +116,20 @@ img.logo {
   height: auto;
 }
 
-h1,
 h2 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+h1 {
   display: grid;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  text-shadow: 
-  1px 0px 0px black,
-  -1px 0px 0px black,
-  0px 1px 0px black,
-  0px -1px 0px black;
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
+    0px -1px 0px black;
 }
 p {
   display: grid;
@@ -122,36 +139,34 @@ p {
   color: rgb(216, 150, 69);
 }
 
-
 aside {
-  position:fixed;
+  position: fixed;
   margin-left: 0.5%;
   margin-right: 0.5%;
   padding-top: 100%;
-  padding: 20px;
-  width: 20%;
+  padding: 10px;
+  width: 15%;
   /* filter: invert(1); */
   float: right;
   overflow: auto;
   border-radius: 5px;
   border-width: 3px;
   /* border-radius: 20%; */
-  border-color:darkorange;
-  background-color:black;
-  opacity: 0.5;
-
+  border-color: darkorange;
+  background-color: #ffc83c57;
+  opacity: 100%;
 }
 
-ul{
+ul {
   display: grid;
   align-items: center;
-  color: darkorange; 
+  color: darkorange;
   /* color is not showing up?? */
-   justify-items: center;
+  justify-items: center;
   justify-content: center;
 }
 
-ul>li{
+ul > li {
   font-size: 20px;
   font-weight: bold;
   border-bottom: 1px solid;
@@ -161,11 +176,24 @@ ul>li{
   background: linear-gradient(
     360deg,
     white,
-    #ffc93c 10%,
-    #ff9a3c 30%,
-    #ff6f3c,
-    #155263 90%
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
   );
   display: 100%;
+}
+button {
+  padding: 10px;
+  margin-left: 20px;
+  background-color: white;
+  opacity: 100%;
+  border-radius: 10%;
+  border-color: orange;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(83, 40, 3);
+  font-weight: bold;
 }
 </style>
