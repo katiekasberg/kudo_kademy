@@ -7,6 +7,7 @@
       alt="school-logo"
     />
     <form class="form-signin" @submit.prevent="login">
+      <h2 class="h3">Welcome!!!</h2>
       <h2 class="h3 mb-3 font-weight-normal">Please Sign In</h2>
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
@@ -84,20 +85,52 @@ export default {
 .form-signin {
   display: grid;
   align-items: center;
+  justify-items: center;
   justify-content: center;
-  grid-gap: 7px;
+  grid-gap: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22pt;
+   text-shadow: 1px 0px 0px black,
+  -1px 0px 0px black,
+  0px 1px 0px black,
+  0px -1px 0px black;
+  letter-spacing: 2px;
+}
+.form-control{
+  display: grid;
+  width: 100%;
+  height: 150%;
 }
 img.logo {
   margin: auto;
   display: block;
   width: 200px;
-  height: auto;
+  height: auto; 
 }
+
 h1 {
   display: grid;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  color: rgb(223, 126, 8);
+  text-decoration: underline;
+  text-shadow: 
+  1px 0px 0px black,
+  -1px 0px 0px black,
+  0px 1px 0px black,
+  0px -1px 0px black;
+  letter-spacing: 2px;
+}
+#login{
+  background: linear-gradient(360deg,white 0%, #FFC93C 10%, #FF9A3C 30%, #FF6F3C, #155263 90%);
+  display: 100%;
+}
+.sr-only{
   color: darkorange;
+}
+button{
+  width: 100%;
+  height: 150%;
 }
 </style>
