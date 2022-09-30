@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Objects;
 
 import com.techelevator.model.UserNotFoundException;
+import com.techelevator.model.profile.Parent;
+import com.techelevator.model.profile.Profile;
+import com.techelevator.model.profile.StudentProfile;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -82,6 +85,26 @@ public class JdbcUserDao implements UserDao {
 
         return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole) == 1;
     }
+
+    //changes below
+    @Override
+    public void createProfile(Profile newProfile) {
+        String sql = "INSERT INTO profile(id, first_name, last_name, email) VALUES(?, ?, ?, ?);";
+        jdbcTemplate.update(sql, newProfile.getId(), newProfile.getFirstName(), newProfile.getLastName(), newProfile.getEmail());
+    }
+
+    @Override
+    public void createStudent(StudentProfile newStudentProfile) {
+        String sql = "INSERT INTO student(id, school_id, graduation_year) VALUES(?, ?, ?);";
+        jdbcTemplate.update(sql, newStudentProfile.getId(), newStudentProfile.getSchoolId(), newStudentProfile.getGraduationYear());
+    }
+
+    @Override
+    public void createParent(Parent newParent) {
+        String sql = "INSERT INTO parent (id, phone_number, address) VALUES (?, ?, ?);";
+        jdbcTemplate.update(sql, newParent.getId(), newParent.getPhoneNumber(), newParent.getAddress());
+    }
+    //changes above
 
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();

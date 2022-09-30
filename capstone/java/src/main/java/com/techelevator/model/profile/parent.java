@@ -1,7 +1,7 @@
 package com.techelevator.model.profile;
 
 public class Parent extends Profile{
-    private String phoneNumber = " ";
+    private String phoneNumber;
     private String address;
 
     public String getPhoneNumber() {

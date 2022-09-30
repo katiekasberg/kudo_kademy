@@ -2,6 +2,9 @@ package com.techelevator.controller;
 
 import javax.validation.Valid;
 
+import com.techelevator.model.profile.Parent;
+import com.techelevator.model.profile.Profile;
+import com.techelevator.model.profile.StudentProfile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +23,8 @@ import com.techelevator.model.User;
 import com.techelevator.model.UserAlreadyExistsException;
 import com.techelevator.security.jwt.JWTFilter;
 import com.techelevator.security.jwt.TokenProvider;
+
+import java.security.Principal;
 
 @RestController
 @CrossOrigin
@@ -54,14 +59,35 @@ public class AuthenticationController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public void register(@Valid @RequestBody RegisterUserDTO newUser) {
+    public int register(@Valid @RequestBody RegisterUserDTO newUser) {
         try {
             User user = userDao.findByUsername(newUser.getUsername());
             throw new UserAlreadyExistsException();
         } catch (UsernameNotFoundException e) {
             userDao.create(newUser.getUsername(),newUser.getPassword(), newUser.getRole());
+            return userDao.findIdByUsername(newUser.getUsername());
         }
     }
+
+    //changes below
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(value = "/profiles", method = RequestMethod.POST)
+    public void addProfile(@RequestBody Profile newProfile) {
+            userDao.createProfile(newProfile);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(value = "/students", method = RequestMethod.POST)
+    public void addStudent(@RequestBody StudentProfile newStudentProfile) {
+        userDao.createStudent(newStudentProfile);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(value = "/parents", method = RequestMethod.POST)
+    public void addParent(@RequestBody Parent newParent) {
+        userDao.createParent(newParent);
+    }
+    //changes above
 
     /**
      * Object to return as body in JWT Authentication.
