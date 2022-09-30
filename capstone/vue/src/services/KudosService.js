@@ -38,10 +38,20 @@ export default {
         return axios.get('/kudo-types')
     },
 
+    //get kudo type by kudo type id
+    getKudoTypeById(kudoTypeId) {
+        return axios.get(`/kudo-types/${kudoTypeId}`)
+    },
+
     //create new kudo type
     addKudoType(kudoType) {
         return axios.post('/kudo-types', kudoType)
-    }
+    },
+
+    //update kudo type by kudo type id
+    updateKudoType(kudoTypeId, kudoType) {
+        return axios.put(`/kudo-types/${kudoTypeId}`, kudoType)
+    },
 
     
 

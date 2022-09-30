@@ -57,8 +57,15 @@ public class KudoController {
         return kudoDao.getTypesOfKudos();
     }
 
+    //get kudo-type by kudoTypeId
+    @RequestMapping(path= "/kudo-types/{kudoTypeId}" , method = RequestMethod.GET)
+    public KudoType getKudoTypeById(@PathVariable int kudoTypeId){
+        return kudoDao.getKudoTypeById(kudoTypeId);
+    }
+
+
     //create new kudo type
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/kudo-types" , method= RequestMethod.POST)
     public KudoType createNewKudoType(@RequestBody KudoType newKudoType){

@@ -1,10 +1,10 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.exceptions.KudoNotFoundException;
+import com.techelevator.model.exceptions.KudoTypeNotFoundException;
 import com.techelevator.model.kudo.Kudo;
 import com.techelevator.model.kudo.KudoRequest;
 import com.techelevator.model.kudo.KudoType;
-import com.techelevator.model.kudo.NewKudoType;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -90,6 +90,21 @@ public class JdbcKudoDao implements KudoDao {
             kudoTypes.add(mapRowToKudoType(results));
         }
         return kudoTypes;
+    }
+
+    //get a kudo type by kudo type id
+    @Override
+    public KudoType getKudoTypeById(int kudoTypeId) throws KudoTypeNotFoundException {
+        KudoType kudoType = new KudoType();
+        String sql = "SELECT id, name, description, value " +
+                     "FROM kudo_type " +
+                     "WHERE id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, kudoTypeId);
+
+        if (results.next()) {
+            return mapRowToKudoType(results);
+        }
+        throw new KudoTypeNotFoundException();
     }
 
     @Override
