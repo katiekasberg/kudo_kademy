@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="kudo-types">
     <table class="kudo-list">
       <tr>
         <th>Kudo Type ID:</th>
@@ -39,12 +39,22 @@ export default {
 </script>
 
 <style>
-.kudo-style {
-  display: grid;
+.kudo-list {
+  border: 1px solid black;
+  display: block;
   align-items: center;
   justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background: lightgoldenrodyellow;
 }
 th {
   padding-right: 100px;
+  border: 1px solid black;
+}
+td{
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
 }
 </style>
