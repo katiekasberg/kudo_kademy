@@ -20,6 +20,7 @@ export default new Vuex.Store({
   state: {
     studentProfiles: [],
     kudoTypes: [],
+    studentKudos:[],
     token: currentToken || '',
     user: currentUser || {}
   },
@@ -45,6 +46,9 @@ export default new Vuex.Store({
     },
     SET_STUDENT_PROFILES(state, data) {
       state.studentProfiles = data;
+    },
+    SET_STUDENT_KUDOS(state, data){
+      state.studentKudos = data;
     }
   }
 })
