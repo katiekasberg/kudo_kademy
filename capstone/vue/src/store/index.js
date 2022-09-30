@@ -30,6 +30,7 @@ export default new Vuex.Store({
     },
 
     kudoTypes: [],
+    studentKudos:[],
     activeKudoType: {
       id: 0,
       name: '',
@@ -65,6 +66,9 @@ export default new Vuex.Store({
     },
     SET_STUDENT_PROFILES(state, data) {
       state.studentProfiles = data;
+    },
+    SET_STUDENT_KUDOS(state, data){
+      state.studentKudos = data;
     },
     SET_ACTIVE_STUDENT_PROFILE(state, data) {
       state.activeStudentProfile = data;
