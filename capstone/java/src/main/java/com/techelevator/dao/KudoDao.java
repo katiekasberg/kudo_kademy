@@ -1,10 +1,10 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.exceptions.KudoNotFoundException;
+import com.techelevator.model.exceptions.KudoTypeNotFoundException;
 import com.techelevator.model.kudo.Kudo;
 import com.techelevator.model.kudo.KudoRequest;
 import com.techelevator.model.kudo.KudoType;
-import com.techelevator.model.kudo.NewKudoType;
 
 import java.util.List;
 
@@ -24,6 +24,9 @@ public interface KudoDao {
 
     //get list of kudo types
     List<KudoType> getTypesOfKudos();
+
+    //get a kudo type by kudo type id
+    KudoType getKudoTypeById(int kudoTypeId) throws KudoTypeNotFoundException;
 
     //TODO: get list of last 10 kudos per student id
 

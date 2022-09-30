@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import EditKudoType from '../views/EditKudoType.vue'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
@@ -74,6 +75,16 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
+    {
+      path: "/edit-kudo-type/:id",
+      name: "EditKudoType",
+      component: EditKudoType,
+      meta: {
+        requiresAuth: false
+      }
+    },
+
     {
       path: "/admin",
       name: "admin",

@@ -19,7 +19,24 @@ if (currentToken != null) {
 export default new Vuex.Store({
   state: {
     studentProfiles: [],
+    activeStudentProfile: {
+      id: 0,
+      firstName: '',
+      lastName: '',
+      email: '',
+      image: '',
+      schoolId: 0,
+      graduationYear: 0
+    },
+
     kudoTypes: [],
+    activeKudoType: {
+      id: 0,
+      name: '',
+      description: '',
+      value: 0
+    },
+    
     token: currentToken || '',
     user: currentUser || {}
   },
@@ -43,8 +60,14 @@ export default new Vuex.Store({
     SET_KUDO_TYPES(state, data) {
       state.kudoTypes = data;
     },
+    SET_ACTIVE_KUDO_TYPE(state, data) {
+      state.activeKudoType = data;
+    },
     SET_STUDENT_PROFILES(state, data) {
       state.studentProfiles = data;
-    }
+    },
+    SET_ACTIVE_STUDENT_PROFILE(state, data) {
+      state.activeStudentProfile = data;
+    },
   }
 })
