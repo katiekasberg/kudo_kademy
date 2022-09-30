@@ -38,7 +38,8 @@ public class JdbcPointDao implements PointDao{
                 "FROM kudo_student " +
                 "JOIN kudo_type ON kudo_student.type_id = kudo_type.id " +
                 "JOIN profile ON kudo_student.student_id = profile.id " +
-                "GROUP BY full_name;";
+                "GROUP BY full_name " +
+                "ORDER BY total_points DESC;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 
         while (results.next()) {
@@ -65,7 +66,8 @@ public class JdbcPointDao implements PointDao{
                 "FROM kudo_student " +
                 "JOIN kudo_type ON kudo_student.type_id = kudo_type.id " +
                 "JOIN student ON kudo_student.student_id = student.id " +
-                "GROUP BY graduation_year;";
+                "GROUP BY graduation_year " +
+                "ORDER BY total_points DESC;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 
         while (results.next()) {
@@ -96,7 +98,8 @@ public class JdbcPointDao implements PointDao{
                 "JOIN kudo_type ON kudo_student.type_id = kudo_type.id " +
                 "JOIN class_info_student ON kudo_student.student_id = class_info_student.student_id " +
                 "JOIN class_info ON class_info_student.class_id = class_info.id " +
-                "GROUP BY class_name;";
+                "GROUP BY class_name " +
+                "ORDER BY total_points DESC;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 
         while (results.next()) {
