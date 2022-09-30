@@ -10,7 +10,9 @@ import Teacher from '../views/Teacher.vue'
 import SendKudos from '../views/SendKudos.vue'
 import Admin from '../views/Admin.vue'
 import Parent from '../views/Parent.vue'
-import Student from '../views/Student.vue'
+import Student from '../views/Student.vue' 
+import StudentProfile from '../views/StudentProfile.vue'
+import NotFound from '../views/NotFound.vue'
 
 Vue.use(Router)
 
@@ -94,6 +96,14 @@ const router = new Router({
       }
     },
     {
+      path: "/notfound",
+      name: "NotFound",
+      component: NotFound,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/parent",
       name: "parent",
       component: Parent,
@@ -102,13 +112,22 @@ const router = new Router({
       }
     },
     {
-      path: "/student",
+      path: "/student-profile/:id",
+      name: "StudentProfile",
+      component: StudentProfile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/student/",
       name: "student",
       component: Student,
       meta: {
         requiresAuth: true
       }
     },
+
   ]
 })
 

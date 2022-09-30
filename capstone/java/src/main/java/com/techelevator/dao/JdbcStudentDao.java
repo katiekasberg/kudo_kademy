@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.exceptions.StudentProfileNotFoundException;
 import com.techelevator.model.profile.Profile;
 import com.techelevator.model.profile.StudentProfile;
 import org.springframework.dao.DataAccessException;
@@ -41,6 +42,21 @@ public class JdbcStudentDao implements StudentDao {
         }
         return studentProfiles;
     }
+
+    @Override
+    public StudentProfile getAllStudentProfileById(int studentId) throws StudentProfileNotFoundException {
+        String sql = "SELECT student.id, first_name, last_name, email, image, school_id, graduation_year " +
+                "FROM profile " +
+                "JOIN student ON profile.id = student.id " +
+                "WHERE student.id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, studentId);
+
+        if (results.next()) {
+            return mapRowToStudentProfile(results);
+        }
+        throw new StudentProfileNotFoundException();
+    }
+
 
     private StudentProfile mapRowToStudentProfile(SqlRowSet rs){
         StudentProfile studentProfile = new StudentProfile();

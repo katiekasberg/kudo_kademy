@@ -27,17 +27,17 @@ INSERT INTO users (username,password_hash,role) VALUES ('parent4','$2a$08$UkVvwp
 
 
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1001, 'Theo', 'Mills', 'admin1@school.com');
-INSERT INTO profile (id, first_name, last_name, email) VALUES (1002, 'Linette', 'Putnam', 'admin2@school.com');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1002, 'Linette', 'Putnam', 'admin2@school.com', 'https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1003, 'JaMarcus', 'Meisner', 'admin3@school.com');
 
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1004, 'Lynda', 'Dodson', 'teacher1@school.com');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1005, 'Nadia', 'Campana', 'teacher2@school.com');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1006, 'Fynn', 'Hopkins', 'teacher3@school.com');
-INSERT INTO profile (id, first_name, last_name, email) VALUES (1007, 'Brian', 'Smets', 'teacher4@school.com');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1007, 'Brian', 'Smets', 'teacher4@school.com', 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1008, 'Isabel', 'Glenn', 'student1@school.com');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1009, 'Wendy', 'Hargrave', 'student2@school.com');
-INSERT INTO profile (id, first_name, last_name, email) VALUES (1010, 'Kalum', 'Ortiz', 'student3@school.com');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1010, 'Kalum', 'Ortiz', 'student3@school.com', 'https://img.freepik.com/free-photo/smiling-happy-boy-pointing-fingers-up-copyspace_171337-16394.jpg?w=1380&t=st=1664564323~exp=1664564923~hmac=f0170cd87238a8c28b87a7c771c72f68ee88715f0932333a8f162b9e4c8a12da');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1011, 'Joseph', 'Farley', 'student4@school.com');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1012, 'Mariya', 'Mcgrath', 'student5@school.com');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1013, 'Jillian', 'Glenn', 'student6@school.com');
@@ -46,7 +46,7 @@ INSERT INTO profile (id, first_name, last_name, email) VALUES (1015, 'Tyrique', 
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1016, 'Gabriella', 'Morikawa', 'student9@school.com');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1017, 'Marianna', 'Millington', 'student10@school.com');
 
-INSERT INTO profile (id, first_name, last_name, email) VALUES (1018, 'Miles', 'Millington', 'parent1@school.com');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1018, 'Miles', 'Millington', 'parent1@school.com', 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1019, 'Kim', 'Millington', 'parent2@school.com');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1020, 'Janet', 'Glenn', 'parent3@school.com');
 INSERT INTO profile (id, first_name, last_name, email) VALUES (1021, 'Dan', 'Ortiz', 'parent4@school.com');
