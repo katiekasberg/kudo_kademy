@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.exceptions.StudentProfileNotFoundException;
 import com.techelevator.model.profile.Profile;
 import com.techelevator.model.profile.StudentProfile;
 
@@ -14,5 +15,7 @@ public interface StudentDao {
     Profile getTeacherProfile(int teacherId);
 
     List<StudentProfile> getAllStudentProfiles();
+
+    StudentProfile getAllStudentProfileById(int studentId) throws StudentProfileNotFoundException;
 
 }

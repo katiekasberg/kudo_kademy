@@ -22,7 +22,7 @@ CREATE TABLE profile(
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
-    image VARCHAR(100) NOT NULL DEFAULT '"placeholder.image"',
+    image VARCHAR(255) NOT NULL DEFAULT '"placeholder.image"',
     CONSTRAINT PK_profile PRIMARY KEY (id),
     CONSTRAINT FK_users_profile FOREIGN KEY (id) REFERENCES users(user_id)
 );
