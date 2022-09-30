@@ -51,6 +51,13 @@ public class KudoController {
         return kudoDao.getAllKudos();
     }
 
+    //get all kudos for all students
+    @RequestMapping(path = "/student-kudos/{studentId}" , method= RequestMethod.GET)
+    public List<Kudo> listAllKudos(@PathVariable int studentId){
+        return kudoDao.getStudentKudos(studentId);
+    }
+
+
     //get list of kudo types
     @RequestMapping(path = "/kudo-types" , method= RequestMethod.GET)
     public List<KudoType> listKudoTypes(){

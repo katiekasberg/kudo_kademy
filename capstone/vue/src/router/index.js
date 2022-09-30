@@ -12,6 +12,7 @@ import Admin from '../views/Admin.vue'
 import Parent from '../views/Parent.vue'
 import Student from '../views/Student.vue' 
 import StudentProfile from '../views/StudentProfile.vue'
+import ParentProfile from '../views/ParentProfile.vue'
 import NotFound from '../views/NotFound.vue'
 
 Vue.use(Router)
@@ -107,6 +108,14 @@ const router = new Router({
       path: "/parent",
       name: "parent",
       component: Parent,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/parent-profile/:id",
+      name: "ParentProfile",
+      component: ParentProfile,
       meta: {
         requiresAuth: true
       }

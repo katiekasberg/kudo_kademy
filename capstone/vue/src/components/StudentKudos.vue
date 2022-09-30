@@ -2,20 +2,20 @@
   <div class="student-kudos">
     <table class="list-kudos">
       <tr>
-        <th>Kudo Type ID</th>
-        <th>Kudo Name</th>
-        <th>Description</th>
-        <th>Value</th>
+        <th>Kudo ID</th>
+        <th>From: </th>
+        <th>Message: </th>
+        <th>Kudo Type: </th>
       </tr>
       <tr
-        v-for="type in this.$store.state.studentKudos"
-        v-bind:key="type.id"
-        v-bind:value="type.id"
+        v-for="kudo in this.$store.state.studentKudos"
+        v-bind:key="kudo.id"
+        v-bind:value="kudo.id"
       >
-        <td>{{ type.id }}</td>
-        <td>{{ type.name }}</td>
-        <td>{{ type.description }}</td>
-        <td>{{ type.value }}</td>
+        <td>{{ kudo.id }}</td>
+        <td>{{ kudo.teacherId }}</td>
+        <td>{{ kudo.message }}</td>
+        <td>{{ kudo.typeId }}</td>
       </tr>
     </table>
   </div>
@@ -24,14 +24,18 @@
 <script>
 import kudoService from "../services/KudosService";
 export default {
+  name: "StudentKudos",
+  props: {
+    studentId: Number
+  },
   data() {
   },
   methods: {
-    getKudosByStudentId(studentId) {
+    getKudosByStudentId() {
       kudoService
-        .getKudosByStudentId(studentId)
+        .getKudosByStudentId(this.studentId)
         .then((response) => {
-          this.studentKudos = response.data;
+          this.$store.commit("SET_STUDENT_KUDOS", response.data);
         });
     },
   },
