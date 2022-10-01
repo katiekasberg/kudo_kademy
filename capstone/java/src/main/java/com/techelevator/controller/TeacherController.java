@@ -38,4 +38,11 @@ public class TeacherController {
         return teacherDao.getClassesAsTeacher(teacherId);
     }
 
+    //create a new class
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/classes" , method= RequestMethod.POST)
+    public ClassInfo addNewClass(@RequestBody ClassInfo newClassInfo){
+        return teacherDao.createNewClass(newClassInfo);
+    }
+
 }

@@ -51,14 +51,28 @@ public class KudoController {
         return kudoDao.getAllKudos();
     }
 
+    //get all kudos for all students
+    @RequestMapping(path = "/student-kudos/{studentId}" , method= RequestMethod.GET)
+    public List<Kudo> listAllKudos(@PathVariable int studentId){
+        return kudoDao.getStudentKudos(studentId);
+    }
+
+
     //get list of kudo types
     @RequestMapping(path = "/kudo-types" , method= RequestMethod.GET)
     public List<KudoType> listKudoTypes(){
         return kudoDao.getTypesOfKudos();
     }
 
+    //get kudo-type by kudoTypeId
+    @RequestMapping(path= "/kudo-types/{kudoTypeId}" , method = RequestMethod.GET)
+    public KudoType getKudoTypeById(@PathVariable int kudoTypeId){
+        return kudoDao.getKudoTypeById(kudoTypeId);
+    }
+
+
     //create new kudo type
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/kudo-types" , method= RequestMethod.POST)
     public KudoType createNewKudoType(@RequestBody KudoType newKudoType){
@@ -80,9 +94,5 @@ public class KudoController {
         int userId = userDao.findIdByUsername(principal.getName());
         return kudoDao.submitKudo(userId, kudoRequest);
     }
-
-
-
-
 
 }

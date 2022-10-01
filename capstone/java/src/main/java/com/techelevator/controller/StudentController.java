@@ -4,10 +4,7 @@ import com.techelevator.dao.StudentDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.profile.StudentProfile;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,4 +25,10 @@ public class StudentController {
     public List<StudentProfile> listAllStudentProfiles(){
         return studentDao.getAllStudentProfiles();
     }
+
+    @RequestMapping(path = "/student-profiles/{studentId}" , method= RequestMethod.GET)
+    public StudentProfile listAllStudentProfiles(@PathVariable int studentId){
+        return studentDao.getAllStudentProfileById(studentId);
+    }
+
 }

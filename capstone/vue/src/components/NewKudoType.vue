@@ -1,25 +1,23 @@
 <template>
-  <body>
-    <div class="new-kudo-type">
-      <form v-on:submit.prevent action="submit">
-        <label for="KudoName"
-          >Name:
-          <input id="KudoName" type="text" v-model="newKudoType.name" />
-        </label>
-        <label for="description"
-          >Description:
-          <input
-            id="KudoDescription"
-            type="text"
-            v-model="newKudoType.description"
-          />
-        </label>
-        <label for="value">Value:</label>
-        <input id="value" type="number" v-model="newKudoType.value" />
-        <button type="submit" v-on:click="saveKudoType()">Submit</button>
-      </form>
-    </div>
-  </body>
+  <div class="newKudoTypes">
+    <form v-on:submit.prevent action="submit" class="newKudoForm">
+      <label for="KudoName"
+        >Name:
+        <input id="KudoName" type="text" v-model="newKudoType.name" />
+      </label>
+      <label for="description"
+        >Description:
+        <input
+          id="KudoDescription"
+          type="text"
+          v-model="newKudoType.description"
+        />
+      </label>
+      <label for="value">Value:</label>
+      <input id="value" type="number" v-model="newKudoType.value" />
+      <button type="submit" v-on:click="saveKudoType()">Submit</button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -53,12 +51,12 @@ export default {
 </script>
 
 <style>
-.new-kudo-type {
-  display: grid;
-  align-items: center;
+.newKudoTypes {
   justify-content: center;
-  background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  border-block: black 5px;
+  text-align: center;
+}
+.newKudoForm {
+  display: inline-block;
+  position: absolute;
 }
 </style>

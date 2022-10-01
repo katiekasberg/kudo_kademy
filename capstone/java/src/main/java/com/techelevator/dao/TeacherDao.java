@@ -14,6 +14,7 @@ public interface TeacherDao {
     List<ClassInfo> getClassesAsTeacher(int teacherId);
 
     //teacher can create a class
+    ClassInfo createNewClass(ClassInfo newClassInfo);
 
     //TODO: add all my students (what does this mean?)
     //get a list of all teachers

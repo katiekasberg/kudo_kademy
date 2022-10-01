@@ -19,6 +19,7 @@
           id="firstName"
           class="form-control"
           placeholder="First Name"
+          v-model="profile.firstName"
           required
           autofocus
         />
@@ -31,6 +32,7 @@
           id="lastName"
           class="form-control"
           placeholder="Last Name"
+          v-model="profile.lastName"
           required
           autofocus
         />
@@ -43,6 +45,7 @@
           id="emailAddress"
           class="form-control"
           placeholder="Email Address"
+          v-model="profile.email"
           required
           autofocus
         />
@@ -82,13 +85,67 @@
 
       <label for="roleMenu" class="sr-only"
         >Role:
-
-        <select name="role-names" id="role-names">
+        <select name="role-names" id="role-names" v-model="user.role" required>
           <option value="parent">Parent</option>
           <option value="student">Student</option>
-          <option value="Teacher">Teacher</option>
-          <option value="Administrator">Admin</option>
+          <option value="teacher">Teacher</option>
+          <option value="admin">Administrator</option>
         </select>
+      </label>
+
+      <label for="school-id" class="sr-only" v-if="user.role === 'student'"
+        >Choose your school:
+        <select
+          name="school-id"
+          id="school-id"
+          v-model="student.schoolId"
+          required
+        >
+          <option value="1">Cypress Hill Middle School</option>
+          <option value="2">Cypress Hill High School</option>
+        </select>
+      </label>
+
+      <label
+        for="graduation-year"
+        class="sr-only"
+        v-if="user.role === 'student'"
+        >Graduation Year:
+        <input
+          type="text"
+          id="graduation-year"
+          class="form-control"
+          placeholder="Graduation Year"
+          v-model="student.graduationYear"
+          required
+          autofocus
+        />
+      </label>
+
+      <label for="phone-number" class="sr-only" v-if="user.role === 'parent'"
+        >Phone Number:
+        <input
+          type="text"
+          id="phone-number"
+          class="form-control"
+          placeholder="Phone Number"
+          v-model="parent.phoneNumber"
+          required
+          autofocus
+        />
+      </label>
+
+      <label for="address" class="sr-only" v-if="user.role === 'parent'"
+        >Address:
+        <input
+          type="text"
+          id="address"
+          class="form-control"
+          placeholder="Address"
+          v-model="parent.address"
+          required
+          autofocus
+        />
       </label>
 
       <router-link :to="{ name: 'login' }">Have an account?</router-link>
@@ -104,14 +161,30 @@ import authService from "../services/AuthService";
 
 export default {
   name: "register",
-  components:{},
+  components: {},
   data() {
     return {
       user: {
         username: "",
         password: "",
         confirmPassword: "",
-        role: "teacher",
+        role: "",
+      },
+      profile: {
+        id: Number,
+        firstName: "",
+        lastName: "",
+        email: "",
+      },
+      student: {
+        id: Number,
+        schoolId: Number,
+        graduationYear: Number,
+      },
+      parent: {
+        id: Number,
+        phoneNumber: "",
+        address: "",
       },
 
       registrationErrors: false,
@@ -128,9 +201,37 @@ export default {
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
-              this.$router.push({
-                path: "/login",
-                query: { registration: "success" },
+              this.profile.id = response.data;
+              authService.createProfile(this.profile).then((response) => {
+                if (response.status == 201 && this.user.role === "student") {
+                  this.student.id = this.profile.id;
+                  authService.createStudent(this.student).then((response) => {
+                    if (response.status == 201) {
+                      this.$router.push({
+                        path: "/login",
+                        query: { registration: "success" },
+                      });
+                    }
+                  });
+                } else if (
+                  response.status == 201 &&
+                  this.user.role === "parent"
+                ) {
+                  this.parent.id = this.profile.id;
+                  authService.createParent(this.parent).then((response) => {
+                    if (response.status == 201) {
+                      this.$router.push({
+                        path: "/login",
+                        query: { registration: "success" },
+                      });
+                    }
+                  });
+                } else {
+                  this.$router.push({
+                    path: "/login",
+                    query: { registration: "success" },
+                  });
+                }
               });
             }
           })
@@ -157,12 +258,10 @@ export default {
   align-items: center;
   justify-content: center;
   grid-gap: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 22pt;
-   text-shadow: 1px 0px 0px black,
-  -1px 0px 0px black,
-  0px 1px 0px black,
-  0px -1px 0px black;
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
+    0px -1px 0px black;
   letter-spacing: 2px;
 }
 .form-control {
@@ -187,15 +286,12 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   text-decoration: underline;
-  text-shadow: 
-  1px 0px 0px black,
-  -1px 0px 0px black,
-  0px 1px 0px black,
-  0px -1px 0px black;
+  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
+    0px -1px 0px black;
   letter-spacing: 2px;
 }
 
-#register{
+#register {
   background: linear-gradient(
     360deg,
     white,
@@ -207,10 +303,10 @@ h1 {
   display: 100%;
 }
 
-.sr-only{
-  color:darkorange
+.sr-only {
+  color: darkorange;
 }
-button{
-  height:150%;
+button {
+  height: 150%;
 }
 </style>

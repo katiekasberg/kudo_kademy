@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import EditKudoType from '../views/EditKudoType.vue'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
@@ -10,7 +11,9 @@ import SendKudos from '../views/SendKudos.vue'
 import Admin from '../views/Admin.vue'
 import Parent from '../views/Parent.vue'
 import Student from '../views/Student.vue'
-import Test from '../views/Student.vue'
+import StudentProfile from '../views/StudentProfile.vue'
+import ParentProfile from '../views/ParentProfile.vue'
+import NotFound from '../views/NotFound.vue'
 
 Vue.use(Router)
 
@@ -75,12 +78,30 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
+    {
+      path: "/edit-kudo-type/:id",
+      name: "EditKudoType",
+      component: EditKudoType,
+      meta: {
+        requiresAuth: false
+      }
+    },
+
     {
       path: "/admin",
       name: "admin",
       component: Admin,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: "/notfound",
+      name: "NotFound",
+      component: NotFound,
+      meta: {
+        requiresAuth: true
       }
     },
     {
@@ -92,21 +113,29 @@ const router = new Router({
       }
     },
     {
-      path: "/student",
+      path: "/parent-profile/:id",
+      name: "ParentProfile",
+      component: ParentProfile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/student-profile/:id",
+      name: "StudentProfile",
+      component: StudentProfile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/student/",
       name: "student",
       component: Student,
       meta: {
         requiresAuth: false
       }
     },
-    {
-      path: "/test",
-      name: "test",
-      component: Test,
-      meta: {
-        requiresAuth: false
-      }
-    }
   ]
 })
 
