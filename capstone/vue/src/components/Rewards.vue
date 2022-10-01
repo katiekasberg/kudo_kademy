@@ -43,6 +43,9 @@ export default {
   display: grid;
   align-items: center;
   justify-content: center;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-block: black 5px;
 }
 th {
   padding-right: 100px;

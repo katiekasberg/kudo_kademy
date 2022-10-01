@@ -10,6 +10,7 @@ import SendKudos from '../views/SendKudos.vue'
 import Admin from '../views/Admin.vue'
 import Parent from '../views/Parent.vue'
 import Student from '../views/Student.vue'
+import Test from '../views/Student.vue'
 
 Vue.use(Router)
 
@@ -87,7 +88,7 @@ const router = new Router({
       name: "parent",
       component: Parent,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -95,9 +96,17 @@ const router = new Router({
       name: "student",
       component: Student,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
+    {
+      path: "/test",
+      name: "test",
+      component: Test,
+      meta: {
+        requiresAuth: false
+      }
+    }
   ]
 })
 
