@@ -1,5 +1,6 @@
 <template>
   <div class="student-kudos">
+    <p id="student-points">Current Student Points: {{this.totalPoints}} </p>
     <table class="list-kudos">
       <tr>
         <th>Kudo ID</th>
@@ -23,12 +24,18 @@
 
 <script>
 import kudoService from "../services/KudosService";
+import PointService from '../services/PointService';
 export default {
   name: "StudentKudos",
   props: {
     studentId: Number
   },
   data() {
+    return {
+      totalPoints: 0,
+      kudoType: Object,
+      teacherProfile: Object,
+    };
   },
   methods: {
     getKudosByStudentId() {
@@ -38,9 +45,23 @@ export default {
           this.$store.commit("SET_STUDENT_KUDOS", response.data);
         });
     },
+
+    getCurrentScore() {
+      PointService.getPointsByStudentId(this.studentId)
+      .then((response) => {
+        this.totalPoints = response.data;
+      });
+    },
   },
+  // computed: {
+  //   getKudoType(id) {
+  //     kudoService.getKudoTypeById(id)
+  //     return -1;
+  //   }
+  // },
   created() {
     this.getKudosByStudentId();
+    this.getCurrentScore();
   },
 };
 </script>
