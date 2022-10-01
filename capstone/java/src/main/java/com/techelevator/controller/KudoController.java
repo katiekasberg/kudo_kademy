@@ -3,6 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.KudoDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.kudo.Kudo;
+import com.techelevator.model.kudo.KudoDetail;
 import com.techelevator.model.kudo.KudoRequest;
 import com.techelevator.model.kudo.KudoType;
 import org.springframework.http.HttpStatus;
@@ -33,7 +34,7 @@ public class KudoController {
 
     //get all kudos related for a user's student id
     @RequestMapping(path = "/kudos" , method= RequestMethod.GET)
-    public List<Kudo> listUserKudos(Principal principal){
+    public List<KudoDetail> listUserKudos(Principal principal){
         int userId = userDao.findIdByUsername(principal.getName());
         return kudoDao.getStudentKudos(userId);
     }
@@ -53,7 +54,7 @@ public class KudoController {
 
     //get all kudos for all students
     @RequestMapping(path = "/student-kudos/{studentId}" , method= RequestMethod.GET)
-    public List<Kudo> listAllKudos(@PathVariable int studentId){
+    public List<KudoDetail> listAllKudos(@PathVariable int studentId){
         return kudoDao.getStudentKudos(studentId);
     }
 

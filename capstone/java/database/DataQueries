@@ -7,10 +7,11 @@ FROM kudo_student
 JOIN kudo_type on kudo_type.id = kudo_student.type_id;
 
 --LIST of all kudos given out to a specific student--
-SELECT kudo_student.id, teacher_id, student_id, message, type_id, approval_status, kudo_type.name, kudo_type.description, kudo_type.value
+SELECT kudo_student.id, teacher_id, profile.first_name, profile.last_name, student_id, message, kudo_student.type_id, kudo_type.name, kudo_type.description, kudo_type.value
 FROM kudo_student
 JOIN kudo_type on kudo_type.id = kudo_student.type_id
-WHERE kudo_student.student_id = 1;
+JOIN profile on profile.id = kudo_student.teacher_id
+WHERE kudo_student.student_id = 1010;
 
 
 SELECT *

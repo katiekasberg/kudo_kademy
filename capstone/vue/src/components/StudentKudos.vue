@@ -14,7 +14,8 @@
         v-bind:value="kudo.id"
       >
         <td>{{ kudo.id }}</td>
-        <td>{{ kudo.teacherId }}</td>
+        <td>{{kudo.first_name}}</td>
+        
         <td>{{ kudo.message }}</td>
         <td>{{ kudo.typeId }}</td>
       </tr>
@@ -53,12 +54,6 @@ export default {
       });
     },
   },
-  // computed: {
-  //   getKudoType(id) {
-  //     kudoService.getKudoTypeById(id)
-  //     return -1;
-  //   }
-  // },
   created() {
     this.getKudosByStudentId();
     this.getCurrentScore();
