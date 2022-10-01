@@ -46,7 +46,6 @@ export default {
       //     this.$store.commit("SET_KUDO_TYPES", response.data);
       //   })
     },
-    
   },
 };
 </script>
