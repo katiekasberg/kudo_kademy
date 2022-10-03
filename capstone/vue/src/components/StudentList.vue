@@ -20,12 +20,13 @@
           </td>
         </tr>
         <tr
+         
           v-for="student in filteredList"
           v-bind:key="student.id"
           v-bind:value="student.id"
           class="col-centered"
         >
-          <td class="col-centered">{{ student.firstName }}</td>
+          <td class="col-centered"  v-on:click="loadStudentDetail(student.id)">{{ student.firstName }}</td>
           <td class="col-centered">{{ student.lastName }}</td>
           <td class="col-centered">{{ student.graduationYear }}</td>
         </tr>
@@ -77,6 +78,9 @@ export default {
         this.$store.commit("SET_STUDENT_PROFILES", response.data);
       });
     },
+    loadStudentDetail(id){
+      this.$router.push({name:'StudentProfile', params:{id:id}})
+    }
   },
   created() {
     this.getStudentProfiles();
@@ -113,3 +117,7 @@ body {
   border: black 5px;
 }
 </style>
+
+
+
+<!-- <td class="col-centered">{{ student.firstName }}</td> -->

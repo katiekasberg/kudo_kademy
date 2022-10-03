@@ -3,12 +3,14 @@
     <table>
       <thead>
         <tr>
+          <th>Rank</th>
           <th>Grade</th>
           <th>Points</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="gradePoint in gradePoints" :key="gradePoint.id">
+          <td>{{ gradePoints.indexOf(gradePoint) + 1 }}</td>
           <td>{{ gradePoint.currentGradeLevel }}</td>
           <td>{{ gradePoint.value }}</td>
         </tr>

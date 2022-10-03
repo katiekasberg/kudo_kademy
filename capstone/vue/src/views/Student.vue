@@ -18,11 +18,17 @@
                 <li>
                   <button>
                     <router-link to="/rewards"> Kudo Values</router-link>
-                    </button>
+                  </button>
                 </li>
                 <li>
                   <button>
-                    <router-link :to="{name: 'StudentProfile', params: {id: this.$store.state.user.id}}">Profile</router-link>
+                    <router-link
+                      :to="{
+                        name: 'StudentProfile',
+                        params: { id: this.$store.state.user.id },
+                      }"
+                      >Profile</router-link
+                    >
                   </button>
                 </li>
                 <li>
@@ -48,17 +54,22 @@
           </div>
         </div>
         <div class="Welcome-User">
-          <h1>Welcome {{ this.$store.state.activeStudentProfile.firstName }} </h1>
+          <h1>
+            Welcome {{ this.$store.state.activeStudentProfile.firstName }}
+          </h1>
         </div>
         <div class="Announcements">
           <h2>Announcements</h2>
         </div>
         <div class="House-Cup">
-          <h2>House Cup Leaderboard</h2>
+          <h2>Leaderboards</h2>
+          <class-points-table />
+          <grade-points-table />
         </div>
+        <div class="Class-points"></div>
         <div>
           <h2>Latest Kudos Recognitions in your grade:</h2>
-          <grade-kudos/>
+          <grade-kudos />
         </div>
       </div>
     </div>
@@ -66,9 +77,12 @@
 </template>
 
 <script>
-import GradeKudos from '../components/GradeKudos.vue';
+import ClassPointsTable from "../components/ClassPointsTable.vue";
+import GradePointsTable from "../components/GradePointsTable.vue";
+import GradeKudos from "../components/GradeKudos.vue";
 export default {
-  components: { GradeKudos },};
+  components: { ClassPointsTable, GradePointsTable, GradeKudos },
+};
 </script>
 
 <style scope>
@@ -99,6 +113,11 @@ export default {
   justify-content: center;
 } */
 
+.Class-points {
+  grid-area: Class-points;
+  justify-items: center;
+}
+
 .app-name {
   grid-area: app-name;
   justify-items: center;
@@ -114,6 +133,7 @@ export default {
 
 .House-Cup {
   grid-area: House-Cup;
+  justify-items: center;
 }
 
 .Announcements {
