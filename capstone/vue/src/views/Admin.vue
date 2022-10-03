@@ -1,64 +1,10 @@
 <template>
   <body>
-    <div class="container">
-      <aside>
-        <nav>
-          <ul>
-            <li>
-              <button><a href="#">Home</a></button>
-            </li>
-            <li>
-              <button>
-                <router-link to="/SendKudos">Send Kudos</router-link>
-              </button>
-            </li>
-            <li>
-              <button><a href="#">Behavioral Report</a></button>
-            </li>
-            <li>
-              <button><a href="/searchbystudent">Search Students</a></button>
-            </li>
-            <li>
-              <button>
-                <a href="/createannouncement">Make Announcements</a>
-              </button>
-            </li>
-            <li>
-              <button><a href="#">Add/Remove Student</a></button>
-            </li>
-            <li>
-              <button><a href="#">Add/Remove Teacher</a></button>
-            </li>
-            <li>
-              <button><a href="/newkudotype">Set Kudo Values</a></button>
-            </li>
-            <li>
-              <button>
-                <router-link to="/logout"> Logout </router-link>
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
-    <div class="Header">
-      <div class="app-name">
-        <h1>School Communication</h1>
-      </div>
-      <div class="logo">
-        <img
-          class="logo"
-          src="../../resources/school-icon-9.png"
-          alt="school-logo"
-        />
-        <!-- <p>You must be authenticated to see this</p> -->
-      </div>
-    </div>
+    <nav-bar />
     <div class="Welcome-User">
       <h1>Welcome Administrator!</h1>
     </div>
     <div class="component-forms">
-      <new-kudo-type />
       <rewards />
     </div>
   </body>
@@ -66,8 +12,9 @@
 
 <script>
 import Rewards from "../components/Rewards.vue";
+import NavBar from "../components/NavBar.vue";
 export default {
-  components: { Rewards },
+  components: { Rewards, NavBar },
   name: "home",
 };
 </script>
