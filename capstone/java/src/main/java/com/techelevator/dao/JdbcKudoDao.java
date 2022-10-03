@@ -3,6 +3,7 @@ package com.techelevator.dao;
 import com.techelevator.model.exceptions.KudoNotFoundException;
 import com.techelevator.model.exceptions.KudoTypeNotFoundException;
 import com.techelevator.model.kudo.Kudo;
+import com.techelevator.model.kudo.KudoDetail;
 import com.techelevator.model.kudo.KudoRequest;
 import com.techelevator.model.kudo.KudoType;
 import org.springframework.dao.DataAccessException;
@@ -37,15 +38,17 @@ public class JdbcKudoDao implements KudoDao {
     }
 
     @Override
-    public List<Kudo> getStudentKudos(int studentId) {
-        List<Kudo> kudos = new ArrayList<>();
-        String sql = "SELECT id, teacher_id, student_id, message, type_id, approval_status " +
+    public List<KudoDetail> getStudentKudos(int studentId) {
+        List<KudoDetail> kudos = new ArrayList<>();
+        String sql = "SELECT kudo_student.id, teacher_id, profile.first_name, profile.last_name, student_id, message, kudo_student.type_id, kudo_type.name, kudo_type.description, kudo_type.value " +
                 "FROM kudo_student " +
-                "WHERE student_id = ?;";
+                "JOIN profile on profile.id = kudo_student.teacher_id " +
+                "JOIN kudo_type on kudo_type.id = kudo_student.type_id " +
+                "WHERE kudo_student.student_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, studentId);
 
         while (results.next()) {
-            kudos.add(mapRowToKudo(results));
+            kudos.add(mapRowToKudoDetail(results));
         }
         return kudos;
     }
@@ -62,6 +65,26 @@ public class JdbcKudoDao implements KudoDao {
 
         while (results.next()) {
             kudos.add(mapRowToKudo(results));
+        }
+        return kudos;
+    }
+
+    @Override
+    public List<KudoDetail> getKudosByGraduationYear(int graduationYear) {
+        List<KudoDetail> kudos = new ArrayList<>();
+        String sql = "SELECT kudo_student.id, teacher_id, profile.first_name, profile.last_name, student_id, message, " +
+                            "kudo_student.type_id, kudo_type.name, kudo_type.description, kudo_type.value " +
+                     "FROM kudo_student " +
+                     "JOIN kudo_type on kudo_type.id = kudo_student.type_id " +
+                     "JOIN profile on profile.id = kudo_student.student_id " +
+                     "JOIN student on student.id = profile.id " +
+                     "WHERE graduation_year = ? " +
+                     "ORDER BY id desc " +
+                     "LIMIT 10; ";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, graduationYear);
+
+        while (results.next()) {
+            kudos.add(mapRowToKudoDetail(results));
         }
         return kudos;
     }
@@ -166,6 +189,23 @@ public class JdbcKudoDao implements KudoDao {
         kudo.setApprovalStatus(rs.getString("approval_status"));
         return kudo;
     }
+
+    private KudoDetail mapRowToKudoDetail(SqlRowSet rs) {
+        KudoDetail kudoDetail = new KudoDetail();
+        kudoDetail.setId(rs.getInt("id"));
+        kudoDetail.setTeacherId(rs.getInt("teacher_id"));
+        kudoDetail.setFirstName(rs.getString("first_name"));
+        kudoDetail.setLastName(rs.getString("last_name"));
+        kudoDetail.setStudentId(rs.getInt("student_id"));
+        kudoDetail.setMessage(rs.getString("message"));
+        kudoDetail.setTypeId(rs.getInt("type_id"));
+        kudoDetail.setKudoTypeName(rs.getString("name"));
+        kudoDetail.setKudoTypeDescription(rs.getString("description"));
+        kudoDetail.setKudoTypeValue(rs.getInt("value"));
+        return kudoDetail;
+    }
+
+
 
     private KudoType mapRowToKudoType(SqlRowSet rs) {
         KudoType kudoType = new KudoType();

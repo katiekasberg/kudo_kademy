@@ -3,6 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.KudoDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.kudo.Kudo;
+import com.techelevator.model.kudo.KudoDetail;
 import com.techelevator.model.kudo.KudoRequest;
 import com.techelevator.model.kudo.KudoType;
 import org.springframework.http.HttpStatus;
@@ -33,7 +34,7 @@ public class KudoController {
 
     //get all kudos related for a user's student id
     @RequestMapping(path = "/kudos" , method= RequestMethod.GET)
-    public List<Kudo> listUserKudos(Principal principal){
+    public List<KudoDetail> listUserKudos(Principal principal){
         int userId = userDao.findIdByUsername(principal.getName());
         return kudoDao.getStudentKudos(userId);
     }
@@ -50,6 +51,20 @@ public class KudoController {
     public List<Kudo> listAllKudos(){
         return kudoDao.getAllKudos();
     }
+
+    //get all kudos assign to studentId
+    @RequestMapping(path = "/student-kudos/{studentId}" , method= RequestMethod.GET)
+    public List<KudoDetail> listAllKudos(@PathVariable int studentId){
+        return kudoDao.getStudentKudos(studentId);
+    }
+
+    //get all kudos of students graduating a certain year
+    @RequestMapping(path = "/kudos/gradyear={graduationYear}" , method= RequestMethod.GET)
+    public List<KudoDetail> listKudosByGradYear(@PathVariable int graduationYear){
+        return kudoDao.getKudosByGraduationYear(graduationYear);
+    }
+
+
 
     //get list of kudo types
     @RequestMapping(path = "/kudo-types" , method= RequestMethod.GET)

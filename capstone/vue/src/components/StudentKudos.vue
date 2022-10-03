@@ -1,21 +1,24 @@
 <template>
   <div class="student-kudos">
+    <p id="student-points">Current Student Points: {{this.totalPoints}} </p>
     <table class="list-kudos">
       <tr>
-        <th>Kudo Type ID</th>
-        <th>Kudo Name</th>
-        <th>Description</th>
-        <th>Value</th>
+        <th>Kudo Id</th>
+        <th>Awarded By </th>
+        <th>Kudo Type: </th>
+        <th>Points </th>
+        <th>Comments </th>
       </tr>
       <tr
-        v-for="type in this.$store.state.studentKudos"
-        v-bind:key="type.id"
-        v-bind:value="type.id"
+        v-for="kudo in this.$store.state.studentKudos"
+        v-bind:key="kudo.id"
+        v-bind:value="kudo.id"
       >
-        <td>{{ type.id }}</td>
-        <td>{{ type.name }}</td>
-        <td>{{ type.description }}</td>
-        <td>{{ type.value }}</td>
+        <td>{{ kudo.id }}</td>
+        <td>{{ kudo.firstName}} {{kudo.lastName}}</td>
+        <td>{{ kudo.kudoTypeName }}</td>
+        <td>{{ kudo.kudoTypeValue }}</td>
+        <td>{{ kudo.message }}</td>
       </tr>
     </table>
   </div>
@@ -23,20 +26,38 @@
 
 <script>
 import kudoService from "../services/KudosService";
+import PointService from '../services/PointService';
 export default {
+  name: "StudentKudos",
+  props: {
+    studentId: Number
+  },
   data() {
+    return {
+      totalPoints: 0,
+      kudoType: Object,
+      teacherProfile: Object,
+    };
   },
   methods: {
-    getKudosByStudentId(studentId) {
+    getKudosByStudentId() {
       kudoService
-        .getKudosByStudentId(studentId)
+        .getKudosByStudentId(this.studentId)
         .then((response) => {
-          this.studentKudos = response.data;
+          this.$store.commit("SET_STUDENT_KUDOS", response.data);
         });
+    },
+
+    getCurrentScore() {
+      PointService.getPointsByStudentId(this.studentId)
+      .then((response) => {
+        this.totalPoints = response.data;
+      });
     },
   },
   created() {
     this.getKudosByStudentId();
+    this.getCurrentScore();
   },
 };
 </script>

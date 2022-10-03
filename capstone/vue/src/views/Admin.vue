@@ -51,11 +51,13 @@
         />
         <!-- <p>You must be authenticated to see this</p> -->
       </div>
-      <new-kudo-type />
-      <rewards />
     </div>
     <div class="Welcome-User">
       <h1>Welcome Administrator!</h1>
+    </div>
+    <div class="component-forms">
+      <new-kudo-type />
+      <rewards />
     </div>
     <div class="Announcements">
       <h3>Create an Announcements</h3>
@@ -229,5 +231,12 @@ a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+.component-forms {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 </style>

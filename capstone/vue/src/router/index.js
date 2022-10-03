@@ -10,9 +10,11 @@ import Teacher from '../views/Teacher.vue'
 import SendKudos from '../views/SendKudos.vue'
 import Admin from '../views/Admin.vue'
 import Parent from '../views/Parent.vue'
-import Student from '../views/Student.vue' 
+import Student from '../views/Student.vue'
 import StudentProfile from '../views/StudentProfile.vue'
+import ParentProfile from '../views/ParentProfile.vue'
 import NotFound from '../views/NotFound.vue'
+import Rewards from '../views/Rewards.vue'
 
 Vue.use(Router)
 
@@ -108,6 +110,14 @@ const router = new Router({
       name: "parent",
       component: Parent,
       meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/parent-profile/:id",
+      name: "ParentProfile",
+      component: ParentProfile,
+      meta: {
         requiresAuth: true
       }
     },
@@ -124,10 +134,17 @@ const router = new Router({
       name: "student",
       component: Student,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
-
+    {
+      path: "/rewards",
+      name: "rewards",
+      component: Rewards,
+      meta: {
+        requiresAuth: false
+      }
+    },
   ]
 })
 

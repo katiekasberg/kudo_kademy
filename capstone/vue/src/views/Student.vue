@@ -16,7 +16,14 @@
                   <button><a href="#">Leaderboard</a></button>
                 </li>
                 <li>
-                  <button><a href="#">See Kudo Values</a></button>
+                  <button>
+                    <router-link to="/rewards"> Kudo Values</router-link>
+                    </button>
+                </li>
+                <li>
+                  <button>
+                    <router-link :to="{name: 'StudentProfile', params: {id: this.$store.state.user.id}}">Profile</router-link>
+                  </button>
                 </li>
                 <li>
                   <button>

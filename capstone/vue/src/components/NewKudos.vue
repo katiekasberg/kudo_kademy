@@ -76,6 +76,7 @@ export default {
         // if (response.status === 200) {
         this.$store.commit("SET_KUDO_TYPES", response.data);
       });
+      console.log(this.$store.state.user);
     },
     getStudentProfiles() {
       studentService.getStudentProfiles().then((response) => {

@@ -12,7 +12,9 @@
                 <button><a href="#">Student Report</a></button>
               </li>
               <li>
-                <button><a href="#">See Kudo Values</a></button>
+                <button>
+                    <router-link to="/rewards"> Kudo Values</router-link>
+                    </button>
               </li>
               <li>
                 <button><a href="#">Contact Teacher</a></button>

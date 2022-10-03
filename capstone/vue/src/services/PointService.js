@@ -15,6 +15,11 @@ export default {
     //returns a list of classes and their total house points
     getPointsForAllClasses() {
         return axios.get('/class-points')
-    }
+    },
+
+    //returns a sum of all kudo points assigned to studentId
+    getPointsByStudentId(studentId) {
+        return axios.get(`/student-points/${studentId}`)
+    },    
 
 }
