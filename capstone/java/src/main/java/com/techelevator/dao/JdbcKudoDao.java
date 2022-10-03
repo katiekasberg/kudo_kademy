@@ -70,6 +70,26 @@ public class JdbcKudoDao implements KudoDao {
     }
 
     @Override
+    public List<KudoDetail> getKudosByGraduationYear(int graduationYear) {
+        List<KudoDetail> kudos = new ArrayList<>();
+        String sql = "SELECT kudo_student.id, teacher_id, profile.first_name, profile.last_name, student_id, message, " +
+                            "kudo_student.type_id, kudo_type.name, kudo_type.description, kudo_type.value " +
+                     "FROM kudo_student " +
+                     "JOIN kudo_type on kudo_type.id = kudo_student.type_id " +
+                     "JOIN profile on profile.id = kudo_student.student_id " +
+                     "JOIN student on student.id = profile.id " +
+                     "WHERE graduation_year = ? " +
+                     "ORDER BY id desc " +
+                     "LIMIT 10; ";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, graduationYear);
+
+        while (results.next()) {
+            kudos.add(mapRowToKudoDetail(results));
+        }
+        return kudos;
+    }
+
+    @Override
     public List<Kudo> getAllKudos() {
         List<Kudo> kudos = new ArrayList<>();
         String sql = "SELECT id, teacher_id, student_id, message, type_id, approval_status " +

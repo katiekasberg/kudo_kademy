@@ -52,11 +52,18 @@ public class KudoController {
         return kudoDao.getAllKudos();
     }
 
-    //get all kudos for all students
+    //get all kudos assign to studentId
     @RequestMapping(path = "/student-kudos/{studentId}" , method= RequestMethod.GET)
     public List<KudoDetail> listAllKudos(@PathVariable int studentId){
         return kudoDao.getStudentKudos(studentId);
     }
+
+    //get all kudos of students graduating a certain year
+    @RequestMapping(path = "/kudos/gradyear={graduationYear}" , method= RequestMethod.GET)
+    public List<KudoDetail> listKudosByGradYear(@PathVariable int graduationYear){
+        return kudoDao.getKudosByGraduationYear(graduationYear);
+    }
+
 
 
     //get list of kudo types

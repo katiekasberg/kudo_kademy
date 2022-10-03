@@ -20,6 +20,9 @@ public interface KudoDao {
     //get list of kudos by class
     List<Kudo> getClassKudos(int classId);
 
+    //get list of kudos by Graduation Year
+    List<KudoDetail> getKudosByGraduationYear(int graduationYear);
+
     //get list of kudos for all students
     List<Kudo> getAllKudos();
 
