@@ -14,6 +14,7 @@ import Student from '../views/Student.vue'
 import StudentProfile from '../views/StudentProfile.vue'
 import ParentProfile from '../views/ParentProfile.vue'
 import NotFound from '../views/NotFound.vue'
+import Rewards from '../views/Rewards.vue'
 
 Vue.use(Router)
 
@@ -132,6 +133,14 @@ const router = new Router({
       path: "/student/",
       name: "student",
       component: Student,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/rewards",
+      name: "rewards",
+      component: Rewards,
       meta: {
         requiresAuth: false
       }
