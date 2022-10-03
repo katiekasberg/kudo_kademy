@@ -3,10 +3,11 @@
     <p id="student-points">Current Student Points: {{this.totalPoints}} </p>
     <table class="list-kudos">
       <tr>
-        <th>Kudo ID</th>
-        <th>From: </th>
-        <th>Message: </th>
+        <th>Kudo Id</th>
+        <th>Awarded By </th>
         <th>Kudo Type: </th>
+        <th>Points </th>
+        <th>Comments </th>
       </tr>
       <tr
         v-for="kudo in this.$store.state.studentKudos"
@@ -14,10 +15,10 @@
         v-bind:value="kudo.id"
       >
         <td>{{ kudo.id }}</td>
-        <td>{{kudo.first_name}}</td>
-        
+        <td>{{ kudo.firstName}} {{kudo.lastName}}</td>
+        <td>{{ kudo.kudoTypeName }}</td>
+        <td>{{ kudo.kudoTypeValue }}</td>
         <td>{{ kudo.message }}</td>
-        <td>{{ kudo.typeId }}</td>
       </tr>
     </table>
   </div>

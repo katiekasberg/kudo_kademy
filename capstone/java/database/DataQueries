@@ -10,9 +10,19 @@ JOIN kudo_type on kudo_type.id = kudo_student.type_id;
 SELECT kudo_student.id, teacher_id, profile.first_name, profile.last_name, student_id, message, kudo_student.type_id, kudo_type.name, kudo_type.description, kudo_type.value
 FROM kudo_student
 JOIN kudo_type on kudo_type.id = kudo_student.type_id
-JOIN profile on profile.id = kudo_student.teacher_id
-WHERE kudo_student.student_id = 1010;
+JOIN profile on profile.id = kudo_student.teacher_id;
+WHERE student_id = 1010;
 
+--LIST of the last 10 kudos given out for a specific graduation year.
+SELECT kudo_student.id, teacher_id, profile.first_name, profile.last_name, student_id, message, 
+kudo_student.type_id, kudo_type.name, kudo_type.description, kudo_type.value, graduation_year 
+FROM kudo_student 
+JOIN kudo_type on kudo_type.id = kudo_student.type_id 
+JOIN profile on profile.id = kudo_student.student_id 
+JOIN student on student.id = profile.id 
+WHERE graduation_year = 2027
+ORDER BY id desc
+LIMIT 10; 
 
 SELECT *
 FROM student;
@@ -52,12 +62,12 @@ SELECT *
 FROM profile
 JOIN student on student.id = profile.id;
 
-
-SELECT *
-FROM profile
-JOIN class_info on class_info.teacher_id = profile.id
+--List of Classes with Teacher Name per Student ID
+SELECT class_info.id, class_info.name, subject, teacher_id, first_name, last_name, email, school_id, description, period, start_time, end_time, school_year
+FROM class_info
+JOIN profile on profile.id = class_info.teacher_id
 JOIN class_info_student on class_info_student.class_id = class_info.id
-JOIN student on student.id = profile.id;
+WHERE student_id = 1010;
 
 
 SELECT *

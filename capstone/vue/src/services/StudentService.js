@@ -8,5 +8,9 @@ export default {
 
     getStudentProfileById(studentId) {
         return axios.get(`/student-profiles/${studentId}`);
-    }
+    },
+
+    getStudentClassesById(studentId) {
+        return axios.get(`/student-profiles/${studentId}/classes`);
+    },
 }
