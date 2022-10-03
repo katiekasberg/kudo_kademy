@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="Welcome-User">
-      <h1>Welcome {{ user }}!</h1>
+      <h1>Welcome {{  }}!</h1>
     </div>
     <div class="Announcements">
       <h3>Announcements</h3>
@@ -66,16 +66,14 @@
     </div>
     <div class="search">
       <student-list />
-      <student-kudos />
     </div>
   </body>
 </template>
 
 <script>
-import StudentKudos from '../components/StudentKudos.vue';
 import StudentList from "../components/StudentList.vue";
 export default {
-  components: { StudentList, StudentKudos },
+  components: { StudentList },
   name: "home",
 };
 </script>

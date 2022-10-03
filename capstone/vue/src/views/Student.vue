@@ -7,7 +7,7 @@
             <nav>
               <ul>
                 <li>
-                  <button><a href="#">Home</a></button>
+                  <button><a href="#">Home </a></button>
                 </li>
                 <li>
                   <button><a href="#">Kudo Report</a></button>
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="Welcome-User">
-          <h1>Welcome</h1>
+          <h1>Welcome {{ this.$store.state.activeStudentProfile.firstName }} </h1>
         </div>
         <div class="Announcements">
           <h2>Announcements</h2>
