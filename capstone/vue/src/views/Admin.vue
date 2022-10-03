@@ -16,10 +16,12 @@
               <button><a href="#">Behavioral Report</a></button>
             </li>
             <li>
-              <button><a href="#">Search Students</a></button>
+              <button><a href="/searchbystudent">Search Students</a></button>
             </li>
             <li>
-              <button><a href="#">Make Announcements</a></button>
+              <button>
+                <a href="/createannouncement">Make Announcements</a>
+              </button>
             </li>
             <li>
               <button><a href="#">Add/Remove Student</a></button>
@@ -28,7 +30,7 @@
               <button><a href="#">Add/Remove Teacher</a></button>
             </li>
             <li>
-              <button><a href="#">Set Kudo Values</a></button>
+              <button><a href="/newkudotype">Set Kudo Values</a></button>
             </li>
             <li>
               <button>
@@ -59,27 +61,13 @@
       <new-kudo-type />
       <rewards />
     </div>
-    <div class="Announcements">
-      <h3>Create an Announcements</h3>
-      <input
-        type="text"
-        id="makeAnnouncement"
-        placeholder="Enter Announcement"
-      />
-      <button type="submit" class="submitBtn">Submit</button>
-    </div>
-    <div class="search">
-      <student-list />
-    </div>
   </body>
 </template>
 
 <script>
-import StudentList from "../components/StudentList.vue";
-import NewKudoType from "../components/NewKudoType.vue";
 import Rewards from "../components/Rewards.vue";
 export default {
-  components: { StudentList, Rewards, NewKudoType },
+  components: { Rewards },
   name: "home",
 };
 </script>
@@ -236,7 +224,5 @@ a {
   display: grid;
   align-content: center;
   justify-content: center;
-  margin-left: 300px;
-  margin-right: 300px;
 }
 </style>
