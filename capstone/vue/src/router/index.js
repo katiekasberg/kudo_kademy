@@ -15,6 +15,9 @@ import StudentProfile from '../views/StudentProfile.vue'
 import ParentProfile from '../views/ParentProfile.vue'
 import NotFound from '../views/NotFound.vue'
 import Rewards from '../views/Rewards.vue'
+import SearchByStudent from "../views/SearchByStudent"
+import NewKudoType from "../components/NewKudoType"
+import CreateAnnouncement from "../views/CreateAnnouncement"
 
 Vue.use(Router)
 
@@ -145,6 +148,30 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    {
+      path: "/searchbystudent",
+      name: "searchbystudent",
+      component: SearchByStudent,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/newkudotype",
+      name: "newkudotype",
+      component: NewKudoType,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/createannouncement",
+      name: "createannouncement",
+      component: CreateAnnouncement,
+      meta: {
+        requiresAuth: true
+      }
+    }
   ]
 })
 

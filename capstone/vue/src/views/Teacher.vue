@@ -16,7 +16,7 @@
               <button><a href="#">Behavioral Report</a></button>
             </li>
             <li>
-              <button><a href="#">Search Students</a></button>
+              <button><a href="/searchbystudent">Search Students</a></button>
             </li>
             <li>
               <button><a href="#">Make Announcements</a></button>
@@ -46,10 +46,6 @@
           src="../../resources/school-icon-9.png"
           alt="school-logo"
         />
-        <button type="submit" class="submitBtn">Submit</button>
-      </div>
-      <div class="search-student">
-        <student-list />
       </div>
     </div>
     <div class="Welcome-User">
@@ -64,18 +60,10 @@
       />
       <button type="submit" class="submitBtn">Submit</button>
     </div>
-    <div class="search">
-      <student-list />
-    </div>
   </body>
 </template>
 
 <script>
-import StudentList from "../components/StudentList.vue";
-export default {
-  components: { StudentList },
-  name: "home",
-};
 </script>
 
 <style scoped>
