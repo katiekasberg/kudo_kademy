@@ -11,7 +11,7 @@
         <th>School Year</th>
       </tr>
       <tr
-        v-for="course in this.studentClasses"
+        v-for="course in this.teacherClasses"
         v-bind:key="course.id"
         v-bind:value="course.id"
       >

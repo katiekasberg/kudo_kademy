@@ -85,8 +85,8 @@ export default new Vuex.Store({
     SET_ACTIVE_STUDENT_ID(state, data) {
       state.activeStudentId = data;
     },
-    SET_ACTIVE_TEACHER_PROFILE(state, data) {
-      state.activeTeacherProfile = data;
+    SET_ACTIVE_STAFF_PROFILE(state, data) {
+      state.activeStaffProfile = data;
     },
   }
 })

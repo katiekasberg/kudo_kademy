@@ -1,7 +1,7 @@
 <template>
   <div>
-      <staff-detail v-bind:teacherId="parseInt($route.params.id)" />
-      <teacher-classes v-bind:teacherId="parseInt($route.params.id)" />
+      <staff-detail v-bind:staffId="parseInt($route.params.id)" />
+      <teacher-classes v-bind:staffId="parseInt($route.params.id)" />
   </div>
 </template>
 

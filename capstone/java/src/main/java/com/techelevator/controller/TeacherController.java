@@ -53,4 +53,10 @@ public class TeacherController {
         return teacherDao.getStaffProfileById(staffId);
     }
 
+    //get a list of classes by teacher id
+    @RequestMapping(path = "/staff-profiles/{staffId}/classes" , method= RequestMethod.GET)
+    public List<ClassInfo> getClassesByTeacherId(@PathVariable int staffId){
+        return teacherDao.getClassesAsTeacher(staffId);
+    }
+
 }

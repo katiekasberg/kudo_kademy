@@ -4,8 +4,6 @@
         <div>
             <p id="first-name">First Name: {{ this.$store.state.activeStaffProfile.firstName }} </p>
             <p id="last-name">Last Name: {{ this.$store.state.activeStaffProfile.lastName }} </p>
-            <p id="school">School: {{ this.$store.state.activeStaffProfile.schoolId }} </p>
-            <p id="graduation-year">Class Of: {{ this.$store.state.activeStaffProfile.graduationYear }} </p>
             <p id="email">Email Address: {{ this.$store.state.activeStaffProfile.email }} </p>
             <img v-bind:src="this.$store.state.activeStaffProfile.image"/>
         </div>

@@ -15,11 +15,11 @@ export default {
         return axios.post('/class-roster')
     },
 
-    getStaffProfile(teacherId){
-        return axios.get(`/teacher/${teacherId}`)
+    getStaffProfile(staffId){
+        return axios.get(`/staff-profiles/${staffId}`)
     },
 
-    getTeacherClassesById(teacherId){
-        return axios.get(`/teacher/${teacherId}/classes`)
+    getTeacherClassesById(staffId){
+        return axios.get(`/staff-profiles/${staffId}/classes`)
     },
 }
