@@ -13,6 +13,7 @@ import Parent from '../views/Parent.vue'
 import Student from '../views/Student.vue'
 import StudentProfile from '../views/StudentProfile.vue'
 import ParentProfile from '../views/ParentProfile.vue'
+import TeacherProfile from '../views/TeacherProfile.vue'
 import NotFound from '../views/NotFound.vue'
 import Rewards from '../views/Rewards.vue'
 import SearchByStudent from "../views/SearchByStudent"
@@ -39,7 +40,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -71,7 +72,7 @@ const router = new Router({
       name: "teacher",
       component: Teacher,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -79,7 +80,7 @@ const router = new Router({
       name: "SendKudos",
       component: SendKudos,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
 
@@ -88,7 +89,7 @@ const router = new Router({
       name: "EditKudoType",
       component: EditKudoType,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
 
@@ -97,7 +98,7 @@ const router = new Router({
       name: "admin",
       component: Admin,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -105,7 +106,7 @@ const router = new Router({
       name: "NotFound",
       component: NotFound,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -113,7 +114,7 @@ const router = new Router({
       name: "parent",
       component: Parent,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -133,11 +134,19 @@ const router = new Router({
       }
     },
     {
+      path: "/teacher-profile/:id",
+      name: "TeacherProfile",
+      component: TeacherProfile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/student/",
       name: "student",
       component: Student,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -145,7 +154,7 @@ const router = new Router({
       name: "rewards",
       component: Rewards,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -161,7 +170,7 @@ const router = new Router({
       name: "newkudotype",
       component: NewKudoType,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {

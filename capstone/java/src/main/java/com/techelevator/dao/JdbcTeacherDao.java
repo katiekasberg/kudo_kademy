@@ -1,5 +1,8 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.exceptions.ProfileNotFoundException;
+import com.techelevator.model.exceptions.StudentProfileNotFoundException;
+import com.techelevator.model.profile.Profile;
 import com.techelevator.model.school.ClassInfo;
 import com.techelevator.model.school.ClassInfoStudent;
 import org.springframework.dao.DataAccessException;
@@ -62,6 +65,17 @@ public class JdbcTeacherDao implements TeacherDao {
         return newClassInfo;
     }
 
+    @Override
+    public Profile getStaffProfileById(int staffId) throws ProfileNotFoundException {
+        String sql = "SELECT id, first_name, last_name, email, image FROM profile WHERE profile.id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, staffId);
+
+        if (results.next()) {
+            return mapRowToProfile(results);
+        }
+        throw new ProfileNotFoundException();
+    }
+
     private ClassInfo mapRowToClassInfo(SqlRowSet rs) {
         ClassInfo classInfo = new ClassInfo();
         classInfo.setId(rs.getInt("id"));
@@ -75,5 +89,15 @@ public class JdbcTeacherDao implements TeacherDao {
         classInfo.setEndTime(rs.getTime("end_time"));
         classInfo.setSchoolYear(rs.getInt("school_year"));
         return classInfo;
+    }
+
+    private Profile mapRowToProfile(SqlRowSet rs) {
+        Profile profile = new Profile();
+        profile.setId(rs.getInt("id"));
+        profile.setFirstName(rs.getString("first_name"));
+        profile.setLastName(rs.getString("last_name"));
+        profile.setEmail(rs.getString("email"));
+        profile.setImage(rs.getString("image"));
+        return profile;
     }
 }
