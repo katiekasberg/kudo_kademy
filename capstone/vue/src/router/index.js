@@ -13,6 +13,7 @@ import Parent from '../views/Parent.vue'
 import Student from '../views/Student.vue'
 import StudentProfile from '../views/StudentProfile.vue'
 import ParentProfile from '../views/ParentProfile.vue'
+import TeacherProfile from '../views/TeacherProfile.vue'
 import NotFound from '../views/NotFound.vue'
 import Rewards from '../views/Rewards.vue'
 import SearchByStudent from "../views/SearchByStudent"
@@ -128,6 +129,14 @@ const router = new Router({
       path: "/student-profile/:id",
       name: "StudentProfile",
       component: StudentProfile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/teacher-profile/:id",
+      name: "TeacherProfile",
+      component: TeacherProfile,
       meta: {
         requiresAuth: true
       }
