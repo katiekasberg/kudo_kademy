@@ -59,7 +59,7 @@ public class KudoController {
     }
 
     //get all kudos of students graduating a certain year
-    @RequestMapping(path = "/kudos/gradyear={graduationYear}" , method= RequestMethod.GET)
+    @RequestMapping(path = "/kudos/gradyear/{graduationYear}" , method= RequestMethod.GET)
     public List<KudoDetail> listKudosByGradYear(@PathVariable int graduationYear){
         return kudoDao.getKudosByGraduationYear(graduationYear);
     }

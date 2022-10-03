@@ -40,7 +40,7 @@ export default {
 
     //get all kudos related to class
     getKudosByGradYear(graduationYear) {
-        return axios.get(`/kudos/gradyear=${graduationYear}`)
+        return axios.get(`/kudos/gradyear/${graduationYear}`)
     },
 
     //get kudo type by kudo type id

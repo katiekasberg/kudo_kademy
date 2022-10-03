@@ -2,9 +2,24 @@
   <div>
       <table>
           <tr>
-              <th></th>
+              <th>Name</th>
+              <th>Kudo Type</th>
+              <th>Kudo Description</th>
+              <th>Points</th>
+          </tr>
+          <tr
+          v-for="kudo in this.GradeLevelKudos"
+          v-bind:key="kudo.id"
+          v-bind:value="kudo.id"
+          >
+              <td>{{kudo.firstName}} {{kudo.lastName}}</td>
+              <td>{{kudo.kudoTypeName}}</td>
+              <td>{{kudo.kudoTypeDescription}}</td>
+              <td>{{kudo.typeValue}}</td>
           </tr>
       </table>
+      graduationYear{{this.graduationYear}}
+      testing store: {{this.$store.state.activeStudentId}}
   </div>
 </template>
 
@@ -15,11 +30,17 @@ export default {
     data() {
         return {
             GradeLevelKudos: [],
-            graduationYear: ''
+            graduationYear: 0,
         }
     },
 
     methods: {
+        getGraduationYear(){
+            StudentService.getStudentProfileById(this.$store.state.activeStudentId).then((response) => {
+                this.graduationYear = response.data.graduationYear;
+            });
+        },
+        
         getKudosByGradYear(){
             KudosService.getKudosByGradYear(this.graduationYear).then((response) => {
                 this.GradeLevelKudos = response.data;
@@ -27,9 +48,8 @@ export default {
         },
     },
     created(){
-        StudentService.getStudentProfileById(this.$store.state.activeStudentId).then((response) => {
-            this.graduationYear = response.data.graduationYear;
-        })
+        this.getGraduationYear();
+        this.getKudosByGradYear();
     }
 
 }

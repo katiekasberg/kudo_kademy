@@ -56,13 +56,19 @@
         <div class="House-Cup">
           <h2>House Cup Leaderboard</h2>
         </div>
+        <div>
+          <h2>Latest Kudos Recognitions in your grade:</h2>
+          <grade-kudos/>
+        </div>
       </div>
     </div>
   </body>
 </template>
 
 <script>
-export default {};
+import GradeKudos from '../components/GradeKudos.vue';
+export default {
+  components: { GradeKudos },};
 </script>
 
 <style scope>
