@@ -13,5 +13,13 @@ export default {
 
     addStudentToClass(){
         return axios.post('/class-roster')
-    }
+    },
+
+    getStaffProfile(teacherId){
+        return axios.get(`/teacher/${teacherId}`)
+    },
+
+    getTeacherClassesById(teacherId){
+        return axios.get(`/teacher/${teacherId}/classes`)
+    },
 }

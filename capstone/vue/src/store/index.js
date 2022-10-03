@@ -29,6 +29,14 @@ export default new Vuex.Store({
       graduationYear: 0
     },
     activeStudentId: '',
+    
+    activeStaffProfile: {
+      id: 0,
+      firstName: '',
+      lastName: '',
+      email: '',
+      image: '',      
+    },
 
     kudoTypes: [],
     studentKudos:[],
@@ -76,6 +84,9 @@ export default new Vuex.Store({
     },
     SET_ACTIVE_STUDENT_ID(state, data) {
       state.activeStudentId = data;
+    },
+    SET_ACTIVE_TEACHER_PROFILE(state, data) {
+      state.activeTeacherProfile = data;
     },
   }
 })
