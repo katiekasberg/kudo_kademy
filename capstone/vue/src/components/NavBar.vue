@@ -24,7 +24,8 @@
     </div>
     <div
       class="teacher-nav"
-      v-show="$store.state.user.authorities[0].role === 'ROLE_TEACHER'"
+      v-show="$store.state.user.authorities[0].name === 'ROLE_TEACHER'"
+      style="display: inline"
     >
       <aside>
         <nav>
@@ -71,7 +72,8 @@
 
     <div
       class="admin-nav"
-      v-show="$store.state.user.authorities[0].role === 'ROLE_ADMIN'"
+      v-show="$store.state.user.authorities[0].name === 'ROLE_ADMIN'"
+      style="display: inline"
     >
       <aside>
         <nav>
@@ -120,7 +122,7 @@
     </div>
     <div
       class="student-nav"
-      v-show="$store.state.user.authorities[0].role === 'ROLE_STUDENT'"
+      v-show="$store.state.user.authorities[0].name === 'ROLE_STUDENT'"
     >
       <aside>
         <nav>
@@ -162,7 +164,7 @@
     </div>
     <div
       class="parent-nav"
-      v-show="$store.state.user.authorities[0].role === 'ROLE_PARENT'"
+      v-show="$store.state.user.authorities[0].name === 'ROLE_PARENT'"
     >
       <aside>
         <nav>
@@ -197,7 +199,14 @@
     </div>
   </body>
 </template>
-
+<script>
+export default {
+  created() {
+    console.log(this.$store.state.user);
+    console.log(this.$store.state.user.authorities[0].name);
+  },
+};
+</script>
 
 <style scoped>
 button {

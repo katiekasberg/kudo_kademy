@@ -12,9 +12,9 @@
 
 <script>
 import Rewards from "../components/Rewards.vue";
-import NavBar from "../components/NavBar.vue";
+
 export default {
-  components: { Rewards, NavBar },
+  components: { Rewards },
   name: "home",
 };
 </script>
