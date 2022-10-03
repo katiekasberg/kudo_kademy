@@ -5,35 +5,18 @@
         <nav>
           <ul>
             <li>
-              <button><a href="#">Home</a></button>
+              <button><a href="/">Home</a></button>
             </li>
             <li>
               <button>
-                <router-link to="/SendKudos">Send Kudos</router-link>
+                <router-link to="/login">Login</router-link>
               </button>
             </li>
             <li>
-              <button><a href="#">Behavioral Report</a></button>
+              <button><a href="#">About us</a></button>
             </li>
             <li>
-              <button><a href="#">Search Students</a></button>
-            </li>
-            <li>
-              <button><a href="#">Make Announcements</a></button>
-            </li>
-            <li>
-              <button><a href="#">Add/Remove Student</a></button>
-            </li>
-            <li>
-              <button><a href="#">Add/Remove Teacher</a></button>
-            </li>
-            <li>
-              <button><a href="#">Set Kudo Values</a></button>
-            </li>
-            <li>
-              <button>
-                <router-link to="/logout"> Logout </router-link>
-              </button>
+              <button><a href="#">Contact us</a></button>
             </li>
           </ul>
         </nav>
@@ -49,35 +32,19 @@
           src="../../resources/school-icon-9.png"
           alt="school-logo"
         />
-        <!-- <p>You must be authenticated to see this</p> -->
       </div>
     </div>
-    <div class="Welcome-User">
-      <h1>Welcome {{ user }}!</h1>
-    </div>
-    <div class="Announcements">
-      <h3>Announcements</h3>
-      <input
-        type="text"
-        id="makeAnnouncement"
-        placeholder="Enter Announcement"
-      />
-      <button type="submit" class="submitBtn">Submit</button>
-    </div>
-    <div class="search">
-      <student-list />
-      <student-kudos />
-    </div>
+    <p>
+      Welcome to the School Communication app! This is your hub for
+      communication of student behaviors between school and home. We pride
+      ourselves on simplifying the process of digital communication about
+      student progress and behavior between schools and families.
+    </p>
+    <p>Please log in to start connecting!</p>
   </body>
 </template>
 
 <script>
-import StudentKudos from '../components/StudentKudos.vue';
-import StudentList from "../components/StudentList.vue";
-export default {
-  components: { StudentList, StudentKudos },
-  name: "home",
-};
 </script>
 
 <style scoped>
@@ -175,6 +142,8 @@ p {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
+  max-width: 50%;
+  margin-left: 375px;
 }
 
 aside {
