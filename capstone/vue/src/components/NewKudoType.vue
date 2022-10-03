@@ -1,23 +1,26 @@
 <template>
-  <div class="newKudoTypes">
-    <form v-on:submit.prevent action="submit" class="newKudoForm">
-      <label for="KudoName"
-        >Name:
-        <input id="KudoName" type="text" v-model="newKudoType.name" />
-      </label>
-      <label for="description"
-        >Description:
-        <input
-          id="KudoDescription"
-          type="text"
-          v-model="newKudoType.description"
-        />
-      </label>
-      <label for="value">Value:</label>
-      <input id="value" type="number" v-model="newKudoType.value" />
-      <button type="submit" v-on:click="saveKudoType()">Submit</button>
-    </form>
-  </div>
+  <body>
+    <div class="newKudoTypes">
+      <form v-on:submit.prevent action="submit" class="newKudoForm">
+        <p>Create new Kudo Type</p>
+        <label for="KudoName"
+          >Kudo Type Name:
+          <input id="KudoName" type="text" v-model="newKudoType.name" />
+        </label>
+        <label for="description"
+          >Description:
+          <input
+            id="KudoDescription"
+            type="text"
+            v-model="newKudoType.description"
+          />
+        </label>
+        <label for="value">Value:</label>
+        <input id="value" type="number" v-model="newKudoType.value" />
+        <button type="submit" v-on:click="saveKudoType()">Submit</button>
+      </form>
+    </div>
+  </body>
 </template>
 
 <script>
@@ -52,11 +55,27 @@ export default {
 
 <style>
 .newKudoTypes {
+  display: grid;
   justify-content: center;
   text-align: center;
+  padding: 100px;
+  margin: 100px;
+  background-color: white;
 }
-.newKudoForm {
-  display: inline-block;
-  position: absolute;
+
+body {
+  background: linear-gradient(
+    360deg,
+    white,
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
+  );
+}
+p {
+  font-weight: bold;
+}
+input {
+  margin: 20px;
 }
 </style>
