@@ -54,7 +54,12 @@
           <h2>Announcements</h2>
         </div>
         <div class="House-Cup">
-          <h2>House Cup Leaderboard</h2>
+          <h2>Leaderboards</h2>
+           <class-points-table/>
+           <grade-points-table/>
+        </div>
+        <div class="Class-points">
+         
         </div>
       </div>
     </div>
@@ -62,7 +67,10 @@
 </template>
 
 <script>
-export default {};
+import ClassPointsTable from '../components/ClassPointsTable.vue';
+import GradePointsTable from '../components/GradePointsTable.vue';
+export default {
+  components: { ClassPointsTable, GradePointsTable },};
 </script>
 
 <style scope>
@@ -93,6 +101,11 @@ export default {};
   justify-content: center;
 } */
 
+.Class-points{
+  grid-area: Class-points;
+  justify-items: center;
+}
+
 .app-name {
   grid-area: app-name;
   justify-items: center;
@@ -108,6 +121,7 @@ export default {};
 
 .House-Cup {
   grid-area: House-Cup;
+  justify-items: center;
 }
 
 .Announcements {

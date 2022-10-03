@@ -51,6 +51,11 @@
         <h2>View Student Report</h2>
         <student-list />
       </div>
+      <div class="House-Cup">
+          <h2>Leaderboards</h2>
+           <class-points-table/>
+           <grade-points-table/>
+      </div>
     </div>
   </div>
 </template>
@@ -66,14 +71,15 @@ export default {
 .container {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr;
+  grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "Aside-nav Header "
     "Aside-nav Welcome-User"
     "Aside-nav Announcements"
-    "Aside-nav View-Report";
+    "Aside-nav View-Report"
+    "Aside-nav House-Cup";
 }
 
 /* .Header {
@@ -109,6 +115,10 @@ export default {
 
 .View-Report {
   grid-area: View-Report;
+}
+
+.House-Cup {
+  grid-area: House-Cup;
 }
 
 img.logo {
