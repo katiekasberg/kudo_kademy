@@ -9,6 +9,7 @@ import store from '../store/index'
 import Teacher from '../views/Teacher.vue'
 import SendKudos from '../views/SendKudos.vue'
 import Admin from '../views/Admin.vue'
+import AdminProfile from '../views/AdminProfile.vue'
 import Parent from '../views/Parent.vue'
 import Student from '../views/Student.vue'
 import StudentProfile from '../views/StudentProfile.vue'
@@ -19,6 +20,8 @@ import Rewards from '../views/Rewards.vue'
 import SearchByStudent from "../views/SearchByStudent"
 import NewKudoType from "../components/NewKudoType"
 import CreateAnnouncement from "../views/CreateAnnouncement"
+import CreateClass from "../views/CreateClass"
+import ClassManagement from '../views/ClassManagement'
 
 Vue.use(Router)
 
@@ -126,6 +129,14 @@ const router = new Router({
       }
     },
     {
+      path: "/admin-profile/:id",
+      name: "AdminProfile",
+      component: AdminProfile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/student-profile/:id",
       name: "StudentProfile",
       component: StudentProfile,
@@ -174,9 +185,25 @@ const router = new Router({
       }
     },
     {
+      path: "/newclass",
+      name: "newClass",
+      component: CreateClass,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/createannouncement",
       name: "createannouncement",
       component: CreateAnnouncement,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/manage-classes",
+      name: "manage-classes",
+      component: ClassManagement,
       meta: {
         requiresAuth: true
       }

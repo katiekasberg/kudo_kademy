@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.profile.Profile;
+import com.techelevator.model.profile.StudentProfile;
 import com.techelevator.model.school.ClassInfo;
 import com.techelevator.model.school.ClassInfoStudent;
 
@@ -19,6 +20,8 @@ public interface TeacherDao {
 
     //get a staff's profile by id
     Profile getStaffProfileById(int staffId);
+
+    List<StudentProfile> getStudentsInClass(int classId);
 
     //TODO: add all my students (what does this mean?)
     //get a list of all teachers

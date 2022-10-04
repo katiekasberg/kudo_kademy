@@ -56,7 +56,7 @@
             </li>
             <li>
               <button>
-                <a href="/makeannouncement">Make Announcements</a>
+                <a href="/createannouncement">Make Announcements</a>
               </button>
             </li>
             <li>

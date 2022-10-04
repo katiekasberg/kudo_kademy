@@ -116,6 +116,7 @@ INSERT INTO kudo_student (teacher_id, student_id, message, type_id) VALUES (1004
 --
 --INSERT INTO discipline student () VALUES ();
 --
---INSERT INTO announcement () VALUES ();
+INSERT INTO announcement (school_id, message, admin_id) VALUES (1, 'Two weeks until the next check-in! Get out there and show your teachers all the good deeds you can do!', 1001);
+INSERT INTO announcement (message, admin_id) VALUES ('Attention all Students and Parents! Report cards will be going out next Monday!', 1002);
 
 COMMIT TRANSACTION;

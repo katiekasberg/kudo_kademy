@@ -37,6 +37,11 @@ FROM profile
 JOIN users on users.user_id = profile.id
 WHERE users.role LIKE 'ROLE_TEACHER';
 
+SELECT *
+FROM profile
+JOIN users on users.user_id = profile.id
+WHERE users.role LIKE 'ROLE_ADMIN';
+
 --SELECT profile.id, first_name, last_name, email, 
 --FROM profile
 
@@ -69,6 +74,13 @@ JOIN profile on profile.id = class_info.teacher_id
 JOIN class_info_student on class_info_student.class_id = class_info.id
 WHERE student_id = 1010;
 
+
+--SELECT Most recent announcement
+SELECT announcement.id, school_id, message, profile.first_name, profile.last_name, time_stamp
+FROM announcement
+JOIN profile on profile.id = announcement.admin_id
+ORDER BY id desc
+LIMIT 1;
 
 SELECT *
 FROM users;
