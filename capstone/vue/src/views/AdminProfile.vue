@@ -8,7 +8,6 @@
 import StaffDetail from '../components/StaffDetail.vue'
 export default {
   components: { StaffDetail },
-
 }
 </script>
 

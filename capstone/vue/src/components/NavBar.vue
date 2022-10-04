@@ -1,27 +1,5 @@
 <template>
   <body>
-    <div class="home" v-show="this.$route.path == '/'">
-      <aside>
-        <nav>
-          <ul>
-            <li>
-              <button><a href="/">Home</a></button>
-            </li>
-            <li>
-              <button>
-                <router-link to="/login">Login</router-link>
-              </button>
-            </li>
-            <li>
-              <button><a href="#">About us</a></button>
-            </li>
-            <li>
-              <button><a href="#">Contact us</a></button>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
     <div
       class="teacher-nav"
       v-show="$store.state.user.authorities[0].name === 'ROLE_TEACHER'"
@@ -31,7 +9,7 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/">Home</a></button>
+              <button><a href="/teacher">Home</a></button>
             </li>
             <li>
               <button>
@@ -40,7 +18,8 @@
                     name: 'TeacherProfile',
                     params: { id: $store.state.user.id },
                   }"
-                  >My Profile</router-link>
+                  >My Profile</router-link
+                >
               </button>
             </li>
             <li>
@@ -60,7 +39,14 @@
               </button>
             </li>
             <li>
-              <button><a href="#">Add/Remove Student</a></button>
+              <button>
+                <router-link to="/newclass">Create Class</router-link>
+              </button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/manage-classes">Manage Classes</router-link>
+              </button>
             </li>
             <li>
               <button><a href="#">Classes</a></button>
@@ -84,11 +70,17 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/">Home</a></button>
+              <button><a href="/admin">Home</a></button>
             </li>
             <li>
               <button>
-                <router-link to="#">My Profile</router-link>
+                <router-link
+                  :to="{
+                    name: 'AdminProfile',
+                    params: { id: this.$store.state.user.id },
+                  }"
+                  >My Profile</router-link
+                >
               </button>
             </li>
             <li>
@@ -108,11 +100,18 @@
               </button>
             </li>
             <li>
-              <button><a href="#">Add/Remove Student</a></button>
+              <button>
+                <router-link to="/newclass">Create Class</router-link>
+              </button>
             </li>
             <li>
-              <button><a href="#">Add/Remove Teacher</a></button>
+              <button>
+                <router-link to="/manage-classes">Manage Classes</router-link>
+              </button>
             </li>
+            <!-- <li>
+              <button><a href="#">Add/Remove Teacher</a></button>
+            </li> -->
             <li>
               <button><a href="/newkudotype">Set Kudo Values</a></button>
             </li>
@@ -133,7 +132,7 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/">Home</a></button>
+              <button><a href="/student">Home</a></button>
             </li>
             <li>
               <button>
@@ -142,7 +141,8 @@
                     name: 'StudentProfile',
                     params: { id: this.$store.state.user.id },
                   }"
-                  >My Profile</router-link>
+                  >My Profile</router-link
+                >
               </button>
             </li>
             <li>
@@ -174,7 +174,7 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/">Home</a></button>
+              <button><a href="/parent">Home</a></button>
             </li>
             <li>
               <button>
@@ -183,7 +183,8 @@
                     name: 'ParentProfile',
                     params: { id: this.$store.state.user.id },
                   }"
-                  >My Profile</router-link>
+                  >My Profile</router-link
+                >
               </button>
             </li>
             <li>
@@ -235,5 +236,8 @@ aside {
   width: 200px;
   background-color: #ffc83c57;
   opacity: 100%;
+}
+a:hover {
+  color:blue;
 }
 </style>

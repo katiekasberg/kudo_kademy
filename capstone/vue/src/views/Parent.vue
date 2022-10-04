@@ -5,7 +5,9 @@
         <h1>Welcome Parent!</h1>
       </div>
       <div class="Announcements">
-        <h2>See Announcements</h2>
+        <h2>
+          <latest-announcement/>
+        </h2>
       </div>
       <div class="View-Report">
         <h2>View Student Report</h2>
@@ -21,9 +23,10 @@
 </template>
 
 <script>
+import LatestAnnouncement from '../components/LatestAnnouncement.vue';
 import StudentList from "../components/StudentList.vue";
 export default {
-  components: { StudentList },
+  components: { StudentList, LatestAnnouncement },
 };
 </script>
 

@@ -38,6 +38,16 @@ export default new Vuex.Store({
       image: '',      
     },
 
+    activeParentProfile: {
+      id: 0,
+      firstName: '',
+      lastName: '',
+      email: '',
+      image: '',
+      phoneNumber: '',
+      address: '',
+    },
+
     kudoTypes: [],
     studentKudos:[],
     activeKudoType: {
@@ -46,6 +56,7 @@ export default new Vuex.Store({
       description: '',
       value: 0
     },
+    latestAnnouncement: [],
     
     token: currentToken || '',
     user: currentUser || {}
@@ -87,6 +98,12 @@ export default new Vuex.Store({
     },
     SET_ACTIVE_STAFF_PROFILE(state, data) {
       state.activeStaffProfile = data;
+    },
+    SET_ACTIVE_PARENT_PROFILE(state, data) {
+      state.activeParentProfile = data;
+    },
+    SET_LATEST_ANNOUNCEMENT(state, data) {
+      state.latestAnnouncement = data;
     },
   }
 })

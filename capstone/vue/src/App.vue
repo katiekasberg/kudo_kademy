@@ -27,6 +27,9 @@ export default {
 <style >
 #app {
   background-color: white;
+  display: grid;
+  align-content: center;
+  justify-content: center;
 }
 
 body {

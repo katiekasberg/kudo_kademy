@@ -1,6 +1,7 @@
 <template>
   <div class="kudo-types">
     <table class="kudo-list">
+      <p>Available Kudo Types</p>
       <tr>
         <th>Kudo Type ID:</th>
         <th>Kudo Name:</th>
@@ -47,7 +48,7 @@ export default {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  background: lightgoldenrodyellow;
+  background-color: rgba(255, 255, 255, 0.657);
 }
 th {
   padding-right: 100px;
