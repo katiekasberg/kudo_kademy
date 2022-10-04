@@ -22,4 +22,8 @@ export default {
     getTeacherClassesById(staffId){
         return axios.get(`/staff-profiles/${staffId}/classes`)
     },
+
+    addNewClass(newClass){
+        return axios.post('/classes', newClass);
+    }
 }

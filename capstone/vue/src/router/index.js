@@ -19,6 +19,7 @@ import Rewards from '../views/Rewards.vue'
 import SearchByStudent from "../views/SearchByStudent"
 import NewKudoType from "../components/NewKudoType"
 import CreateAnnouncement from "../views/CreateAnnouncement"
+import CreateClass from "../views/CreateClass"
 
 Vue.use(Router)
 
@@ -169,6 +170,14 @@ const router = new Router({
       path: "/newkudotype",
       name: "newkudotype",
       component: NewKudoType,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/newclass",
+      name: "newClass",
+      component: CreateClass,
       meta: {
         requiresAuth: true
       }

@@ -10,12 +10,11 @@ import StaffDetail from '../components/StaffDetail.vue'
 import TeacherClasses from '../components/TeacherClasses.vue'
 
 export default {
-  components: { TeacherClasses, StaffDetail },
+  components: { TeacherClasses, StaffDetail, },
 
 }
 </script>
 
-    StaffDetail
 <style>
 
 </style>
