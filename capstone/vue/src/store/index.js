@@ -46,6 +46,7 @@ export default new Vuex.Store({
       description: '',
       value: 0
     },
+    latestAnnouncement: [],
     
     token: currentToken || '',
     user: currentUser || {}
@@ -87,6 +88,9 @@ export default new Vuex.Store({
     },
     SET_ACTIVE_STAFF_PROFILE(state, data) {
       state.activeStaffProfile = data;
+    },
+    SET_LATEST_ANNOUNCEMENT(state, data) {
+      state.latestAnnouncement = data;
     },
   }
 })

@@ -1,8 +1,10 @@
 <template>
   <body class="admin-home">
-    <nav-bar />
     <div class="Welcome-User">
-      <h1>Welcome Administrator!</h1>
+      <h2>Welcome Administrator!</h2>
+      <h2>
+        <latest-announcement />
+      </h2>
     </div>
     <div class="component-forms">
       <rewards />
@@ -11,23 +13,24 @@
 </template>
 
 <script>
+import LatestAnnouncement from "../components/LatestAnnouncement.vue";
 import Rewards from "../components/Rewards.vue";
 
 export default {
-  components: { Rewards },
+  components: { Rewards, LatestAnnouncement },
   name: "home",
 };
 </script>
+    
 
 <style >
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  gap: 0px 0px;
-  /* grid-auto-flow: row; */
+  align-content: center;
+  justify-content: center;
 }
 
-.admin-home{
+.admin-home {
   display: grid;
 }
 /* .Header {
@@ -44,26 +47,11 @@ export default {
   justify-content: center;
 } */
 
-/* .app-name {
-  grid-area: app-name;
-  justify-items: center;
-  text-decoration: underline;
-  color: darkorange;
-} */
-
-/* .logo {
-  grid-area: logo;
-} */
-
 .Welcome-User {
-  grid-area: Welcome-User;
-}
-
-.Announcements {
-  grid-area: Announcements;
-  color: black;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding-left: 300px;
 }
 
 /* #makeAnnouncement {
@@ -104,6 +92,7 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
+  padding-right: 300px;
 }
 
 p {
@@ -114,35 +103,6 @@ p {
   color: rgb(216, 150, 69);
 }
 
-aside {
-  display: grid;
-  position: fixed;
-  border-collapse: separate;
-  border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid rgb(211, 211, 211);
-  height: 100%;
-  width: 200px;
-  background-color: #ffc83c57;
-  opacity: 100%;
-}
-
-ul {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-ul > li {
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  border-color: rgba(0, 173, 238, 0.4);
-  padding: 15px;
-
-  list-style: none;
-  width: 95%;
-}
 body {
   background: linear-gradient(
     360deg,
@@ -159,14 +119,15 @@ button {
   border-radius: 10%;
   border-color: orange;
 }
-a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
+
 .component-forms {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
+  margin: auto;
+  padding-left: 600px;
+  padding-right: 600px;
+  padding-top: 100px;
 }
 </style>

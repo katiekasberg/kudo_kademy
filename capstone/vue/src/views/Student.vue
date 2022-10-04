@@ -8,7 +8,9 @@
           </h1>
         </div>
         <div class="Announcements">
-          <h2>Announcements</h2>
+          <h2>
+            <latest-announcement/>
+          </h2>
         </div>
         <div class="House-Cup">
           <h2>Leaderboards</h2>
@@ -28,8 +30,9 @@
 import ClassPointsTable from "../components/ClassPointsTable.vue";
 import GradePointsTable from "../components/GradePointsTable.vue";
 import GradeKudos from "../components/GradeKudos.vue";
+import LatestAnnouncement from '../components/LatestAnnouncement.vue';
 export default {
-  components: { ClassPointsTable, GradePointsTable, GradeKudos },
+  components: { ClassPointsTable, GradePointsTable, GradeKudos, LatestAnnouncement },
 };
 </script>
 
