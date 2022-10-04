@@ -7,7 +7,6 @@
         id="selectedClass"
         name="selectedClass"
         v-on:click="
-          getClassRoster();
           selectClass();
         "
       >
@@ -152,6 +151,8 @@ export default {
     },
     selectClass() {
       this.classInfoStudent.classId = this.classInfo.id;
+      this.rosterIds = [];
+      this.getClassRoster();
     },
     addStudentToClass() {
       this.selectedStudentIDs.forEach((selectedId) => {

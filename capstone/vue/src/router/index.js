@@ -20,6 +20,7 @@ import SearchByStudent from "../views/SearchByStudent"
 import NewKudoType from "../components/NewKudoType"
 import CreateAnnouncement from "../views/CreateAnnouncement"
 import CreateClass from "../views/CreateClass"
+import ClassManagement from '../views/ClassManagement'
 
 Vue.use(Router)
 
@@ -186,6 +187,14 @@ const router = new Router({
       path: "/createannouncement",
       name: "createannouncement",
       component: CreateAnnouncement,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/manage-classes",
+      name: "manage-classes",
+      component: ClassManagement,
       meta: {
         requiresAuth: true
       }
