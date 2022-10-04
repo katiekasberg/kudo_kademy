@@ -3,6 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.TeacherDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.profile.Profile;
+import com.techelevator.model.profile.StudentProfile;
 import com.techelevator.model.school.ClassDetail;
 import com.techelevator.model.school.ClassInfo;
 import com.techelevator.model.school.ClassInfoStudent;
@@ -24,6 +25,12 @@ public class TeacherController {
     public TeacherController(TeacherDao teacherDao, UserDao userDao) {
         this.teacherDao = teacherDao;
         this.userDao = userDao;
+    }
+
+    //see all students in a class
+    @RequestMapping(path = "/class-roster/{classId}" , method= RequestMethod.GET)
+    public List<StudentProfile> getAllStudentsInClass(@PathVariable int classId){
+        return teacherDao.getStudentsInClass(classId);
     }
 
     //add student to a class

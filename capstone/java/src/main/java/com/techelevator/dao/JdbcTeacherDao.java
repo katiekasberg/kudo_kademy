@@ -3,6 +3,7 @@ package com.techelevator.dao;
 import com.techelevator.model.exceptions.ProfileNotFoundException;
 import com.techelevator.model.exceptions.StudentProfileNotFoundException;
 import com.techelevator.model.profile.Profile;
+import com.techelevator.model.profile.StudentProfile;
 import com.techelevator.model.school.ClassInfo;
 import com.techelevator.model.school.ClassInfoStudent;
 import org.springframework.dao.DataAccessException;
@@ -76,6 +77,24 @@ public class JdbcTeacherDao implements TeacherDao {
         throw new ProfileNotFoundException();
     }
 
+    @Override
+    public List<StudentProfile> getStudentsInClass(int classId) {
+        List<StudentProfile> studentsInClassList = new ArrayList<>();
+        String sql =
+                "SELECT profile.id, first_name, last_name, email, image, school_id, graduation_year " +
+                        "FROM profile " +
+                        "JOIN student ON profile.id = student.id " +
+                        "JOIN class_info_student ON student.id = class_info_student.student_id " +
+                        "WHERE class_id = ? " +
+                        "ORDER BY first_name ASC;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, classId);
+
+        while (results.next()) {
+            studentsInClassList.add(mapRowToStudentProfile(results));
+        }
+        return studentsInClassList;
+    }
+
     private ClassInfo mapRowToClassInfo(SqlRowSet rs) {
         ClassInfo classInfo = new ClassInfo();
         classInfo.setId(rs.getInt("id"));
@@ -99,5 +118,17 @@ public class JdbcTeacherDao implements TeacherDao {
         profile.setEmail(rs.getString("email"));
         profile.setImage(rs.getString("image"));
         return profile;
+    }
+
+    private StudentProfile mapRowToStudentProfile(SqlRowSet rs) {
+        StudentProfile studentProfile = new StudentProfile();
+        studentProfile.setId(rs.getInt("id"));
+        studentProfile.setFirstName(rs.getString("first_name"));
+        studentProfile.setLastName(rs.getString("last_name"));
+        studentProfile.setEmail(rs.getString("email"));
+        studentProfile.setImage(rs.getString("image"));
+        studentProfile.setSchoolId(rs.getInt("school_id"));
+        studentProfile.setGraduationYear(rs.getInt("graduation_year"));
+        return studentProfile;
     }
 }
