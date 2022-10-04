@@ -1,27 +1,5 @@
 <template>
   <body>
-    <div class="home" v-show="this.$route.path == '/'">
-      <aside>
-        <nav>
-          <ul>
-            <li>
-              <button><a href="/">Home</a></button>
-            </li>
-            <li>
-              <button>
-                <router-link to="/login">Login</router-link>
-              </button>
-            </li>
-            <li>
-              <button><a href="#">About us</a></button>
-            </li>
-            <li>
-              <button><a href="#">Contact us</a></button>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
     <div
       class="teacher-nav"
       v-show="$store.state.user.authorities[0].name === 'ROLE_TEACHER'"
