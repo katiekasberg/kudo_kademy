@@ -9,11 +9,16 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/">Home</a></button>
+              <button><a href="/teacher">Home</a></button>
             </li>
             <li>
               <button>
-                <router-link to="#">My Profile</router-link>
+                <router-link
+                  :to="{
+                    name: 'TeacherProfile',
+                    params: { id: $store.state.user.id },
+                  }"
+                  >My Profile</router-link>
               </button>
             </li>
             <li>
@@ -29,11 +34,18 @@
             </li>
             <li>
               <button>
-                <a href="/makeannouncement">Make Announcements</a>
+                <a href="/createannouncement">Make Announcements</a>
               </button>
             </li>
             <li>
-              <button><a href="#">Add/Remove Student</a></button>
+              <button>
+                <router-link to="/newclass">Create Class</router-link>
+              </button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/manage-classes">Manage Classes</router-link>
+                </button>
             </li>
             <li>
               <button><a href="#">Classes</a></button>
@@ -57,11 +69,16 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/">Home</a></button>
+              <button><a href="/admin">Home</a></button>
             </li>
             <li>
               <button>
-                <router-link to="#">My Profile</router-link>
+                <router-link
+                  :to="{
+                    name: 'AdminProfile',
+                    params: { id: this.$store.state.user.id },
+                  }"
+                  >My Profile</router-link>
               </button>
             </li>
             <li>
@@ -81,7 +98,14 @@
               </button>
             </li>
             <li>
-              <button><a href="#">Add/Remove Student</a></button>
+              <button>
+                <router-link to="/newclass">Create Class</router-link>
+              </button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/manage-classes">Manage Classes</router-link>
+                </button>
             </li>
             <li>
               <button><a href="#">Add/Remove Teacher</a></button>
@@ -106,7 +130,7 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/">Home</a></button>
+              <button><a href="/student">Home</a></button>
             </li>
             <li>
               <button>
@@ -115,8 +139,7 @@
                     name: 'StudentProfile',
                     params: { id: this.$store.state.user.id },
                   }"
-                  >My Profile</router-link
-                >
+                  >My Profile</router-link>
               </button>
             </li>
             <li>
@@ -148,11 +171,16 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/">Home</a></button>
+              <button><a href="/parent">Home</a></button>
             </li>
             <li>
               <button>
-                <router-link to="#">My Profile</router-link>
+                <router-link
+                  :to="{
+                    name: 'ParentProfile',
+                    params: { id: this.$store.state.user.id },
+                  }"
+                  >My Profile</router-link>
               </button>
             </li>
             <li>

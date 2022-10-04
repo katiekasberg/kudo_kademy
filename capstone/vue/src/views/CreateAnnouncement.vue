@@ -1,16 +1,44 @@
 <template>
   <body>
     <div class="Announcements">
-      <h3>Create an Announcement</h3>
-      <input
-        type="text"
-        id="makeAnnouncement"
-        placeholder="Enter Announcement"
-      />
-      <button type="submit" class="submitBtn">Submit</button>
+      <form v-on:submit.prevent action="submit">
+        <h3>Create an Announcement</h3>
+        <input
+          type="text"
+          id="makeAnnouncement"
+          placeholder="Enter Announcement"
+          v-model="newAnnouncement.message"
+        />
+        <button type="submit" v-on:click="saveAnnouncement()" class="submitBtn">Submit</button>
+      </form>
     </div>
   </body>
 </template>
+
+<script>
+import AdminService from "../services/AdminService";
+
+export default {
+  data() {
+    return {
+      newAnnouncement: {
+        message: "",
+      },
+    };
+  },
+  methods: {
+    saveAnnouncement() {
+      AdminService.createAnnouncement(this.newAnnouncement).then((response) => {
+        if (response.data === 201) {
+          this.newAnnouncement.message = "";
+        }
+      });
+    },
+  },
+};
+</script>
+
+
 <style scoped>
 .Announcements {
   background-color: white;

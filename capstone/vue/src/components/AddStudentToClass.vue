@@ -1,9 +1,83 @@
 <template>
   <div>
+    <form v-on:submit.prevent>
+      <label for="selectedClass">Select Class to Add Students:</label>
+      <select
+        v-model="classInfo.id"
+        id="selectedClass"
+        name="selectedClass"
+        v-on:click="
+          selectClass();
+        "
+      >
+        <option
+          v-for="classInfo in classes"
+          v-bind:key="classInfo.id"
+          v-bind:value="classInfo.id"
+        >
+          {{ classInfo.name }}: {{ classInfo.subject }}- {{ classInfo.period }}
+        </option>
+      </select>
+
+      <table>
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Graduation Year</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Select Student:</td>
+            <td>
+              <input
+                type="text"
+                id="firstNameFilter"
+                v-model="filter.firstName"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="lastNameFilter"
+                v-model="filter.lastName"
+              />
+            </td>
+            <td>
+              <input type="text" id="emailFilter" v-model="filter.email" />
+            </td>
+            <td>
+              <input type="number" id="graduationFilter" v-model="filter.graduationYear" />
+            </td>
+          </tr>
+
+          <tr v-for="student in filteredList" v-bind:key="student.id">
+            <td>
+              <input
+                type="checkbox"
+                v-bind:id="student.id"
+                v-bind:value="student.id"
+                v-model="selectedStudentIDs"
+                v-on:click="selectStudents(student.id)"
+              />
+            </td>
+            <td>{{ student.firstName }}</td>
+            <td>{{ student.lastName }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.graduationYear }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" v-on:click="addStudentToClass()">Submit</button>
+    </form>
+    <div><h3>Current Roster for Selected Class:</h3></div>
     <table>
       <thead>
         <tr>
-          <th>&nbsp;</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
@@ -11,58 +85,17 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td><input type="checkbox" /></td>
-          <td>
-            <input
-              type="text"
-              id="firstNameFilter"
-              v-model="filter.firstName"
-            />
-          </td>
-          <td>
-            <input type="text" id="lastNameFilter" v-model="filter.lastName" />
-          </td>
-          <td>
-            <input type="text" id="emailFilter" v-model="filter.email" />
-          </td>
-        </tr>
-
-        <tr v-for="student in filteredList" v-bind:key="student.id">
-          <td>
-            <input
-              type="checkbox"
-              v-bind:id="student.id"
-              v-bind:value="student.id"
-              v-model="selectedStudentIDs"
-              v-on:click="selectStudents(student.id)"
-            />
-          </td>
-          <td>{{ student.firstName }}</td>
-          <td>{{ student.lastName }}</td>
-          <td>{{ student.email }}</td>
+        <tr
+          v-for="classRosterStudent in classRoster"
+          v-bind:key="classRosterStudent.id"
+        >
+          <td>{{ classRosterStudent.firstName }}</td>
+          <td>{{ classRosterStudent.lastName }}</td>
+          <td>{{ classRosterStudent.email }}</td>
         </tr>
       </tbody>
     </table>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Class Name:</th>
-          <th>Subject:</th>
-          <th>Description:</th>
-          <th>Period:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="classInfo in classes" v-bind:key="classInfo.id">
-          <td>{{ classInfo.name }}</td>
-          <td>{{ classInfo.subject }}</td>
-          <td>{{ classInfo.description }}</td>
-          <td>{{ classInfo.period }}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </template>
  
@@ -79,16 +112,36 @@ export default {
         studentId: Number,
       },
       filter: {
+        id: "",
         firstName: "",
         lastName: "",
         email: "",
+        graduationYear: "",
       },
       selectedStudentIDs: [],
+      rosterIds: [],
       students: [],
       classes: [],
+      classRoster: [
+        {
+          id: Number,
+          firstName: "",
+          lastName: "",
+          email: "",
+        },
+      ],
+      classInfo: {
+        id: "",
+        name: "",
+      },
     };
   },
   methods: {
+    getAvailableStudents() {
+      studentService.getStudentProfiles().then((response) => {
+        this.students = response.data;
+      });
+    },
     selectStudents(id) {
       if (this.selectedStudentIDs.includes(id)) {
         this.selectedStudentIDs.splice(this.selectedStudentIDs.indexOf(id), 1);
@@ -97,28 +150,44 @@ export default {
       }
     },
     selectClass() {
-      return 0;
+      this.classInfoStudent.classId = this.classInfo.id;
+      this.rosterIds = [];
+      this.getClassRoster();
     },
     addStudentToClass() {
-      teacherService
-        .addStudentToClass(this.classInfoStudent)
-        .then((response) => {
-          if (response.status === 201) {
-            this.classInfoStudent.studentId = "";
-          }
-        });
+      this.selectedStudentIDs.forEach((selectedId) => {
+        this.classInfoStudent.studentId = selectedId;
+        teacherService
+          .addStudentToClass(this.classInfoStudent)
+          .then((response) => {
+            if (response.status === 201) {
+              this.classInfoStudent.studentId = "";
+              this.getClassRoster();
+            }
+          });
+      });
+      this.selectedStudentIDs = [];
+    },
+    getClassRoster() {
+      teacherService.getStudentsInClass(this.classInfo.id).then((response) => {
+        this.classRoster = response.data;
+      });
     },
   },
   created() {
-    studentService.getStudentProfiles().then((response) => {
-      this.students = response.data;
+    teacherService.getOwnClasses().then((response) => {
+      this.classes = response.data;
     });
-      teacherService.getOwnClasses().then((response) => {
-          this.classes = response.data;
-  });
   },
   computed: {
+    getRosterIds() {
+      this.classRoster.forEach((studentInRoster) => {
+        this.rosterIds.push(studentInRoster.id);
+      });
+      return this.rosterIds;
+    },
     filteredList() {
+      this.getAvailableStudents();
       let filteredStudents = this.students;
       if (this.filter.firstName != "") {
         filteredStudents = filteredStudents.filter((student) =>
@@ -137,6 +206,15 @@ export default {
       if (this.filter.email != "") {
         filteredStudents = filteredStudents.filter((student) =>
           student.email.toLowerCase().includes(this.filter.email.toLowerCase())
+        );
+      }
+      let currentRoster = this.getRosterIds;
+      filteredStudents = filteredStudents.filter(
+        (student) => !currentRoster.includes(student.id)
+      );
+      if (this.filter.graduationYear != "") {
+        filteredStudents = filteredStudents.filter((student) =>
+          student.graduationYear.toString().includes(this.filter.graduationYear.toString())
         );
       }
       return filteredStudents;

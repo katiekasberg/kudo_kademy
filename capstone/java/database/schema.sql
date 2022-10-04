@@ -119,12 +119,15 @@ CREATE TABLE kudo_student(
 --    CONSTRAINT PK_discipline_student PRIMARY KEY (id)
 --);
 --
---CREATE TABLE announcement(
---    id INTEGER NOT NULL,
---    school_id INTEGER NOT NULL,
---    message VARCHAR(255) NOT NULL,
---    admin_id INTEGER NOT NULL,
---    CONSTRAINT PK_announcement PRIMARY KEY (id)
---);
+CREATE TABLE announcement(
+    id SERIAL,
+    school_id INTEGER NOT NULL DEFAULT 1,
+    message VARCHAR(255) NOT NULL,
+    admin_id INTEGER NOT NULL,
+	time_stamp timestamp DEFAULT current_timestamp,
+    CONSTRAINT PK_announcement PRIMARY KEY (id),
+	CONSTRAINT FK_school_announcement_school_id FOREIGN KEY(school_id) REFERENCES school(id),
+    CONSTRAINT FK_profile_announcement_admin FOREIGN KEY(admin_id) REFERENCES profile(id)
+);
 
 COMMIT TRANSACTION;
