@@ -11,10 +11,14 @@ export default {
         return axios.get('/classes')
     },
 
-    addStudentToClass(){
-        return axios.post('/class-roster')
+    getStudentsInClass(classInfoId){
+        return axios.get(`/class-roster/${classInfoId}`)
     },
 
+    addStudentToClass(classInfoStudent){
+        return axios.post('/class-roster', classInfoStudent)
+    },
+    
     getStaffProfile(staffId){
         return axios.get(`/staff-profiles/${staffId}`)
     },
