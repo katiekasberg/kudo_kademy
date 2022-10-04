@@ -19,18 +19,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .container {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  grid-template-areas:
-    "Aside-nav Header "
-    "Aside-nav Welcome-User"
-    "Aside-nav Announcements "
-    "Aside-nav search";
 }
 
 .Header {
