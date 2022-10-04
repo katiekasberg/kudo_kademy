@@ -1,7 +1,9 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.exceptions.ClassInfoNotFoundException;
 import com.techelevator.model.profile.Profile;
 import com.techelevator.model.profile.StudentProfile;
+import com.techelevator.model.school.ClassDetail;
 import com.techelevator.model.school.ClassInfo;
 import com.techelevator.model.school.ClassInfoStudent;
 
@@ -23,13 +25,6 @@ public interface TeacherDao {
 
     List<StudentProfile> getStudentsInClass(int classId);
 
-    //TODO: add all my students (what does this mean?)
-    //get a list of all teachers
-    //search by name, class, grade, group, etc... to return a single student or list of students
-    //add positive behavior comments and rewards
-    //give house points for positive behaviors
-    //get the current house points
-    //create reports
-    //add disciplinary actions/behavior warning (OPTIONAL)
-    //set my notification setting (OPTIONAL)
+    ClassDetail getClassDetailsByClassId(int classId) throws ClassInfoNotFoundException;
+
 }

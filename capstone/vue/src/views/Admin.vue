@@ -2,11 +2,9 @@
   <body class="admin-home">
     <div class="Welcome-User">
       <h2>Welcome Administrator!</h2>
-      <h2>
-        <latest-announcement />
-      </h2>
     </div>
     <div class="component-forms">
+      <latest-announcement />
       <rewards />
     </div>
   </body>
@@ -84,7 +82,7 @@ img.logo {
   width: 200px;
   height: auto;
 }
-h1,
+
 h2 {
   display: grid;
   align-items: center;
@@ -92,7 +90,7 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  padding-right: 300px;
+  padding-right: 600px;
 }
 
 p {

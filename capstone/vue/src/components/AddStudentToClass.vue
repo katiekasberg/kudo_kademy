@@ -1,14 +1,12 @@
 <template>
   <div>
-    <form v-on:submit.prevent>
+    <form v-on:submit.prevent="addStudentToClass()">
       <label for="selectedClass">Select Class to Add Students:</label>
       <select
         v-model="classInfo.id"
         id="selectedClass"
         name="selectedClass"
-        v-on:click="
-          selectClass();
-        "
+        v-on:click="selectClass();$refs.classDetail.getClassDetails();"
       >
         <option
           v-for="classInfo in classes"
@@ -19,6 +17,11 @@
         </option>
       </select>
 
+      <class-detail
+        v-bind:classInfoId="parseInt(classInfo.id)"
+        ref="classDetail"
+        v-show="classInfo.id != ''"
+      />
       <table>
         <thead>
           <tr>
@@ -51,7 +54,11 @@
               <input type="text" id="emailFilter" v-model="filter.email" />
             </td>
             <td>
-              <input type="number" id="graduationFilter" v-model="filter.graduationYear" />
+              <input
+                type="number"
+                id="graduationFilter"
+                v-model="filter.graduationYear"
+              />
             </td>
           </tr>
 
@@ -72,9 +79,11 @@
           </tr>
         </tbody>
       </table>
-      <button type="submit" v-on:click="addStudentToClass()">Submit</button>
+      <button type="submit">Submit</button>
     </form>
-    <div><h3>Current Roster for Selected Class:</h3></div>
+
+    <div v-show="classInfo.id != ''">
+      <h3>Current Roster for Selected Class:</h3>
     <table>
       <thead>
         <tr>
@@ -95,21 +104,23 @@
         </tr>
       </tbody>
     </table>
-
+    </div>
   </div>
 </template>
  
 <script>
 import teacherService from "../services/TeacherService.js";
 import studentService from "../services/StudentService.js";
+import classDetail from "../components/ClassDetail.vue";
 
 export default {
   name: "add-student-to-class",
+  components: { classDetail },
   data() {
     return {
       classInfoStudent: {
-        classId: Number,
-        studentId: Number,
+        classId: "",
+        studentId: "",
       },
       filter: {
         id: "",
@@ -124,7 +135,7 @@ export default {
       classes: [],
       classRoster: [
         {
-          id: Number,
+          id: "",
           firstName: "",
           lastName: "",
           email: "",
@@ -134,6 +145,7 @@ export default {
         id: "",
         name: "",
       },
+      classInfoId: "",
     };
   },
   methods: {
@@ -151,6 +163,7 @@ export default {
     },
     selectClass() {
       this.classInfoStudent.classId = this.classInfo.id;
+      this.classInfoId = this.classInfo.id;
       this.rosterIds = [];
       this.getClassRoster();
     },
@@ -214,7 +227,9 @@ export default {
       );
       if (this.filter.graduationYear != "") {
         filteredStudents = filteredStudents.filter((student) =>
-          student.graduationYear.toString().includes(this.filter.graduationYear.toString())
+          student.graduationYear
+            .toString()
+            .includes(this.filter.graduationYear.toString())
         );
       }
       return filteredStudents;

@@ -1,9 +1,11 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.exceptions.ClassInfoNotFoundException;
 import com.techelevator.model.exceptions.ProfileNotFoundException;
 import com.techelevator.model.exceptions.StudentProfileNotFoundException;
 import com.techelevator.model.profile.Profile;
 import com.techelevator.model.profile.StudentProfile;
+import com.techelevator.model.school.ClassDetail;
 import com.techelevator.model.school.ClassInfo;
 import com.techelevator.model.school.ClassInfoStudent;
 import org.springframework.dao.DataAccessException;
@@ -95,6 +97,22 @@ public class JdbcTeacherDao implements TeacherDao {
         return studentsInClassList;
     }
 
+    @Override
+    public ClassDetail getClassDetailsByClassId(int classId) throws ClassInfoNotFoundException {
+        String sql =
+                "SELECT class_info.id, name, subject, class_info.teacher_id, first_name, last_name, email, school_id, description, period, start_time, end_time, school_year " +
+                        "FROM class_info " +
+                        "JOIN profile ON class_info.teacher_id = profile.id " +
+                        "WHERE class_info.id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, classId);
+
+        if (results.next()) {
+            return (mapRowToClassDetail(results));
+        }
+        throw new ClassInfoNotFoundException();
+    }
+
+
     private ClassInfo mapRowToClassInfo(SqlRowSet rs) {
         ClassInfo classInfo = new ClassInfo();
         classInfo.setId(rs.getInt("id"));
@@ -130,5 +148,23 @@ public class JdbcTeacherDao implements TeacherDao {
         studentProfile.setSchoolId(rs.getInt("school_id"));
         studentProfile.setGraduationYear(rs.getInt("graduation_year"));
         return studentProfile;
+    }
+
+    private ClassDetail mapRowToClassDetail(SqlRowSet rs){
+        ClassDetail classDetail = new ClassDetail();
+        classDetail.setId(rs.getInt("id"));
+        classDetail.setName(rs.getString("name"));
+        classDetail.setSubject(rs.getString("subject"));
+        classDetail.setTeacherId(rs.getInt("teacher_id"));
+        classDetail.setFirstName(rs.getString("first_name"));
+        classDetail.setLastName(rs.getString("last_name"));
+        classDetail.setEmail(rs.getString("email"));
+        classDetail.setSchoolId(rs.getInt("school_id"));
+        classDetail.setDescription(rs.getString("description"));
+        classDetail.setPeriod(rs.getString("period"));
+        classDetail.setStartTime(rs.getTime("start_time"));
+        classDetail.setEndTime(rs.getTime("end_time"));
+        classDetail.setSchoolYear(rs.getInt("school_year"));
+        return classDetail;
     }
 }
