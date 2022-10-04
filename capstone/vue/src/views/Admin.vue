@@ -3,6 +3,9 @@
     <nav-bar />
     <div class="Welcome-User">
       <h1>Welcome Administrator!</h1>
+      <h2>
+        <latest-announcement/>
+      </h2>
     </div>
     <div class="component-forms">
       <rewards />
@@ -11,13 +14,15 @@
 </template>
 
 <script>
+import LatestAnnouncement from '../components/LatestAnnouncement.vue';
 import Rewards from "../components/Rewards.vue";
 
 export default {
-  components: { Rewards },
+  components: { Rewards, LatestAnnouncement },
   name: "home",
 };
 </script>
+    
 
 <style>
 .container {
