@@ -29,8 +29,14 @@ export default {
   methods: {
     saveAnnouncement() {
       AdminService.createAnnouncement(this.newAnnouncement).then((response) => {
-        if (response.data === 201) {
+        if (response.status === 201) {
           this.newAnnouncement.message = "";
+          
+          if ( this.$store.state.user.authorities[0].name == "ROLE_TEACHER" ) {
+            this.$router.push({ name: "teacher" });
+          } else if ( this.$store.state.user.authorities[0].name == "ROLE_ADMIN" ) {
+            this.$router.push({ name: "admin" });
+          }
         }
       });
     },
