@@ -1,0 +1,230 @@
+<template>
+  <body>
+    <div class="home" v-show="this.$route.path == '/'">
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <button><a href="/">Home</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/login">Login</router-link>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">About us</a></button>
+            </li>
+            <li>
+              <button><a href="#">Contact us</a></button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div
+      class="teacher-nav"
+      v-show="$store.state.user.authorities[0].name === 'ROLE_TEACHER'"
+      style="display: inline"
+    >
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <button><a href="/">Home</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="#">My Profile</router-link>
+              </button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/SendKudos">Send Kudos</router-link>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Behavioral Report</a></button>
+            </li>
+            <li>
+              <button><a href="/searchbystudent">Search Students</a></button>
+            </li>
+            <li>
+              <button>
+                <a href="/makeannouncement">Make Announcements</a>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Add/Remove Student</a></button>
+            </li>
+            <li>
+              <button><a href="#">Classes</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/logout"> Logout </router-link>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+
+    <div
+      class="admin-nav"
+      v-show="$store.state.user.authorities[0].name === 'ROLE_ADMIN'"
+      style="display: inline"
+    >
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <button><a href="/">Home</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="#">My Profile</router-link>
+              </button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/SendKudos">Send Kudos</router-link>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Behavioral Report</a></button>
+            </li>
+            <li>
+              <button><a href="/searchbystudent">Search Students</a></button>
+            </li>
+            <li>
+              <button>
+                <a href="/createannouncement">Make Announcements</a>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Add/Remove Student</a></button>
+            </li>
+            <li>
+              <button><a href="#">Add/Remove Teacher</a></button>
+            </li>
+            <li>
+              <button><a href="/newkudotype">Set Kudo Values</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/logout"> Logout </router-link>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div
+      class="student-nav"
+      v-show="$store.state.user.authorities[0].name === 'ROLE_STUDENT'"
+    >
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <button><a href="/">Home</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link
+                  :to="{
+                    name: 'StudentProfile',
+                    params: { id: this.$store.state.user.id },
+                  }"
+                  >My Profile</router-link
+                >
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Kudo Report</a></button>
+            </li>
+            <li>
+              <button><a href="#">Leaderboard</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/rewards"> Kudo Values</router-link>
+              </button>
+            </li>
+
+            <li>
+              <button>
+                <router-link to="/logout"> Logout </router-link>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div
+      class="parent-nav"
+      v-show="$store.state.user.authorities[0].name === 'ROLE_PARENT'"
+    >
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <button><a href="/">Home</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="#">My Profile</router-link>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Student Report</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/rewards"> Kudo Values</router-link>
+              </button>
+            </li>
+            <li>
+              <button><a href="#">Contact Teacher</a></button>
+            </li>
+            <li>
+              <button>
+                <router-link to="/logout"> Logout </router-link>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </body>
+</template>
+<script>
+export default {
+  created() {
+    console.log(this.$store.state.user);
+    console.log(this.$store.state.user.authorities[0].name);
+  },
+};
+</script>
+
+<style scoped>
+button {
+  padding: 10px;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 10%;
+  border-color: orange;
+}
+aside {
+  display: grid;
+  position: fixed;
+  border-collapse: separate;
+  border-color: rgba(243, 1, 1, 0.815);
+  border-right: 1px solid rgb(211, 211, 211);
+  height: 100%;
+  width: 200px;
+  background-color: #ffc83c57;
+  opacity: 100%;
+}
+</style>

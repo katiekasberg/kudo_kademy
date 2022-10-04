@@ -17,5 +17,17 @@ export default {
 
     addStudentToClass(classInfoStudent){
         return axios.post('/class-roster', classInfoStudent)
+    },
+    
+    getStaffProfile(staffId){
+        return axios.get(`/staff-profiles/${staffId}`)
+    },
+
+    getTeacherClassesById(staffId){
+        return axios.get(`/staff-profiles/${staffId}/classes`)
+    },
+
+    addNewClass(newClass){
+        return axios.post('/classes', newClass);
     }
 }

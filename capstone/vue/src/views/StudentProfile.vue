@@ -1,26 +1,31 @@
 <template>
-  <div class="container">
-      <student-detail v-bind:studentId="parseInt($route.params.id)" />
+  <body>
+    <div class="container">
+      <student-detail v-bind:studentId="parseInt($route.params.id)" /><br />
+      <student-classes v-bind:studentId="parseInt($route.params.id)" /><br />
       <student-kudos v-bind:studentId="parseInt($route.params.id)" />
-      <student-classes v-bind:studentId="parseInt($route.params.id)" />
-  </div>
+    </div>
+  </body>
 </template>
 
 <script>
-import StudentClasses from '../components/StudentClasses.vue'
-import StudentDetail from '../components/StudentDetail.vue'
-import StudentKudos from '../components/StudentKudos.vue'
+import StudentClasses from "../components/StudentClasses.vue";
+import StudentDetail from "../components/StudentDetail.vue";
+import StudentKudos from "../components/StudentKudos.vue";
 
 export default {
-    name: "StudentProfile",
-    components: { StudentDetail, StudentKudos, StudentClasses },
-
-}
+  name: "StudentProfile",
+  components: { StudentDetail, StudentKudos, StudentClasses },
+};
 </script>
 
-<style>
-.container{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
+<style scoped>
+.container {
+  display: grid;
+  align-content: center;
+  margin-left: 200px;
+  grid-template-columns: 1fr 3fr;
+  width: 75%;
+  justify-content: flex-start;
 }
 </style>
