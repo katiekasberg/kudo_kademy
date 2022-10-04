@@ -9,6 +9,7 @@ import store from '../store/index'
 import Teacher from '../views/Teacher.vue'
 import SendKudos from '../views/SendKudos.vue'
 import Admin from '../views/Admin.vue'
+import AdminProfile from '../views/AdminProfile.vue'
 import Parent from '../views/Parent.vue'
 import Student from '../views/Student.vue'
 import StudentProfile from '../views/StudentProfile.vue'
@@ -122,6 +123,14 @@ const router = new Router({
       path: "/parent-profile/:id",
       name: "ParentProfile",
       component: ParentProfile,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/admin-profile/:id",
+      name: "AdminProfile",
+      component: AdminProfile,
       meta: {
         requiresAuth: true
       }
