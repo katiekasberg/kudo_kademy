@@ -1,11 +1,14 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.exceptions.ParentNotFoundException;
+import com.techelevator.model.profile.Parent;
 import com.techelevator.model.profile.Profile;
 import com.techelevator.model.profile.StudentProfile;
 import com.techelevator.model.school.ClassInfo;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -46,6 +49,22 @@ public class JdbcParentDao implements ParentDao {
         }
         return parentStudent;
     }
+
+    @Override
+    public Parent getParentById(int parentId) throws ParentNotFoundException {
+        String sql = "SELECT profile.id, first_name, last_name, email, image, phone_number, address " +
+                     "FROM profile " +
+                     "JOIN parent on parent.id = profile.id " +
+                     "WHERE profile.id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, parentId);
+
+        if(results.next()){
+            return mapRowToParentProfile(results);
+        }
+
+        throw new ParentNotFoundException();
+    }
+
     private StudentProfile mapRowToStudentProfile(SqlRowSet rs){
         StudentProfile studentProfile = new StudentProfile();
         studentProfile.setId(rs.getInt("id"));
@@ -57,5 +76,18 @@ public class JdbcParentDao implements ParentDao {
         studentProfile.setGraduationYear(rs.getInt("graduation_year"));
         return studentProfile;
     }
+
+    private Parent mapRowToParentProfile(SqlRowSet rs){
+        Parent parent = new Parent();
+        parent.setId(rs.getInt("id"));
+        parent.setFirstName(rs.getString("first_name"));
+        parent.setLastName(rs.getString("last_name"));
+        parent.setEmail(rs.getString("email"));
+        parent.setImage(rs.getString("image"));
+        parent.setPhoneNumber(rs.getString("phone_number"));
+        parent.setAddress(rs.getString("address"));
+        return parent;
     }
+
+}
 

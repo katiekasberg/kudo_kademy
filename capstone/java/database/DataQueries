@@ -32,6 +32,12 @@ FROM profile
 JOIN student on student.id = profile.id
 JOIN users on users.user_id = profile.id;
 
+--Get a parent profile by profile id
+SELECT profile.id, first_name, last_name, email, image, phone_number, address
+FROM profile
+JOIN parent on parent.id = profile.id
+WHERE profile.id = 1018;
+
 SELECT *
 FROM profile
 JOIN users on users.user_id = profile.id

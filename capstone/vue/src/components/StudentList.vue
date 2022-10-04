@@ -9,7 +9,7 @@
           <th>Class of:</th>
         </tr>
         <tr>
-          <td>
+          <td class="firstName">
             <input id="firstName" type="text" v-model="filter.firstName" />
           </td>
           <td>
@@ -20,13 +20,13 @@
           </td>
         </tr>
         <tr
-         
+          v-on:click="loadStudentDetail(student.id)"
           v-for="student in filteredList"
           v-bind:key="student.id"
           v-bind:value="student.id"
           class="col-centered"
         >
-          <td class="col-centered"  v-on:click="loadStudentDetail(student.id)">{{ student.firstName }}</td>
+          <td class="col-centered">{{ student.firstName }}</td>
           <td class="col-centered">{{ student.lastName }}</td>
           <td class="col-centered">{{ student.graduationYear }}</td>
         </tr>
@@ -116,8 +116,8 @@ body {
   color: black;
   border: black 5px;
 }
+.col-centered:hover{
+  color: blue;
+  font-weight: bold;
+}
 </style>
-
-
-
-<!-- <td class="col-centered">{{ student.firstName }}</td> -->

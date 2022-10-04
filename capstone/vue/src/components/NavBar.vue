@@ -237,4 +237,7 @@ aside {
   background-color: #ffc83c57;
   opacity: 100%;
 }
+a:hover {
+  color:blue;
+}
 </style>

@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.ParentDao;
 import com.techelevator.dao.UserDao;
+import com.techelevator.model.profile.Parent;
 import com.techelevator.model.profile.StudentProfile;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -42,5 +43,12 @@ public class ParentController {
         int parentId = userDao.findIdByUsername(principal.getName());
         return parentDao.myStudent(parentId);
     }
+
+    //get a parent profile by parent Id
+    @RequestMapping(path = "/parent-profile/{parentId}", method = RequestMethod.GET)
+    public Parent getParentProfileById(@PathVariable int parentId){
+        return parentDao.getParentById(parentId);
+    }
+
 
 }
