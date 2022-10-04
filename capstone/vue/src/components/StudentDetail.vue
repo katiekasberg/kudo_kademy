@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div id="profile-image">
-      <!-- <img v-bind:src="this.$store.state.activeStudentProfile.image" /> -->
-      <img src="../../resources/profile-icon.png" alt="" />
+      <img v-bind:src="this.$store.state.activeStudentProfile.image" />
+      <!-- <img src="../../resources/profile-icon.png" alt="" /> -->
     </div>
     <div class="student-profile">
       <h1>Student Profile</h1>

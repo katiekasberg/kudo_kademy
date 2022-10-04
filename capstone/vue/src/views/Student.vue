@@ -17,8 +17,7 @@
           <class-points-table />
           <grade-points-table />
         </div>
-        <div class="Class-points"></div>
-        <div>
+        <div class="Class-points">
           <h2>Latest Kudos Recognitions in your grade:</h2>
           <grade-kudos />
         </div>
@@ -37,9 +36,13 @@ export default {
 };
 </script>
 
-<style scope>
+<style>
 .container {
-  display: grid;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  /* display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr;
   gap: 0px 0px;
@@ -48,7 +51,12 @@ export default {
     "Aside-nav Header"
     "Aside-nav Welcome-User"
     "Aside-nav Announcements"
-    "Aside-nav House-Cup";
+    "Aside-nav House-Cup"; */
+}
+
+.House-Cup{
+  display:grid;
+  justify-items: center;
 }
 
 /* .Header {
@@ -66,11 +74,11 @@ export default {
 } */
 
 .Class-points {
-  grid-area: Class-points;
-  justify-items: center;
+  display: grid;
+  justify-content: center;
 }
 
-.app-name {
+/* .app-name {
   grid-area: app-name;
   justify-items: center;
 }
@@ -83,6 +91,7 @@ export default {
   grid-area: Welcome-User;
 }
 
+
 .House-Cup {
   grid-area: House-Cup;
   justify-items: center;
@@ -90,7 +99,7 @@ export default {
 
 .Announcements {
   grid-area: Announcements;
-}
+} */
 
 img.logo {
   margin: auto;
@@ -110,13 +119,13 @@ h2 {
   text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
     0px -1px 0px black;
 }
-p {
+/* p {
   display: grid;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
-}
+} */
 
 aside {
   position: fixed;
@@ -158,7 +167,7 @@ li {
   width: 95%;
 }
 
-.home {
+/* .home {
   background: linear-gradient(
     360deg,
     white,
@@ -167,17 +176,17 @@ li {
     white
   );
   display: 100%;
-}
-button {
+} */
+/* button {
   padding: 10px;
   margin-left: 20px;
   background-color: rgb(253, 223, 158);
   border-radius: 10%;
   border-color: orange;
-}
-a {
+} */
+/* a {
   text-decoration: none;
   color: rgb(83, 40, 3);
   font-weight: bold;
-}
+} */
 </style>

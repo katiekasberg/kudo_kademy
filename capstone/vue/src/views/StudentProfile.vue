@@ -21,7 +21,8 @@ export default {
 
 <style scoped>
 .container {
-  display: grid;
+  display:flex;
+  flex-direction: column;
   align-content: center;
   margin-left: 200px;
   grid-template-columns: 1fr 3fr;

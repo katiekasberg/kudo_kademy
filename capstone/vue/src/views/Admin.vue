@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body class="admin-home">
     <nav-bar />
     <div class="Welcome-User">
       <h1>Welcome Administrator!</h1>
@@ -24,16 +24,18 @@ export default {
 </script>
     
 
-<style>
+<style >
 .container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr;
   gap: 0px 0px;
-  grid-auto-flow: row;
+  /* grid-auto-flow: row; */
 }
 
-.Header {
+.admin-home{
+  display: grid;
+}
+/* .Header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -45,18 +47,18 @@ export default {
     "logo logo logo";
   grid-area: Header;
   justify-content: center;
-}
+} */
 
-.app-name {
+/* .app-name {
   grid-area: app-name;
   justify-items: center;
   text-decoration: underline;
   color: darkorange;
-}
+} */
 
-.logo {
+/* .logo {
   grid-area: logo;
-}
+} */
 
 .Welcome-User {
   grid-area: Welcome-User;
@@ -69,7 +71,7 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#makeAnnouncement {
+/* #makeAnnouncement {
   margin: auto;
   display: block;
   width: 50%;
@@ -82,7 +84,7 @@ export default {
 #searchStudent {
   margin: auto;
   display: block;
-}
+} */
 
 .submitBtn {
   margin: auto;
