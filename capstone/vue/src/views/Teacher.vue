@@ -1,10 +1,16 @@
 <template>
   <body>
     <h1>Welcome Teacher!</h1>
+    <latest-announcement/>
   </body>
 </template>
 
 <script>
+import LatestAnnouncement from '../components/LatestAnnouncement.vue'
+export default {
+  components: { LatestAnnouncement },
+}
+
 </script>
 
 <style scoped>

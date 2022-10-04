@@ -2,6 +2,9 @@
   <body class="admin-home">
     <div class="Welcome-User">
       <h2>Welcome Administrator!</h2>
+      <h2>
+        <latest-announcement />
+      </h2>
     </div>
     <div class="component-forms">
       <rewards />
@@ -10,13 +13,15 @@
 </template>
 
 <script>
+import LatestAnnouncement from "../components/LatestAnnouncement.vue";
 import Rewards from "../components/Rewards.vue";
 
 export default {
-  components: { Rewards },
+  components: { Rewards, LatestAnnouncement },
   name: "home",
 };
 </script>
+    
 
 <style >
 .container {
