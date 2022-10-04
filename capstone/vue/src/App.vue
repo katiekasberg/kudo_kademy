@@ -55,9 +55,4 @@ a {
   opacity: 100%;
   font-weight: bold;
 }
-h1 {
-  justify-content: center;
-  align-content: center;
-  padding-left: 300px;
-}
 </style>
