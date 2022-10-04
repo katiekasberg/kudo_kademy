@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style >
+<style>
 #app {
   background-color: white;
   display: grid;
