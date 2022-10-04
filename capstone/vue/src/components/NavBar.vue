@@ -18,7 +18,8 @@
                     name: 'TeacherProfile',
                     params: { id: $store.state.user.id },
                   }"
-                  >My Profile</router-link>
+                  >My Profile</router-link
+                >
               </button>
             </li>
             <li>
@@ -45,7 +46,7 @@
             <li>
               <button>
                 <router-link to="/manage-classes">Manage Classes</router-link>
-                </button>
+              </button>
             </li>
             <li>
               <button><a href="#">Classes</a></button>
@@ -78,7 +79,8 @@
                     name: 'AdminProfile',
                     params: { id: this.$store.state.user.id },
                   }"
-                  >My Profile</router-link>
+                  >My Profile</router-link
+                >
               </button>
             </li>
             <li>
@@ -105,11 +107,11 @@
             <li>
               <button>
                 <router-link to="/manage-classes">Manage Classes</router-link>
-                </button>
+              </button>
             </li>
-            <li>
+            <!-- <li>
               <button><a href="#">Add/Remove Teacher</a></button>
-            </li>
+            </li> -->
             <li>
               <button><a href="/newkudotype">Set Kudo Values</a></button>
             </li>
@@ -139,7 +141,8 @@
                     name: 'StudentProfile',
                     params: { id: this.$store.state.user.id },
                   }"
-                  >My Profile</router-link>
+                  >My Profile</router-link
+                >
               </button>
             </li>
             <li>
@@ -180,7 +183,8 @@
                     name: 'ParentProfile',
                     params: { id: this.$store.state.user.id },
                   }"
-                  >My Profile</router-link>
+                  >My Profile</router-link
+                >
               </button>
             </li>
             <li>

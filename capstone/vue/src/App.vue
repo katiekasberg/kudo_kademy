@@ -27,6 +27,9 @@ export default {
 <style >
 #app {
   background-color: white;
+  display: grid;
+  align-content: center;
+  justify-content: center;
 }
 
 body {
@@ -51,5 +54,10 @@ a {
   color: black;
   opacity: 100%;
   font-weight: bold;
+}
+h1 {
+  justify-content: center;
+  align-content: center;
+  padding-left: 300px;
 }
 </style>
