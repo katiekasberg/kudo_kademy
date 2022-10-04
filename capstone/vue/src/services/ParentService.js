@@ -1,5 +1,9 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-// export default {
+export default {
+    //get parent profile by id
+    getParentProfile(parentId){
+        return axios.get(`/parent-profile/${parentId}`);
+    },
     
-// }
+}
