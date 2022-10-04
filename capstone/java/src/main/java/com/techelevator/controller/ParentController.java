@@ -44,6 +44,13 @@ public class ParentController {
         return parentDao.myStudent(parentId);
     }
 
+    //List all students associated with a parentId
+    @RequestMapping(path = "/parent-profile/{parentId}/student", method = RequestMethod.GET)
+    public List<StudentProfile> getListofStudentsByParentId(@PathVariable int parentId){
+        return parentDao.myStudent(parentId);
+    }
+
+
     //get a parent profile by parent Id
     @RequestMapping(path = "/parent-profile/{parentId}", method = RequestMethod.GET)
     public Parent getParentProfileById(@PathVariable int parentId){
