@@ -29,17 +29,19 @@ export default {
 
 <style scoped>
 .container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr 1fr;
-  gap: 0px 0px;
+  display: flex;
+  flex-direction: column;
+  
+  /* grid-template-columns: 1fr 3fr;
+  grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr 1fr; */
+  /* gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "Aside-nav Header "
     "Aside-nav Welcome-User"
     "Aside-nav Announcements"
     "Aside-nav View-Report"
-    "Aside-nav House-Cup";
+    "Aside-nav House-Cup"; */
 }
 
 /* .Header {
@@ -89,7 +91,7 @@ img.logo {
 }
 
 h2 {
-  color: black;
+  color: darkorange;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
 }

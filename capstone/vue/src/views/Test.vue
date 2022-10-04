@@ -12,6 +12,7 @@ export default {
   components: { MyStudent },
 };
 </script>
+
 <style scoped>
 body {
   background-color: white;

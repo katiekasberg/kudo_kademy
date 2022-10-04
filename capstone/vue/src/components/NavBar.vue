@@ -35,7 +35,12 @@
             </li>
             <li>
               <button>
-                <router-link to="#">My Profile</router-link>
+                <router-link
+                  :to="{
+                    name: 'TeacherProfile',
+                    params: { id: $store.state.user.id },
+                  }"
+                  >My Profile</router-link>
               </button>
             </li>
             <li>
@@ -137,8 +142,7 @@
                     name: 'StudentProfile',
                     params: { id: this.$store.state.user.id },
                   }"
-                  >My Profile</router-link
-                >
+                  >My Profile</router-link>
               </button>
             </li>
             <li>
@@ -174,7 +178,12 @@
             </li>
             <li>
               <button>
-                <router-link to="#">My Profile</router-link>
+                <router-link
+                  :to="{
+                    name: 'ParentProfile',
+                    params: { id: this.$store.state.user.id },
+                  }"
+                  >My Profile</router-link>
               </button>
             </li>
             <li>
