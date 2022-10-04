@@ -2,57 +2,6 @@
   <body>
     <div class="home">
       <div class="container">
-        <div class="Aside-nav">
-          <aside>
-            <nav>
-              <ul>
-                <li>
-                  <button><a href="#">Home </a></button>
-                </li>
-                <li>
-                  <button><a href="#">Kudo Report</a></button>
-                </li>
-                <li>
-                  <button><a href="#">Leaderboard</a></button>
-                </li>
-                <li>
-                  <button>
-                    <router-link to="/rewards"> Kudo Values</router-link>
-                  </button>
-                </li>
-                <li>
-                  <button>
-                    <router-link
-                      :to="{
-                        name: 'StudentProfile',
-                        params: { id: this.$store.state.user.id },
-                      }"
-                      >Profile</router-link
-                    >
-                  </button>
-                </li>
-                <li>
-                  <button>
-                    <router-link to="/logout"> Logout </router-link>
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </aside>
-        </div>
-        <div class="Header">
-          <div class="app-name">
-            <h1>School Communication</h1>
-          </div>
-          <div class="logo">
-            <img
-              class="logo"
-              src="../../resources/school-icon-9.png"
-              alt="school-logo"
-            />
-            <p>You must be authenticated to see this</p>
-          </div>
-        </div>
         <div class="Welcome-User">
           <h1>
             Welcome {{ this.$store.state.activeStudentProfile.firstName }}

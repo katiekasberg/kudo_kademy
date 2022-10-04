@@ -1,15 +1,28 @@
 <template>
-  <div class="student-profile">
-    <h1>Student Profile</h1>
-    <div id="profileInfo">
-      <p id="first-name">First Name: {{ this.$store.state.activeStudentProfile.firstName }}</p>
-      <p id="last-name">Last Name: {{ this.$store.state.activeStudentProfile.lastName }}</p>
-      <p id="school">School: {{ this.$store.state.activeStudentProfile.schoolId }}</p>
-      <p id="graduation-year">Class Of: {{ this.$store.state.activeStudentProfile.graduationYear }}</p>
-      <p id="email">Email Address: {{ this.$store.state.activeStudentProfile.email }}</p>
+  <div class="container">
+    <div id="profile-image">
+      <!-- <img v-bind:src="this.$store.state.activeStudentProfile.image" /> -->
+      <img src="../../resources/profile-icon.png" alt="" />
     </div>
-    <div id="profileImage">
-      <img v-bind:src="this.$store.state.activeStudentProfile.image" />
+    <div class="student-profile">
+      <h1>Student Profile</h1>
+      <div id="profileInfo">
+        <p id="first-name">
+          First Name: {{ this.$store.state.activeStudentProfile.firstName }}
+        </p>
+        <p id="last-name">
+          Last Name: {{ this.$store.state.activeStudentProfile.lastName }}
+        </p>
+        <p id="school">
+          School: {{ this.$store.state.activeStudentProfile.schoolId }}
+        </p>
+        <p id="graduation-year">
+          Class Of: {{ this.$store.state.activeStudentProfile.graduationYear }}
+        </p>
+        <p id="email">
+          Email Address: {{ this.$store.state.activeStudentProfile.email }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -40,16 +53,21 @@ export default {
 };
 </script>
 
-<style>
-.student-profile {
-  display: grid;
-  justify-content: center;
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.657);
+  padding-right: 136px;
 }
-
 img {
-  display: grid;
-  width: 50%;
-  justify-items: center;
-  justify-content: center;
+  align-content: flex-start;
+  border-radius: 50%;
+  justify-content: right;
+  align-items: right;
+  margin-left: 50px;
+  height: 200px;
+  width: 200px;
+  image-rendering: auto;
 }
 </style>

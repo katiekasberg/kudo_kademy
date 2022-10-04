@@ -1,65 +1,6 @@
 <template>
   <body>
-    <div class="container">
-      <aside>
-        <nav>
-          <ul>
-            <li>
-              <button><a href="#">Home</a></button>
-            </li>
-            <li>
-              <button>
-                <router-link to="/SendKudos">Send Kudos</router-link>
-              </button>
-            </li>
-            <li>
-              <button><a href="#">Behavioral Report</a></button>
-            </li>
-            <li>
-              <button><a href="/searchbystudent">Search Students</a></button>
-            </li>
-            <li>
-              <button><a href="#">Make Announcements</a></button>
-            </li>
-            <li>
-              <button><a href="#">Add/Remove Student</a></button>
-            </li>
-            <li>
-              <button><a href="#">Classes</a></button>
-            </li>
-            <li>
-              <button>
-                <router-link to="/logout"> Logout </router-link>
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
-    <div class="Header">
-      <div class="app-name">
-        <h1>School Communication</h1>
-      </div>
-      <div class="logo">
-        <img
-          class="logo"
-          src="../../resources/school-icon-9.png"
-          alt="school-logo"
-        />
-      </div>
-    </div>
-    <div class="Welcome-User">
-      <h1>Welcome Teacher!</h1>
-    </div>
-    <div class="Announcements">
-      <h3>Create an Announcements</h3>
-      <input
-        type="text"
-        id="makeAnnouncement"
-        placeholder="Enter Announcement"
-      />
-      <button type="submit" class="submitBtn">Submit</button>
-    </div>
+    <h1>Welcome Teacher!</h1>
   </body>
 </template>
 
@@ -156,43 +97,6 @@ h2 {
   letter-spacing: 2px;
 }
 
-p {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgba(216, 150, 69, 0.644);
-}
-
-aside {
-  display: grid;
-  position: fixed;
-  border-collapse: separate;
-  border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid rgb(211, 211, 211);
-  height: 100%;
-  width: 200px;
-  background-color: #ffc83c57;
-  opacity: 100%;
-}
-
-ul {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-ul > li {
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  border-color: rgba(0, 173, 238, 0.4);
-  padding: 15px;
-
-  list-style: none;
-  width: 95%;
-}
 body {
   background: linear-gradient(
     360deg,
@@ -201,19 +105,5 @@ body {
     rgb(253, 223, 158),
     white
   );
-}
-button {
-  padding: 10px;
-  margin-left: 20px;
-  background-color: white;
-  border-radius: 10%;
-  border-color: orange;
-  opacity: 100%;
-}
-a {
-  text-decoration: none;
-  color: black;
-  opacity: 100%;
-  font-weight: bold;
 }
 </style>

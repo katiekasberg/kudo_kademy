@@ -1,13 +1,13 @@
 <template>
   <div class="student-kudos">
-    <p id="student-points">Current Student Points: {{this.totalPoints}} </p>
+    <p id="student-points">Current Student Points: {{ this.totalPoints }}</p>
     <table class="list-kudos">
       <tr>
         <th>Kudo Id</th>
-        <th>Awarded By </th>
-        <th>Kudo Type: </th>
-        <th>Points </th>
-        <th>Comments </th>
+        <th>Awarded By</th>
+        <th>Kudo Type:</th>
+        <th>Points</th>
+        <th>Comments</th>
       </tr>
       <tr
         v-for="kudo in this.$store.state.studentKudos"
@@ -15,7 +15,7 @@
         v-bind:value="kudo.id"
       >
         <td>{{ kudo.id }}</td>
-        <td>{{ kudo.firstName}} {{kudo.lastName}}</td>
+        <td>{{ kudo.firstName }} {{ kudo.lastName }}</td>
         <td>{{ kudo.kudoTypeName }}</td>
         <td>{{ kudo.kudoTypeValue }}</td>
         <td>{{ kudo.message }}</td>
@@ -26,11 +26,11 @@
 
 <script>
 import kudoService from "../services/KudosService";
-import PointService from '../services/PointService';
+import PointService from "../services/PointService";
 export default {
   name: "StudentKudos",
   props: {
-    studentId: Number
+    studentId: Number,
   },
   data() {
     return {
@@ -41,16 +41,13 @@ export default {
   },
   methods: {
     getKudosByStudentId() {
-      kudoService
-        .getKudosByStudentId(this.studentId)
-        .then((response) => {
-          this.$store.commit("SET_STUDENT_KUDOS", response.data);
-        });
+      kudoService.getKudosByStudentId(this.studentId).then((response) => {
+        this.$store.commit("SET_STUDENT_KUDOS", response.data);
+      });
     },
 
     getCurrentScore() {
-      PointService.getPointsByStudentId(this.studentId)
-      .then((response) => {
+      PointService.getPointsByStudentId(this.studentId).then((response) => {
         this.totalPoints = response.data;
       });
     },
@@ -63,4 +60,21 @@ export default {
 </script>
 
 <style>
+.student-kudos {
+  display: flexbox;
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.657);
+  margin-left: 200px;
+  padding-left: 75px;
+}
+td {
+  background-color: white;
+}
+tr {
+  background-color: white;
+}
+
+th {
+  background-color: white;
+}
 </style>

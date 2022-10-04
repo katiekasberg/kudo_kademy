@@ -1,33 +1,55 @@
 <template>
-  <div id="app">
+  <body>
     <div id="nav">
-      <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp; -->
-      <router-link
-        v-bind:to="{ name: 'logout' }"
-        v-if="$store.state.token != ''"
-        >Logout</router-link
-      >
-      <!-- <router-link
-        v-bind:to="{ name: 'Teacher' }"
-        v-if="$store.state.token != ''"
-      >
-        Teacher View
-      </router-link>
-      <router-link
-        v-bind:to="{ name: 'SendKudos' }"
-        v-if="$store.state.token != ''"
-        >Send Kudos</router-link
-      > -->
+      <nav-bar />
     </div>
-    <router-view />
-  </div>
+    <div id="app">
+      <h1>School Communication</h1>
+      <img
+        class="logo"
+        src="../resources/school-icon-9.png"
+        alt="school-logo"
+      />
+
+      <router-view />
+    </div>
+  </body>
 </template>
 
-<style scoped>
-  #nav{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    
-  }
+<script>
+import NavBar from "./components/NavBar.vue";
+
+export default {
+  components: { NavBar },
+};
+</script>
+
+<style >
+#app {
+  background-color: white;
+}
+
+body {
+  background: linear-gradient(
+    360deg,
+    white,
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
+  );
+}
+.nav {
+  display: inline-flex;
+  float: left;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  justify-items: flex-start;
+}
+a {
+  text-decoration: none;
+  color: black;
+  opacity: 100%;
+  font-weight: bold;
+}
 </style>

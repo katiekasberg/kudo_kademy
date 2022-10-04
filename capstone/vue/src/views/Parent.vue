@@ -1,46 +1,6 @@
 <template>
   <div class="home">
     <div class="container">
-      <div class="Aside-nav">
-        <aside>
-          <nav>
-            <ul>
-              <li>
-                <button><a href="#">Home</a></button>
-              </li>
-              <li>
-                <button><a href="#">Student Report</a></button>
-              </li>
-              <li>
-                <button>
-                    <router-link to="/rewards"> Kudo Values</router-link>
-                    </button>
-              </li>
-              <li>
-                <button><a href="#">Contact Teacher</a></button>
-              </li>
-              <li>
-                <button>
-                  <router-link to="/logout"> Logout </router-link>
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-      <div class="Header">
-        <div class="app-name">
-          <h1>School Communication</h1>
-        </div>
-        <div class="logo">
-          <img
-            class="logo"
-            src="../../resources/school-icon-9.png"
-            alt="school-logo"
-          />
-          <p>You must be authenticated to see this</p>
-        </div>
-      </div>
       <div class="Welcome-User">
         <h1>Welcome Parent!</h1>
       </div>
@@ -52,9 +12,9 @@
         <student-list />
       </div>
       <div class="House-Cup">
-          <h2>Leaderboards</h2>
-           <class-points-table/>
-           <grade-points-table/>
+        <h2>Leaderboards</h2>
+        <class-points-table />
+        <grade-points-table />
       </div>
     </div>
   </div>

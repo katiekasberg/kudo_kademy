@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <table>
       <thead>
         <tr>
@@ -37,5 +37,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.container {
+  display: flexbox;
+}
 </style>
