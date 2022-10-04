@@ -1,33 +1,36 @@
 import axios from 'axios';
 
 export default {
-    
-    
+
     teacher() {
         return axios.get('/teacher')
     },
 
-    getOwnClasses(){
+    getOwnClasses() {
         return axios.get('/classes')
     },
 
-    getStudentsInClass(classInfoId){
+    getStudentsInClass(classInfoId) {
         return axios.get(`/class-roster/${classInfoId}`)
     },
 
-    addStudentToClass(classInfoStudent){
+    addStudentToClass(classInfoStudent) {
         return axios.post('/class-roster', classInfoStudent)
     },
-    
-    getStaffProfile(staffId){
+
+    getStaffProfile(staffId) {
         return axios.get(`/staff-profiles/${staffId}`)
     },
 
-    getTeacherClassesById(staffId){
+    getTeacherClassesById(staffId) {
         return axios.get(`/staff-profiles/${staffId}/classes`)
     },
 
-    addNewClass(newClass){
+    addNewClass(newClass) {
         return axios.post('/classes', newClass);
+    },
+
+    getClassDetailByClassId(classInfoId) {
+        return axios.get(`/classes/${classInfoId}`)
     }
 }

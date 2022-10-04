@@ -180,7 +180,7 @@ export default {
       student: {
         id: Number,
         schoolId: Number,
-        graduationYear: Number,
+        graduationYear: '',
       },
       parent: {
         id: Number,
