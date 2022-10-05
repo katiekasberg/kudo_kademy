@@ -39,7 +39,7 @@ h1 {
 }
 img {
   display: grid;
-  padding-left: 350px;
+  padding-left: 550px;
   height: 150px;
   width: auto;
 }
