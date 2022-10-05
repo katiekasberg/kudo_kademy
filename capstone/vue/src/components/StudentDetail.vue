@@ -59,6 +59,7 @@ export default {
   flex-direction: row;
   background-color: rgba(255, 255, 255, 0.657);
   padding-right: 136px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 img {
   align-content: flex-start;
