@@ -2,8 +2,10 @@
   <body>
     <div>
       <table class="student-list">
-        <p>Search by Student</p>
-        <tr>
+
+        <th colspan="3">Search by Student</th>
+
+        <tr class="header-table">
           <th>First Name:</th>
           <th>Last Name:</th>
           <th>Class of:</th>
@@ -89,25 +91,30 @@ export default {
 </script>
 <style scoped>
 .student-list {
-  display: grid;
+  /* display: grid;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   border-block: black 5px;
 }
+.header-table{
+  text-align: center;
+}
 th {
   padding-right: 100px;
+  text-align: center;
 }
 p {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  display: block;
 }
 .col-centered {
   margin: 0 auto;
   float: none;
-  padding-right: 115px;
+  /* padding-right: 115px; */
 }
 body {
   padding: 10px;

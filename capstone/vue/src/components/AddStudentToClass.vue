@@ -6,7 +6,7 @@
         v-model="classInfo.id"
         id="selectedClass"
         name="selectedClass"
-        v-on:click="selectClass();$refs.classDetail.getClassDetails();"
+        v-on:change="selectClass()"
       >
         <option
           v-for="classInfo in classes"
@@ -19,7 +19,6 @@
 
       <class-detail
         v-bind:classInfoId="parseInt(classInfo.id)"
-        ref="classDetail"
         v-show="classInfo.id != ''"
       />
       <table>
@@ -84,26 +83,26 @@
 
     <div v-show="classInfo.id != ''">
       <h3>Current Roster for Selected Class:</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr
-          v-for="classRosterStudent in classRoster"
-          v-bind:key="classRosterStudent.id"
-        >
-          <td>{{ classRosterStudent.firstName }}</td>
-          <td>{{ classRosterStudent.lastName }}</td>
-          <td>{{ classRosterStudent.email }}</td>
-        </tr>
-      </tbody>
-    </table>
+        <tbody>
+          <tr
+            v-for="classRosterStudent in classRoster"
+            v-bind:key="classRosterStudent.id"
+          >
+            <td>{{ classRosterStudent.firstName }}</td>
+            <td>{{ classRosterStudent.lastName }}</td>
+            <td>{{ classRosterStudent.email }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -149,9 +148,18 @@ export default {
     };
   },
   methods: {
+    getRosterIds() {
+      this.rosterIds = [];
+      this.classRoster.forEach((studentInRoster) => {
+        this.rosterIds.push(studentInRoster.id);
+      });
+      return this.rosterIds;
+    },
     getAvailableStudents() {
       studentService.getStudentProfiles().then((response) => {
-        this.students = response.data;
+        if (response.status === 200) {
+          this.students = response.data;
+        }
       });
     },
     selectStudents(id) {
@@ -163,9 +171,9 @@ export default {
     },
     selectClass() {
       this.classInfoStudent.classId = this.classInfo.id;
-      this.classInfoId = this.classInfo.id;
       this.rosterIds = [];
       this.getClassRoster();
+      this.getRosterIds();
     },
     addStudentToClass() {
       this.selectedStudentIDs.forEach((selectedId) => {
@@ -183,22 +191,20 @@ export default {
     },
     getClassRoster() {
       teacherService.getStudentsInClass(this.classInfo.id).then((response) => {
-        this.classRoster = response.data;
+        if (response.status === 200) {
+          this.classRoster = response.data;
+        }
       });
     },
   },
   created() {
     teacherService.getOwnClasses().then((response) => {
-      this.classes = response.data;
+      if (response.status === 200) {
+        this.classes = response.data;
+      }
     });
   },
   computed: {
-    getRosterIds() {
-      this.classRoster.forEach((studentInRoster) => {
-        this.rosterIds.push(studentInRoster.id);
-      });
-      return this.rosterIds;
-    },
     filteredList() {
       this.getAvailableStudents();
       let filteredStudents = this.students;
@@ -221,10 +227,6 @@ export default {
           student.email.toLowerCase().includes(this.filter.email.toLowerCase())
         );
       }
-      let currentRoster = this.getRosterIds;
-      filteredStudents = filteredStudents.filter(
-        (student) => !currentRoster.includes(student.id)
-      );
       if (this.filter.graduationYear != "") {
         filteredStudents = filteredStudents.filter((student) =>
           student.graduationYear
@@ -232,6 +234,10 @@ export default {
             .includes(this.filter.graduationYear.toString())
         );
       }
+      let currentRoster = this.getRosterIds();
+      filteredStudents = filteredStudents.filter(
+        (student) => !currentRoster.includes(student.id)
+      );
       return filteredStudents;
     },
   },

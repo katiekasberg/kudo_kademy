@@ -10,7 +10,6 @@
         src="../resources/school-icon-9.png"
         alt="school-logo"
       />
-
       <router-view />
     </div>
   </body>
@@ -24,23 +23,27 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 #app {
   background-color: white;
   display: grid;
   align-content: center;
   justify-content: center;
 }
-
-body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
+h1 {
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorange;
+  align-content: center;
+  justify-content: center;
 }
+img {
+  display: grid;
+  padding-left: 550px;
+  height: 150px;
+  width: auto;
+}
+
 .nav {
   display: inline-flex;
   float: left;

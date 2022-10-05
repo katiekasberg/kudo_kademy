@@ -59,7 +59,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .student-kudos {
   display: flexbox;
   align-content: center;

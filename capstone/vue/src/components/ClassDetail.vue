@@ -50,6 +50,15 @@ export default {
         });
     },
   },
+  created() {
+    if (this.classInfoId) {
+      this.getClassDetails();
+    } else {
+      this.$watch("classInfoId", () => {
+        this.getClassDetails();
+      });
+    }
+  },
 };
 </script>
 
