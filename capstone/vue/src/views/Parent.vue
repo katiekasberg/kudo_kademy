@@ -11,7 +11,7 @@
       </div>
       <div class="View-Report">
         <h2>View Student Report</h2>
-        <student-list />
+        
       </div>
       <div class="House-Cup">
         <h2>Leaderboards</h2>
@@ -24,12 +24,11 @@
 
 <script>
 import LatestAnnouncement from '../components/LatestAnnouncement.vue';
-import StudentList from "../components/StudentList.vue";
 import ClassPointsTable from '../components/ClassPointsTable.vue';
 import GradePointsTable from '../components/GradePointsTable.vue'
 
 export default {
-  components: { StudentList, LatestAnnouncement, ClassPointsTable, GradePointsTable},
+  components: { LatestAnnouncement, ClassPointsTable, GradePointsTable},
 };
 </script>
 
