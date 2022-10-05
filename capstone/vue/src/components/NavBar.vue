@@ -48,9 +48,9 @@
                 <router-link to="/manage-classes">Manage Classes</router-link>
               </button>
             </li>
-            <li>
+            <!-- <li>
               <button><a href="#">Classes</a></button>
-            </li>
+            </li> -->
             <li>
               <button>
                 <router-link to="/logout"> Logout </router-link>
@@ -145,12 +145,12 @@
                 >
               </button>
             </li>
-            <li>
+            <!-- <li>
               <button><a href="#">Kudo Report</a></button>
             </li>
             <li>
               <button><a href="#">Leaderboard</a></button>
-            </li>
+            </li> -->
             <li>
               <button>
                 <router-link to="/rewards"> Kudo Values</router-link>
@@ -187,17 +187,17 @@
                 >
               </button>
             </li>
-            <li>
+            <!-- <li>
               <button><a href="#">Student Report</a></button>
-            </li>
+            </li> -->
             <li>
               <button>
                 <router-link to="/rewards"> Kudo Values</router-link>
               </button>
             </li>
-            <li>
+            <!-- <li>
               <button><a href="#">Contact Teacher</a></button>
-            </li>
+            </li> -->
             <li>
               <button>
                 <router-link to="/logout"> Logout </router-link>
