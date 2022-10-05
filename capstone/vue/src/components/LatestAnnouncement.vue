@@ -40,6 +40,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 255, 255, 0.657);
 }
 .top-text {
   display: grid;
