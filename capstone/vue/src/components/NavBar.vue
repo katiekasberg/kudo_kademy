@@ -221,7 +221,6 @@ export default {
 <style scoped>
 ul {
   list-style: none;
-  justfy-items: center;
 }
 button {
   padding: 10px;
