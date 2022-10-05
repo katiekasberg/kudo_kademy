@@ -34,7 +34,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .display-announce {
   display: grid;
   align-items: center;
