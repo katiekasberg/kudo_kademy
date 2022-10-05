@@ -38,7 +38,7 @@ export default {
         getGraduationYear(){
             StudentService.getStudentProfileById(this.$store.state.activeStudentId).then((response) => {
                 this.graduationYear = response.data.graduationYear;
-                    this.getKudosByGradYear();
+                this.getKudosByGradYear();
             });
         },
         
