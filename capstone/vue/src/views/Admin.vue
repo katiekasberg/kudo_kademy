@@ -21,52 +21,24 @@ export default {
 </script>
     
 
-<style >
+<style scoped>
 .container {
   display: grid;
   align-content: center;
   justify-content: center;
+
 }
 
 .admin-home {
   display: grid;
 }
-/* .Header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "app-name app-name app-name"
-    "logo logo logo"
-    "logo logo logo";
-  grid-area: Header;
-  justify-content: center;
-} */
 
 .Welcome-User {
   display: grid;
   justify-content: center;
   align-content: center;
-  padding-left: 300px;
+  padding-left: 00px;
 }
-
-/* #makeAnnouncement {
-  margin: auto;
-  display: block;
-  width: 50%;
-  height: 50%;
-  text-align: center;
-  padding-bottom: 100px;
-  margin-bottom: 5px;
-}
-
-#searchStudent {
-  margin: auto;
-  display: block;
-} */
-
 .submitBtn {
   margin: auto;
   display: block;
@@ -90,7 +62,6 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  padding-right: 600px;
 }
 
 p {
@@ -119,8 +90,8 @@ button {
 }
 
 .component-forms {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row-gap: 20px;
   align-content: center;
   justify-content: center;
   margin: auto;
@@ -128,4 +99,35 @@ button {
   padding-right: 600px;
   padding-top: 100px;
 }
+
+/* .Header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "app-name app-name app-name"
+    "logo logo logo"
+    "logo logo logo";
+  grid-area: Header;
+  justify-content: center;
+} */
+
+/* #makeAnnouncement {
+  margin: auto;
+  display: block;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  padding-bottom: 100px;
+  margin-bottom: 5px;
+}
+
+#searchStudent {
+  margin: auto;
+  display: block;
+} */
+
+
 </style>

@@ -55,7 +55,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .box {
   background-color: rgba(255, 255, 255, 0.657);
   padding-left: 50px;
