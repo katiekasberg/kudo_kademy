@@ -32,7 +32,7 @@ export default {
   justify-content: center;
 }
 
-body {
+/* body {
   background: linear-gradient(
     360deg,
     white,
@@ -40,7 +40,7 @@ body {
     rgb(253, 223, 158),
     white
   );
-}
+} */
 .nav {
   display: inline-flex;
   float: left;

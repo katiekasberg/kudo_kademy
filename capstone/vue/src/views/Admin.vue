@@ -90,7 +90,7 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-  padding-right: 600px;
+  padding-right: 300px;
 }
 
 p {
@@ -126,6 +126,6 @@ button {
   margin: auto;
   padding-left: 600px;
   padding-right: 600px;
-  padding-top: 100px;
+  padding-bottom: 200px;
 }
 </style>
