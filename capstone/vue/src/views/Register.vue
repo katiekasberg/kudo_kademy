@@ -148,7 +148,9 @@
           />
         </label>
 
-        <router-link :to="{ name: 'login' }">Have an account?</router-link>
+        <router-link :to="{ name: 'login' }"
+          ><h1>Have an account?</h1></router-link
+        >
         <button class="btn btn-lg btn-primary btn-block" type="submit">
           Create Account
         </button>
@@ -180,7 +182,7 @@ export default {
       student: {
         id: Number,
         schoolId: Number,
-        graduationYear: '',
+        graduationYear: "",
       },
       parent: {
         id: Number,
@@ -261,8 +263,7 @@ export default {
   grid-gap: 18px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22pt;
-  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
-    0px -1px 0px black;
+
   letter-spacing: 2px;
 }
 .form-control {
@@ -285,22 +286,35 @@ h1 {
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: darkorange;
+
   text-decoration: underline;
-  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
-    0px -1px 0px black;
+  font-size: small;
   letter-spacing: 2px;
+}
+h2 {
+  font-size: x-large;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: darkorange;
 }
 
 #register {
-  margin-left: 25%;
+  margin-left: 10%;
   margin-right: 25%;
   background-color: rgba(255, 255, 255, 0.616);
+  padding-left: 400px;
+  padding-right: 400px;
 }
 
 .sr-only {
-  color: darkorange;
+  display: grid;
+  align-content: center;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }
+
 button {
   height: 150%;
 }
@@ -312,5 +326,7 @@ body {
     rgb(253, 223, 158),
     white
   );
+  padding-left: 800px;
+  padding-right: 800px;
 }
 </style>
