@@ -55,5 +55,6 @@ td {
   font-family: Arial, Helvetica, sans-serif;
   background-color: white;
   border-radius: 5px;
+  border: 2px solid black
 }
 </style>

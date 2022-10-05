@@ -37,15 +37,16 @@
 p {
   display: grid;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
   max-width: 50%;
-  margin-left: 375px;
+  /* margin-left: 375px; */
   padding-bottom: 600px;
 }
-home-nav {
-  display: flex;
+.home-nav {
+  display: grid;
+  justify-content: center;
   flex-direction: column;
 }
 ul {
@@ -59,7 +60,7 @@ button {
   border-radius: 10%;
   border-color: orange;
 }
-aside {
+/* aside {
   display: grid;
   position: fixed;
   border-collapse: separate;
@@ -68,7 +69,7 @@ aside {
   height: 100%;
   width: 200px;
   background-color: #ffc83c57;
-}
+} */
 a {
   color: black;
   text-decoration: none;
