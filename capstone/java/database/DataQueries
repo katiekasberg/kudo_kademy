@@ -13,6 +13,15 @@ JOIN kudo_type on kudo_type.id = kudo_student.type_id
 JOIN profile on profile.id = kudo_student.teacher_id;
 WHERE student_id = 1010;
 
+--LIST All Students Not In The Parent_student table where parentId = 1018
+SELECT student.id, first_name, last_name, email, image, parent_id
+FROM student
+JOIN profile on profile.id = student.id
+LEFT OUTER JOIN parent_student on parent_student.student_id = student.id
+WHERE parent_id != 1018 OR parent_id IS null 
+ORDER BY student.id
+
+
 --LIST of the last 10 kudos given out for a specific graduation year.
 SELECT kudo_student.id, teacher_id, profile.first_name, profile.last_name, student_id, message, 
 kudo_student.type_id, kudo_type.name, kudo_type.description, kudo_type.value, graduation_year 
@@ -36,7 +45,15 @@ JOIN users on users.user_id = profile.id;
 SELECT profile.id, first_name, last_name, email, image, phone_number, address
 FROM profile
 JOIN parent on parent.id = profile.id
-WHERE profile.id = 1018;
+WHERE parent.id = 1018;
+
+
+--Get a list of students assigned to a parent id
+SELECT profile.id, first_name, last_name, email, image, school_id, graduation_year
+FROM profile
+JOIN student on student.id = profile.id
+JOIN parent_student on parent_student.student_id = student.id
+WHERE parent_id = 1018;
 
 SELECT *
 FROM profile
@@ -90,3 +107,6 @@ LIMIT 1;
 
 SELECT *
 FROM users;
+
+select *
+FROM parent_student
