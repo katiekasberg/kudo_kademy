@@ -63,4 +63,11 @@ td {
   border-radius: 5px;
    border: 2px solid black
 }
+/* p {
+  display: grid;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  padding-left: 50px;
+} */
 </style>

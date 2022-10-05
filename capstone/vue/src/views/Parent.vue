@@ -20,6 +20,7 @@
     </div>
     <!-- </div> -->
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -52,6 +53,7 @@ export default {
     rgb(253, 223, 158),
     white
   );
+  padding: 200px;
 }
 
 .leaderboard{
@@ -93,15 +95,6 @@ export default {
 
 /* .Header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "app-name app-name app-name"
-    "logo logo logo"
-    "logo logo logo";
-  grid-area: Header;
   justify-content: center;
 } */
 
@@ -138,33 +131,12 @@ export default {
 } */
 /* p {
   display: grid;
-  align-items: center;
   justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(216, 150, 69);
-} */
+  align-content: center;
+}
 
-/* aside {
-  position: fixed;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-  padding-top: 100%;
-  padding: 10px;
-  width: 15%;
-  float: right;
-  overflow: auto;
-  border-radius: 5px;
-  border-width: 3px;
-  border-color: darkorange;
-  background-color: #ffc83c57;
-  opacity: 100%;
-} */
-
-/* ul {
+.House-Cup {
   display: grid;
-  align-items: center;
-  color: darkorange;
-  justify-items: center;
   justify-content: center;
 } */
 

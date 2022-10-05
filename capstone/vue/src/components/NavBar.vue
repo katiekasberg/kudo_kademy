@@ -39,9 +39,9 @@
               </button>
             </li>
             <li>
-              <button>
-                <router-link to="/newclass">Create Class</router-link>
-              </button>
+              <router-link to="/newclass"
+                ><button>Create Class</button></router-link
+              >
             </li>
             <li>
               <button>
@@ -70,55 +70,59 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/admin">Home</a></button>
+              <router-link v-bind:to="{ name: 'admin' }">
+                <button>Home</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <router-link
-                  :to="{
-                    name: 'AdminProfile',
-                    params: { id: this.$store.state.user.id },
-                  }"
-                  >My Profile</router-link
-                >
-              </button>
+              <router-link
+                v-bind:to="{
+                  name: 'AdminProfile',
+                  params: { id: this.$store.state.user.id },
+                }"
+                ><button>My Profile</button></router-link
+              >
             </li>
             <li>
-              <button>
-                <router-link to="/SendKudos">Send Kudos</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'SendKudos' }"
+                ><button>Send Kudos</button></router-link
+              >
             </li>
             <!-- <li>
               <button><a href="#">Behavioral Report</a></button>
             </li> -->
             <li>
-              <button><a href="/searchbystudent">Search Students</a></button>
+              <router-link v-bind:to="{ name: 'searchbystudent' }"
+                ><button>Search Students</button></router-link
+              >
             </li>
             <li>
-              <button>
-                <a href="/createannouncement">Make Announcements</a>
-              </button>
+              <router-link v-bind:to="{ name: 'createannouncement' }"
+                ><button>Make Announcements</button></router-link
+              >
             </li>
             <li>
-              <button>
-                <router-link to="/newclass">Create Class</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'newClass' }"
+                ><button>Create Class</button></router-link
+              >
             </li>
             <li>
-              <button>
-                <router-link to="/manage-classes">Manage Classes</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'manage-classes' }"
+                ><button>Manage Classes</button></router-link
+              >
             </li>
             <!-- <li>
               <button><a href="#">Add/Remove Teacher</a></button>
             </li> -->
             <li>
-              <button><a href="/newkudotype">Set Kudo Values</a></button>
+              <router-link v-bind:to="{ name: 'newkudotype' }"
+                ><button>Set Kudo Values</button></router-link
+              >
             </li>
             <li>
-              <button>
-                <router-link to="/logout"> Logout </router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'logout' }"
+                ><button>Logout</button></router-link
+              >
             </li>
           </ul>
         </nav>
@@ -132,18 +136,18 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/student">Home</a></button>
+              <router-link v-bind:to="{ name: 'home' }"
+                ><button>Home</button></router-link
+              >
             </li>
             <li>
-              <button>
-                <router-link
-                  :to="{
-                    name: 'StudentProfile',
-                    params: { id: this.$store.state.user.id },
-                  }"
-                  >My Profile</router-link
-                >
-              </button>
+              <router-link
+                :to="{
+                  name: 'StudentProfile',
+                  params: { id: this.$store.state.user.id },
+                }"
+                ><button>My Profile</button></router-link
+              >
             </li>
             <!-- <li>
               <button><a href="#">Kudo Report</a></button>
@@ -152,15 +156,15 @@
               <button><a href="#">Leaderboard</a></button>
             </li> -->
             <li>
-              <button>
-                <router-link to="/rewards"> Kudo Values</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'rewards' }"
+                ><button>Kudo Values</button></router-link
+              >
             </li>
 
             <li>
-              <button>
-                <router-link to="/logout"> Logout </router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'logout' }"
+                ><button>Logout</button></router-link
+              >
             </li>
           </ul>
         </nav>
@@ -174,34 +178,34 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/parent">Home</a></button>
+              <router-link v-bind:to="{ name: 'parent' }"
+                ><button>Home</button></router-link
+              >
             </li>
             <li>
-              <button>
-                <router-link
-                  :to="{
-                    name: 'ParentProfile',
-                    params: { id: this.$store.state.user.id },
-                  }"
-                  >My Profile</router-link
-                >
-              </button>
+              <router-link
+                v-bind:to="{
+                  name: 'ParentProfile',
+                  params: { id: this.$store.state.user.id },
+                }"
+                ><button>My Profile</button></router-link
+              >
             </li>
             <!-- <li>
               <button><a href="#">Student Report</a></button>
             </li> -->
             <li>
-              <button>
-                <router-link to="/rewards"> Kudo Values</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'rewards' }"
+                ><button>Kudo Values</button></router-link
+              >
             </li>
             <!-- <li>
               <button><a href="#">Contact Teacher</a></button>
             </li> -->
             <li>
-              <button>
-                <router-link to="/logout"> Logout </router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'logout' }"
+                ><button>Logout</button></router-link
+              >
             </li>
           </ul>
         </nav>

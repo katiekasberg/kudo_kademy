@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div id="profile-image">
-          <img v-bind:src="this.$store.state.activeParentProfile.image" />
+      <img v-bind:src="this.$store.state.activeParentProfile.image" />
     </div>
     <div class="parent-profile">
       <h1>Parent Profile</h1>
@@ -30,34 +30,49 @@
 import ParentService from "../services/ParentService";
 
 export default {
-    name: 'ParentDetail',
-    props: {
-        parentId: Number,
+  name: "ParentDetail",
+  props: {
+    parentId: Number,
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    getParentProfile() {
+      ParentService.getParentProfile(this.parentId)
+        .then((response) => {
+          this.$store.commit("SET_ACTIVE_PARENT_PROFILE", response.data);
+        })
+        .catch((error) => {
+          if (error.response.status == 404) {
+            this.$router.push({ name: "NotFound" });
+          }
+        });
     },
-    data(){
-        return {
-
-        };
-    },
-    methods: {
-        getParentProfile(){
-            ParentService.getParentProfile(this.parentId).then((response) => {
-                this.$store.commit("SET_ACTIVE_PARENT_PROFILE", response.data);
-            })
-            .catch((error) => {
-                if(error.response.status == 404){
-                    this.$router.push({name: "NotFound"});
-                }
-            });
-        }
-    },
-    created(){
-        this.getParentProfile();
-    }
-
-}
+  },
+  created() {
+    this.getParentProfile();
+  },
+};
 </script>
 
-<style>
-
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.657);
+  padding-right: 136px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+  align-content: flex-start;
+  border-radius: 50%;
+  justify-content: right;
+  align-items: right;
+  margin-left: 50px;
+  height: 200px;
+  width: 200px;
+  image-rendering: auto;
+  padding: 20px;
+}
 </style>
