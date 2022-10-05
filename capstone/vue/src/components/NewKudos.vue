@@ -63,7 +63,7 @@ export default {
       kudoService.SendKudos(this.kudo).then((response) => {
         if (response.status === 201) {
           this.kudo.studentId = "";
-          this.kudo.typeId = false;
+          this.kudo.typeId = "";
           this.kudo.message = "";
         }
       });
@@ -87,7 +87,8 @@ export default {
   },
 };
 </script>
-    <style scoped>
+
+<style scoped>
 .send-kudo {
   display: grid;
   align-items: center;

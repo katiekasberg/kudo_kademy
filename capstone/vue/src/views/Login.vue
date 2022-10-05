@@ -2,8 +2,8 @@
   <body>
     <div id="login" class="text-center">
       <form class="form-signin" @submit.prevent="login">
-        <h2 class="h3">Welcome!!!</h2>
-        <h2 class="h3 mb-3 font-weight-normal">Please Sign In</h2>
+        <h2 class="h2">Welcome!</h2>
+        <h2 class="h2">Please Sign In</h2>
         <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
           Invalid username and password!
         </div>
@@ -99,25 +99,27 @@ export default {
   align-items: center;
   justify-items: center;
   justify-content: center;
-
+  width: 800px;
+  /* height: 300px; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22pt;
 }
 .form-control {
   display: grid;
-  width: 100%;
-  height: 50%;
+  height: 200%;
+  grid-row-gap: 100px;
 }
-img.logo {
+/* img.logo {
   margin: auto;
   display: block;
   width: 200px;
   height: auto;
-}
+} */
 
-h2 {
+.h2 {
   display: grid;
   align-items: center;
+  text-align: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: xx-large;
@@ -128,8 +130,8 @@ h2 {
 #login {
   background-color: rgba(255, 255, 255, 0.616);
   padding-bottom: 200px;
-  padding-left: 200px;
-  padding-right: 200px;
+  /* padding-left: 200px;
+  padding-right: 200px; */
 }
 body {
   background: linear-gradient(

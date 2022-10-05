@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #app {
   background-color: white;
   display: grid;
@@ -37,12 +37,12 @@ h1 {
   align-content: center;
   justify-content: center;
 }
-img {
+/* img {
   display: grid;
   padding-left: 550px;
   height: 150px;
   width: auto;
-}
+} */
 
 .nav {
   display: inline-flex;
@@ -57,5 +57,12 @@ a {
   color: black;
   opacity: 100%;
   font-weight: bold;
+}
+.logo{
+  display: grid;
+  justify-content: center;
+  height: 150px;
+  width: auto;
+  margin:auto;
 }
 </style>

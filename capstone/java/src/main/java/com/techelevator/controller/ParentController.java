@@ -3,6 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.ParentDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.profile.Parent;
+import com.techelevator.model.profile.ParentStudent;
 import com.techelevator.model.profile.StudentProfile;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -25,12 +26,13 @@ public class ParentController {
     }
 
     //add student to a parent
-    @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(path = "/parent/student" , method= RequestMethod.POST)
-    public void addStudentToParent(Principal principal, int studentId){
-        int userId = userDao.findIdByUsername(principal.getName());
-        parentDao.addStudentToParent(userId,studentId);
-    }
+//    @ResponseStatus(HttpStatus.CREATED)
+//    @RequestMapping(path = "/parent/student" , method= RequestMethod.POST)
+//    public void addStudentToParent(Principal principal, int studentId){
+//        int userId = userDao.findIdByUsername(principal.getName());
+//        parentDao.addStudentToParent(userId, studentId);
+//    }
+
 //    @ResponseStatus(HttpStatus.CREATED)
 //    @RequestMapping(path = "/parent/{parentId}/student" , method= RequestMethod.POST)
 //    public void addStudentToParent(@PathVariable int parentId, int studentId){
@@ -45,9 +47,27 @@ public class ParentController {
     }
 
     //List all students associated with a parentId
-    @RequestMapping(path = "/parent-profile/{parentId}/student", method = RequestMethod.GET)
+    @RequestMapping(path = "/parent-profile/{parentId}/children", method = RequestMethod.GET)
     public List<StudentProfile> getListofStudentsByParentId(@PathVariable int parentId){
         return parentDao.myStudent(parentId);
+    }
+
+
+    //List all students associated with a parentId
+    @RequestMapping(path = "/parent-profile/{parentId}/students", method = RequestMethod.GET)
+    public List<StudentProfile> getListofUnclaimedStudents(@PathVariable int parentId){
+        return parentDao.myStudent(parentId);
+    }
+
+
+
+
+    //Assign studentId to parentId
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/parent-profile/claim", method = RequestMethod.POST)
+    public void assignStudentToParentId(@RequestBody ParentStudent student){
+        System.out.println(student);
+        parentDao.addStudentToParent(student);
     }
 
 
