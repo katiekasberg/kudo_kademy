@@ -90,7 +90,8 @@ export default {
   },
 };
 </script>
-    <style scoped>
+
+<style scoped>
 .send-kudo {
   display: grid;
   align-items: center;
