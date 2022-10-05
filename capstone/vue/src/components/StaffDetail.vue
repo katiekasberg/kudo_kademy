@@ -70,3 +70,4 @@ img {
   width: 200px;
   image-rendering: auto;
 }
+</style>

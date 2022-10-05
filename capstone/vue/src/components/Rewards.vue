@@ -39,8 +39,7 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
 .kudo-list {
   border: 1px solid black;
   display: block;
