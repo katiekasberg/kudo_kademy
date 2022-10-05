@@ -1,6 +1,6 @@
 <template>
   <div class="display-announce">
-    <h2>Latest School Announcement</h2>
+    <h2 class="top-text">Latest School Announcements:</h2>
     <div id="scroll-container">
       <div id="scroll-text">
         <p>{{ this.$store.state.latestAnnouncement.message }}</p>
@@ -40,19 +40,18 @@ export default {
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 255, 255, 0.657);
 }
-h2 {
+.top-text {
   display: grid;
-  align-items: center;
-  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
-  letter-spacing: 2px;
 }
 p {
   display: grid;
   align-content: center;
   justify-content: center;
+  text-decoration-color: black;
 }
 #scroll-container {
   background-color: white;

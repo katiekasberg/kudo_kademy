@@ -99,17 +99,14 @@ export default {
   align-items: center;
   justify-items: center;
   justify-content: center;
-  grid-gap: 18px;
+
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22pt;
-  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
-    0px -1px 0px black;
-  letter-spacing: 2px;
 }
 .form-control {
   display: grid;
   width: 100%;
-  height: 150%;
+  height: 50%;
 }
 img.logo {
   margin: auto;
@@ -118,21 +115,21 @@ img.logo {
   height: auto;
 }
 
-h1 {
+h2 {
   display: grid;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(223, 126, 8);
-  text-decoration: underline;
-  text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,
-    0px -1px 0px black;
+  font-size: xx-large;
+  color: darkorange;
+
   letter-spacing: 2px;
 }
 #login {
-  margin-left: 25%;
-  margin-right: 25%;
   background-color: rgba(255, 255, 255, 0.616);
+  padding-bottom: 200px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 body {
   background: linear-gradient(
@@ -142,12 +139,14 @@ body {
     rgb(253, 223, 158),
     white
   );
-
-  display: 100%;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 .sr-only {
-  color: darkorange;
+  color: black;
+  font-size: medium;
 }
+
 button {
   width: 100%;
   height: 150%;

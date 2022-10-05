@@ -26,7 +26,6 @@ export default {
   display: grid;
   align-content: center;
   justify-content: center;
-
 }
 
 .admin-home {
@@ -97,7 +96,7 @@ button {
   margin: auto;
   padding-left: 600px;
   padding-right: 600px;
-  padding-top: 100px;
+  padding-bottom: 200px;
 }
 
 /* .Header {
@@ -128,6 +127,4 @@ button {
   margin: auto;
   display: block;
 } */
-
-
 </style>

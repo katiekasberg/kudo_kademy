@@ -48,4 +48,30 @@ home-nav {
   display: flex;
   flex-direction: column;
 }
+ul {
+  list-style: none;
+}
+button {
+  padding: 10px;
+  margin: 10px;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 10%;
+  border-color: orange;
+}
+aside {
+  display: grid;
+  position: fixed;
+  border-collapse: separate;
+  justify-items: center;
+
+  height: 100%;
+  width: 200px;
+  background-color: #ffc83c57;
+}
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
 </style>

@@ -27,9 +27,9 @@
                 <router-link to="/SendKudos">Send Kudos</router-link>
               </button>
             </li>
-            <li>
+            <!-- <li>
               <button><a href="#">Behavioral Report</a></button>
-            </li>
+            </li> -->
             <li>
               <button><a href="/searchbystudent">Search Students</a></button>
             </li>
@@ -88,9 +88,9 @@
                 <router-link to="/SendKudos">Send Kudos</router-link>
               </button>
             </li>
-            <li>
+            <!-- <li>
               <button><a href="#">Behavioral Report</a></button>
-            </li>
+            </li> -->
             <li>
               <button><a href="/searchbystudent">Search Students</a></button>
             </li>
@@ -219,8 +219,12 @@ export default {
 </script>
 
 <style scoped>
+ul {
+  list-style: none;
+}
 button {
   padding: 10px;
+  margin: 10px;
   margin-left: 20px;
   background-color: white;
   border-radius: 10%;
@@ -230,14 +234,15 @@ aside {
   display: grid;
   position: fixed;
   border-collapse: separate;
-  border-color: rgba(243, 1, 1, 0.815);
-  border-right: 1px solid rgb(211, 211, 211);
+  justify-items: center;
+
   height: 100%;
   width: 200px;
   background-color: #ffc83c57;
-  opacity: 100%;
 }
-a:hover {
-  color:blue;
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
 </style>

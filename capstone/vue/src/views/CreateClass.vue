@@ -1,17 +1,15 @@
 <template>
   <div>
-      <new-class/>
+    <new-class />
   </div>
 </template>
 
 <script>
-import NewClass from '../components/NewClass.vue'
+import NewClass from "../components/NewClass.vue";
 export default {
   components: { NewClass },
-
-}
+};
 </script>
 
-<style>
-
+<style scoped>
 </style>

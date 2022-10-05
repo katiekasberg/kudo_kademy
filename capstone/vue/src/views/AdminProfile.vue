@@ -1,16 +1,15 @@
 <template>
   <div>
-      <staff-detail v-bind:staffId="parseInt($route.params.id)" />
+    <staff-detail v-bind:staffId="parseInt($route.params.id)" />
   </div>
 </template>
 
 <script>
-import StaffDetail from '../components/StaffDetail.vue'
+import StaffDetail from "../components/StaffDetail.vue";
 export default {
   components: { StaffDetail },
-}
+};
 </script>
 
-<style>
-
+<style scoped>
 </style>

@@ -1,17 +1,15 @@
 <template>
   <div>
-      <rewards />
+    <rewards />
   </div>
 </template>
 
 <script>
-import Rewards from '../components/Rewards.vue'
+import Rewards from "../components/Rewards.vue";
 export default {
-    components: {Rewards}
-}
+  components: { Rewards },
+};
 </script>
 
-<style>
-
-
+<style scoped>
 </style>
