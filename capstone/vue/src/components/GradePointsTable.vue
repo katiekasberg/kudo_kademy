@@ -1,4 +1,5 @@
 <template>
+<body>
   <div>
     <table>
       <thead>
@@ -17,6 +18,7 @@
       </tbody>
     </table>
   </div>
+  </body>
 </template>
 
 <script>
@@ -37,5 +39,21 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 255, 255, 0.657);
+  padding-left: 200px;
+  padding-right: 200px;
+}
+tr,
+th,
+td {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  border-radius: 5px;
+}
 </style>

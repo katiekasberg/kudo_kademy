@@ -19,7 +19,11 @@
         >
           <td>{{ course.name }}</td>
           <td>{{ course.subject }}</td>
-          <td>{{ course.firstName }} {{ course.lastName }}</td>
+          <td>
+            <router-link v-bind:to="{ name: 'TeacherProfile', params: {id: course.teacherId} }">  
+            {{ course.firstName }} {{ course.lastName }}
+            </router-link>
+          </td>
           <td>{{ course.period }}</td>
           <td>{{ course.startTime }}</td>
           <td>{{ course.endTime }}</td>

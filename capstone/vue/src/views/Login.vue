@@ -33,7 +33,9 @@
           v-model="user.password"
           required
         />
-        <router-link :to="{ name: 'register' }">Need an account?</router-link>
+        <router-link class="register" :to="{ name: 'register' }"
+          >Need an account?</router-link
+        >
         <button type="submit">Sign in</button>
       </form>
     </div>
@@ -109,12 +111,6 @@ export default {
   height: 200%;
   grid-row-gap: 100px;
 }
-/* img.logo {
-  margin: auto;
-  display: block;
-  width: 200px;
-  height: auto;
-} */
 
 .h2 {
   display: grid;
@@ -143,6 +139,13 @@ body {
   );
   padding-left: 300px;
   padding-right: 300px;
+}
+
+label {
+  padding: 20px;
+}
+.register {
+  padding: 20px;
 }
 .sr-only {
   color: black;

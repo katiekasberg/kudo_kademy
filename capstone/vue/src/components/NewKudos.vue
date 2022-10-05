@@ -1,9 +1,6 @@
 <template>
   <body>
     <div>
-      <h1>SCHOOL COMMUNICATION</h1>
-      <img class="logo" src="../../resources/school-icon-9.png" alt="" />
-
       <h2>Send A Kudo!</h2>
 
       <form v-on:submit.prevent action="submit">

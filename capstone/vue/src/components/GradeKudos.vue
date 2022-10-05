@@ -18,8 +18,6 @@
               <td>{{kudo.typeValue}}</td>
           </tr>
       </table>
-      graduationYear{{this.graduationYear}}
-      testing store: {{this.$store.state.activeStudentId}}
   </div>
 </template>
 
