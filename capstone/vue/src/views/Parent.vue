@@ -1,49 +1,50 @@
 <template>
   <div class="home">
     <!-- <div class="container"> -->
-      <div class="Welcome-User">
-        <h1>Welcome Parent!</h1>
-      </div>
-      <div class="Announcements">
-        <h2>
-          <latest-announcement/>
-        </h2>
-      </div>
-      <div class="View-Report">
+    <div class="Welcome-User">
+      <h1>Welcome Parent!</h1>
+    </div>
+    <div class="Announcements">
+      <h2>
+        <latest-announcement />
+      </h2>
+    </div>
+    <!-- <div class="View-Report">
         <h2>View Student Report</h2>
         
-      </div>
-      <div class="House-Cup">
-        <h2>Leaderboards</h2>
-        <class-points-table />
-        <grade-points-table />
-      </div>
+      </div> -->
+    <div class="House-Cup">
+      <h2 class="leaderboard">Leaderboard</h2>
+      <class-points-table />
+      <grade-points-table />
+    </div>
     <!-- </div> -->
   </div>
 </template>
 
 <script>
-import LatestAnnouncement from '../components/LatestAnnouncement.vue';
-import ClassPointsTable from '../components/ClassPointsTable.vue';
-import GradePointsTable from '../components/GradePointsTable.vue'
+import LatestAnnouncement from "../components/LatestAnnouncement.vue";
+import ClassPointsTable from "../components/ClassPointsTable.vue";
+import GradePointsTable from "../components/GradePointsTable.vue";
 
 export default {
-  components: { LatestAnnouncement, ClassPointsTable, GradePointsTable},
+  components: { LatestAnnouncement, ClassPointsTable, GradePointsTable },
 };
 </script>
 
 <style scoped>
-
 .home {
   display: grid;
-  grid-template-columns: 0.34fr 1fr;
-  grid-template-areas: 
-  ". Welcome-User"
-  ". Announcements"
-  ". View-Report"
-  ". House-Cup";
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "Welcome-User"
+    "Announcements"
+    "View-Report"
+    "House-Cup";
+  /* justify-items: center; */
   justify-content: space-evenly;
   align-content: center;
+  text-align: center;
   background: linear-gradient(
     360deg,
     white,
@@ -52,14 +53,36 @@ export default {
     white
   );
 }
+
+.leaderboard{
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorange
+}
+
+.Welcome-User {
+  grid-area: Welcome-User;
+}
+
+.Announcements {
+  grid-area: Announcements;
+}
+
+.View-Report {
+  grid-area: View-Report;
+}
+
+.House-Cup {
+  grid-area: House-Cup;
+}
+
 /* .container {
   display: flex;
   flex-direction: column;
    */
-  
-  /* grid-template-columns: 1fr 3fr;
+
+/* grid-template-columns: 1fr 3fr;
   grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr 1fr; */
-  /* gap: 0px 0px;
+/* gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "Aside-nav Header "
@@ -67,7 +90,6 @@ export default {
     "Aside-nav Announcements"
     "Aside-nav View-Report"
     "Aside-nav House-Cup"; */
-
 
 /* .Header {
   display: grid;
@@ -91,22 +113,6 @@ export default {
 /* .logo {
   grid-area: logo;
 } */
-
-.Welcome-User {
-  grid-area: Welcome-User;
-}
-
-.Announcements {
-  grid-area: Announcements;
-}
-
-.View-Report {
-  grid-area: View-Report;
-}
-
-.House-Cup {
-  grid-area: House-Cup;
-}
 
 /* img.logo {
   margin: auto;
@@ -167,7 +173,6 @@ export default {
   font-weight: bold;
   border-bottom: 1px solid;
 } */
-
 
 /* button {
   padding: 10px;

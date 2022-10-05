@@ -46,6 +46,7 @@ export default {
   display: grid;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
+  text-align: center;
 }
 p {
   display: grid;
