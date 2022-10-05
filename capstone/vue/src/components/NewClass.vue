@@ -1,7 +1,7 @@
 <template>
   <div>
-    <form v-on:submit.prevent action="submit" class="newClassForm"></form>
-    <p>Create a new Class</p>
+    <form v-on:submit.prevent action="submit" class="newClassForm">
+    <p>Creat a new Class</p>
     <label for="ClassName">
       Class Name:
       <input type="text" v-model="newClass.name" />
@@ -39,6 +39,7 @@
       <input type="number" value="2022" v-model="newClass.schoolYear" />
     </label>
     <button type="submit" v-on:click="saveClass()">Submit</button>
+    </form>
   </div>
 </template>
 
@@ -80,5 +81,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.newClassForm {
+    display:flex;
+    flex-direction: column;
+
+}
 </style>

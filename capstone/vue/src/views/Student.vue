@@ -4,11 +4,13 @@
       <div class="Welcome-User">
         <h1>Welcome {{ this.$store.state.activeStudentProfile.firstName }}</h1>
       </div>
-      <div class="Announcements">
+      <div class="Announcements"> 
         <latest-announcement />
+        <p>Leaderboard</p>
         <class-points-table />
         <grade-points-table />
       </div>
+      
       <div class="Class-points">
         <h3>Latest Kudos Recognitions in your grade:</h3>
         <grade-kudos />
@@ -56,5 +58,8 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
+}
+p{
+
 }
 </style>

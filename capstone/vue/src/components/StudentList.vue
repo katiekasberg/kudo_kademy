@@ -96,7 +96,8 @@ export default {
   justify-content: center; */
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
-  border-block: black 5px;
+  border: black solid 5px;
+  
 }
 .header-table{
   text-align: center;
