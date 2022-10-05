@@ -24,8 +24,8 @@ public class JdbcParentDao implements ParentDao {
 
     @Override
     public void addStudentToParent(int parentId, int studentId) {
-        String sql = "INSERT INTO parent_student (parent_id, student_id)" +
-                "VALUES (?,?)";
+        String sql = "INSERT INTO parent_student (parent_id, student_id) " +
+                     "VALUES (?,?)";
         try {
             jdbcTemplate.update(sql, parentId, studentId);
         } catch (DataAccessException e) {
@@ -38,9 +38,10 @@ public class JdbcParentDao implements ParentDao {
     public List<StudentProfile> myStudent(int parentId) {
         List<StudentProfile> parentStudent = new ArrayList<>();
         String sql =
-                "SELECT id, first_name, last_name, email, image " +
+                "SELECT profile.id, first_name, last_name, email, image, school_id, graduation_year " +
                         "FROM profile " +
-                        "JOIN parent_student on profile.id = parent_student.parent_id" +
+                        "JOIN student on student.id = profile.id " +
+                        "JOIN parent_student on parent_student.student_id = student.id " +
                         "WHERE parent_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, parentId);
 
