@@ -146,9 +146,7 @@ body {
   color: black;
   font-size: medium;
 }
-input {
-  width: ;
-}
+
 button {
   width: 100%;
   height: 150%;
