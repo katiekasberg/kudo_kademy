@@ -2,6 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.exceptions.ParentNotFoundException;
 import com.techelevator.model.profile.Parent;
+import com.techelevator.model.profile.ParentStudent;
 import com.techelevator.model.profile.Profile;
 import com.techelevator.model.profile.StudentProfile;
 import com.techelevator.model.school.ClassInfo;
@@ -23,14 +24,13 @@ public class JdbcParentDao implements ParentDao {
         this.jdbcTemplate = jdbcTemplate;}
 
     @Override
-    public void addStudentToParent(int parentId, int studentId) {
-        String sql = "INSERT INTO parent_student (parent_id, student_id) " +
-                     "VALUES (?,?)";
+    public void addStudentToParent(ParentStudent student) {
+        String sql = "INSERT INTO parent_student (parent_id, student_id, relation) " +
+                     "VALUES (?, ?, ?); ";
         try {
-            jdbcTemplate.update(sql, parentId, studentId);
+            jdbcTemplate.update(sql, student.getParentId(), student.getStudentId(), student.getRelation() );
         } catch (DataAccessException e) {
             System.out.println(" Database access exception");
-
         }
     }
 
@@ -64,6 +64,11 @@ public class JdbcParentDao implements ParentDao {
         }
 
         throw new ParentNotFoundException();
+    }
+
+    @Override
+    public List<StudentProfile> listUnclaimedStudents(int parentId) {
+        return null;
     }
 
     private StudentProfile mapRowToStudentProfile(SqlRowSet rs){
