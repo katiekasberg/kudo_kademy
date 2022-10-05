@@ -25,8 +25,11 @@
 <script>
 import LatestAnnouncement from '../components/LatestAnnouncement.vue';
 import StudentList from "../components/StudentList.vue";
+import ClassPointsTable from '../components/ClassPointsTable.vue';
+import GradePointsTable from '../components/GradePointsTable.vue'
+
 export default {
-  components: { StudentList, LatestAnnouncement },
+  components: { StudentList, LatestAnnouncement, ClassPointsTable, GradePointsTable},
 };
 </script>
 
