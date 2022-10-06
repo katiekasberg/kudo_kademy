@@ -2,15 +2,17 @@
   <body>
     <div>
       <new-kudos />
+      <rewards/>
     </div>
   </body>
 </template>
 
   <script>
 import NewKudos from "../components/NewKudos";
+import Rewards from '../components/Rewards.vue';
 export default {
   components: {
-    NewKudos,
+    NewKudos, Rewards
   },
 };
 </script>

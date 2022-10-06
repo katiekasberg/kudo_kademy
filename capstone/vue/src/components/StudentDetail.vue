@@ -17,10 +17,10 @@
           School: {{ this.$store.state.activeStudentProfile.schoolId }}
         </p>
         <p id="graduation-year">
-          Class Of: {{ this.$store.state.activeStudentProfile.graduationYear }}
+          Class Of {{ this.$store.state.activeStudentProfile.graduationYear }}
         </p>
         <p id="email">
-          Email Address: {{ this.$store.state.activeStudentProfile.email }}
+          Email: {{ this.$store.state.activeStudentProfile.email }}
         </p>
       </div>
     </div>

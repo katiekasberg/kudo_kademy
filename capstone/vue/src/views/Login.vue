@@ -65,7 +65,6 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            console.log(response.data.user);
             if (response.data.user.authorities[0].name == "ROLE_PARENT") {
               this.$router.push({ name: "parent" });
             } else if (
@@ -74,12 +73,10 @@ export default {
               this.$router.push({ name: "teacher" });
             } else if (response.data.user.authorities[0].name == "ROLE_ADMIN") {
               this.$router.push({ name: "admin" });
-            } else {
-              this.$store.commit(
-                "SET_ACTIVE_STUDENT_ID",
-                response.data.user.id
-              );
+            } else if (response.data.user.authorities[0].name == "ROLE_STUDENT"){
               this.$router.push({ name: "student" });
+            } else {
+              this.$router.push({ name: "home" });
             }
           }
         })

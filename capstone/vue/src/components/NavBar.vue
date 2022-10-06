@@ -1,60 +1,63 @@
 <template>
-  <body>
+<body>
     <div
       class="teacher-nav"
-      v-show="$store.state.user.authorities[0].name === 'ROLE_TEACHER'"
+      v-if="$store.state.user.authorities[0].name === 'ROLE_TEACHER'"
       style="display: inline"
     >
       <aside>
         <nav>
           <ul>
             <li>
-              <button><a href="/teacher">Home</a></button>
+              <router-link v-bind:to="{ name: 'teacher' }">
+                <button>Home</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <router-link
-                  :to="{
-                    name: 'TeacherProfile',
-                    params: { id: $store.state.user.id },
-                  }"
-                  >My Profile</router-link
-                >
-              </button>
+              <router-link
+                v-bind:to="{
+                  name: 'TeacherProfile',
+                  params: { id: $store.state.user.id },
+                }"
+              >
+                <button>My Profile</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <router-link to="/SendKudos">Send Kudos</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'SendKudos' }">
+                <button>Give Kudos</button>
+              </router-link>
             </li>
             <!-- <li>
               <button><a href="#">Behavioral Report</a></button>
             </li> -->
             <li>
-              <button><a href="/searchbystudent">Search Students</a></button>
+              <router-link v-bind:to="{ name: 'searchbystudent' }">
+                <button>Search Students</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <a href="/createannouncement">Make Announcements</a>
-              </button>
+              <router-link v-bind:to="{ name: 'createannouncement' }">
+                <button>Make Announcements</button>
+              </router-link>
             </li>
             <li>
-              <router-link to="/newclass"
-                ><button>Create Class</button></router-link
-              >
+              <router-link v-bind:to="{ name: 'newClass' }">
+                <button>Create Class</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <router-link to="/manage-classes">Manage Classes</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'manage-classes' }">
+                <button>Manage Classes</button>
+              </router-link>
             </li>
             <!-- <li>
               <button><a href="#">Classes</a></button>
             </li> -->
             <li>
-              <button>
-                <router-link to="/logout"> Logout </router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'logout' }">
+                <button>Logout</button>
+              </router-link>
             </li>
           </ul>
         </nav>
@@ -63,7 +66,7 @@
 
     <div
       class="admin-nav"
-      v-show="$store.state.user.authorities[0].name === 'ROLE_ADMIN'"
+      v-if="$store.state.user.authorities[0].name === 'ROLE_ADMIN'"
       style="display: inline"
     >
       <aside>
@@ -85,7 +88,7 @@
             </li>
             <li>
               <router-link v-bind:to="{ name: 'SendKudos' }"
-                ><button>Send Kudos</button></router-link
+                ><button>Give Kudos</button></router-link
               >
             </li>
             <!-- <li>
@@ -115,8 +118,8 @@
               <button><a href="#">Add/Remove Teacher</a></button>
             </li> -->
             <li>
-              <router-link v-bind:to="{ name: 'newkudotype' }"
-                ><button>Set Kudo Values</button></router-link
+              <router-link v-bind:to="{ name: 'manage-kudos' }"
+                ><button>Create Kudos Categories</button></router-link
               >
             </li>
             <li>
@@ -130,13 +133,13 @@
     </div>
     <div
       class="student-nav"
-      v-show="$store.state.user.authorities[0].name === 'ROLE_STUDENT'"
+      v-if="$store.state.user.authorities[0].name === 'ROLE_STUDENT'"
     >
       <aside>
         <nav>
           <ul>
             <li>
-              <router-link v-bind:to="{ name: 'home' }"
+              <router-link v-bind:to="{ name: 'student' }"
                 ><button>Home</button></router-link
               >
             </li>
@@ -157,7 +160,7 @@
             </li> -->
             <li>
               <router-link v-bind:to="{ name: 'rewards' }"
-                ><button>Kudo Values</button></router-link
+                ><button>Earn Kudos</button></router-link
               >
             </li>
 
@@ -172,7 +175,7 @@
     </div>
     <div
       class="parent-nav"
-      v-show="$store.state.user.authorities[0].name === 'ROLE_PARENT'"
+      v-if="$store.state.user.authorities[0].name === 'ROLE_PARENT'"
     >
       <aside>
         <nav>
@@ -196,7 +199,7 @@
             </li> -->
             <li>
               <router-link v-bind:to="{ name: 'rewards' }"
-                ><button>Kudo Values</button></router-link
+                ><button>Earn Kudos</button></router-link
               >
             </li>
             <!-- <li>
@@ -210,14 +213,41 @@
           </ul>
         </nav>
       </aside>
-    </div>
+</div>
+
+      <div
+      class="home-nav"
+      v-if="$store.state.user.authorities[0] == []"
+    >
+      <aside>
+      <nav>
+        <ul>
+          <li>
+            <button><a href="/">Home</a></button>
+          </li>
+          <li>
+            <button>
+              <router-link to="/login">Login</router-link>
+            </button>
+          </li>
+          <li>
+            <button><a href="#">About us</a></button>
+          </li>
+          <li>
+            <button><a href="#">Contact us</a></button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+     </div>
+
   </body>
 </template>
 <script>
 export default {
   created() {
-    console.log(this.$store.state.user);
-    console.log(this.$store.state.user.authorities[0].name);
+    // console.log(this.$store.state.user);
+    // console.log(this.$store.state.user.authorities[0].name);
   },
 };
 </script>

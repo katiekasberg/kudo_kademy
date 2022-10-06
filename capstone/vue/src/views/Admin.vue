@@ -5,19 +5,21 @@
     </div>
     <div class="announcement-component">
       <latest-announcement />
-    </div>
-    <div class="rewards-component">
-      <rewards />
+      <student-points-table/>
+      <class-points-table/>
+      <grade-points-table/>
     </div>
   </body>
 </template>
 
 <script>
+import ClassPointsTable from '../components/ClassPointsTable.vue';
+import GradePointsTable from '../components/GradePointsTable.vue';
 import LatestAnnouncement from "../components/LatestAnnouncement.vue";
-import Rewards from "../components/Rewards.vue";
+import StudentPointsTable from '../components/StudentPointsTable.vue';
 
 export default {
-  components: { Rewards, LatestAnnouncement },
+  components: { LatestAnnouncement, StudentPointsTable, ClassPointsTable, GradePointsTable },
   name: "home",
 };
 </script>

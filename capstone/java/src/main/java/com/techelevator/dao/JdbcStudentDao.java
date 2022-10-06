@@ -62,7 +62,7 @@ public class JdbcStudentDao implements StudentDao {
     }
 
     @Override
-    public StudentProfile getAllStudentProfileById(int studentId) throws StudentProfileNotFoundException {
+    public StudentProfile getStudentProfileById(int studentId) throws StudentProfileNotFoundException {
         String sql = "SELECT student.id, first_name, last_name, email, image, school_id, graduation_year " +
                 "FROM profile " +
                 "JOIN student ON profile.id = student.id " +

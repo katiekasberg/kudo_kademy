@@ -39,7 +39,7 @@ public class JdbcPointDao implements PointDao{
                 "JOIN kudo_type ON kudo_student.type_id = kudo_type.id " +
                 "JOIN profile ON kudo_student.student_id = profile.id " +
                 "GROUP BY full_name " +
-                "ORDER BY total_points DESC;";
+                "ORDER BY total_points DESC LIMIT 10;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 
         while (results.next()) {

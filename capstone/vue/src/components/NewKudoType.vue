@@ -2,9 +2,9 @@
   <body>
     <div class="newKudoTypes">
       <form v-on:submit.prevent action="submit" class="newKudoForm">
-        <p>Create new Kudo Type</p>
+        <p>Create New Kudos Type</p>
         <label for="KudoName"
-          >Kudo Type Name:
+          >Kudos Type Name:
           <input id="KudoName" type="text" v-model="newKudoType.name" />
         </label>
         <label for="description"
@@ -58,9 +58,11 @@ export default {
   display: grid;
   justify-content: center;
   text-align: center;
-  padding: 100px;
-  margin: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin: 50px;
   background-color: white;
+  height: auto;
 }
 
 body {

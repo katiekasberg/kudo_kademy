@@ -3,12 +3,12 @@
     <div>
       <table class="student-list">
 
-        <th colspan="3">Search by Student</th>
+        <th colspan="3">Search For Students</th>
 
         <tr class="header-table">
           <th>First Name:</th>
           <th>Last Name:</th>
-          <th>Class of:</th>
+          <th>Class of</th>
         </tr>
         <tr>
           <td class="firstName">
@@ -68,8 +68,7 @@ export default {
       }
       if (this.filter.graduationYear != "") {
         filteredStudents = filteredStudents.filter(
-          (student) => student.graduationYear == this.filter.graduationYear
-        );
+          (student) => student.graduationYear.toString().includes(this.filter.graduationYear.toString()));
       }
       return filteredStudents;
     },
