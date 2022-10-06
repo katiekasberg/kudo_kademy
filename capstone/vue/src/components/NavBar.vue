@@ -1,8 +1,8 @@
 <template>
-  <body>
+<body>
     <div
       class="teacher-nav"
-      v-show="$store.state.user.authorities[0].name === 'ROLE_TEACHER'"
+      v-if="$store.state.user.authorities[0].name === 'ROLE_TEACHER'"
       style="display: inline"
     >
       <aside>
@@ -66,7 +66,7 @@
 
     <div
       class="admin-nav"
-      v-show="$store.state.user.authorities[0].name === 'ROLE_ADMIN'"
+      v-if="$store.state.user.authorities[0].name === 'ROLE_ADMIN'"
       style="display: inline"
     >
       <aside>
@@ -133,7 +133,7 @@
     </div>
     <div
       class="student-nav"
-      v-show="$store.state.user.authorities[0].name === 'ROLE_STUDENT'"
+      v-if="$store.state.user.authorities[0].name === 'ROLE_STUDENT'"
     >
       <aside>
         <nav>
@@ -175,7 +175,7 @@
     </div>
     <div
       class="parent-nav"
-      v-show="$store.state.user.authorities[0].name === 'ROLE_PARENT'"
+      v-if="$store.state.user.authorities[0].name === 'ROLE_PARENT'"
     >
       <aside>
         <nav>
@@ -213,14 +213,41 @@
           </ul>
         </nav>
       </aside>
-    </div>
+</div>
+
+      <div
+      class="home-nav"
+      v-if="$store.state.user.authorities[0] == []"
+    >
+      <aside>
+      <nav>
+        <ul>
+          <li>
+            <button><a href="/">Home</a></button>
+          </li>
+          <li>
+            <button>
+              <router-link to="/login">Login</router-link>
+            </button>
+          </li>
+          <li>
+            <button><a href="#">About us</a></button>
+          </li>
+          <li>
+            <button><a href="#">Contact us</a></button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+     </div>
+
   </body>
 </template>
 <script>
 export default {
   created() {
-    console.log(this.$store.state.user);
-    console.log(this.$store.state.user.authorities[0].name);
+    // console.log(this.$store.state.user);
+    // console.log(this.$store.state.user.authorities[0].name);
   },
 };
 </script>

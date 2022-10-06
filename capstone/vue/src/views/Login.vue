@@ -73,8 +73,10 @@ export default {
               this.$router.push({ name: "teacher" });
             } else if (response.data.user.authorities[0].name == "ROLE_ADMIN") {
               this.$router.push({ name: "admin" });
-            } else {
+            } else if (response.data.user.authorities[0].name == "ROLE_STUDENT"){
               this.$router.push({ name: "student" });
+            } else {
+              this.$router.push({ name: "home" });
             }
           }
         })

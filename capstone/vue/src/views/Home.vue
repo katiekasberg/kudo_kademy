@@ -1,6 +1,6 @@
 <template>
   <body>
-    <div class="home-nav">
+    <!-- <div class="home-nav">
       <nav>
         <ul>
           <li>
@@ -19,7 +19,7 @@
           </li>
         </ul>
       </nav>
-    </div>
+    </div> -->
     <p>
       Welcome to the School Communication app! This is your hub for
       communication of student behaviors between school and home. We pride

@@ -59,7 +59,7 @@ export default new Vuex.Store({
     latestAnnouncement: [],
     
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {authorities: ['']}
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -75,7 +75,7 @@ export default new Vuex.Store({
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       state.token = '';
-      state.user = {};
+      state.user = {authorities: ['']};
       axios.defaults.headers.common = {};
     },
     SET_KUDO_TYPES(state, data) {
