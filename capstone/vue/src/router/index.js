@@ -23,6 +23,7 @@ import CreateAnnouncement from "../views/CreateAnnouncement"
 import CreateClass from "../views/CreateClass"
 import ClassManagement from '../views/ClassManagement'
 import KudosManagement from '../views/KudosManagement'
+import AboutUs from '../views/AboutUs'
 
 Vue.use(Router)
 
@@ -43,6 +44,14 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: Home,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutUs,
       meta: {
         requiresAuth: false
       }

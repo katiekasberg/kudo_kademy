@@ -3,7 +3,7 @@
     <table>
       <thead>
         <tr class="header">
-          <th colspan="3">Grade Leaderboard</th>
+          <th colspan="3">Grade Rank</th>
         </tr>
         <tr>
           <th>Rank</th>

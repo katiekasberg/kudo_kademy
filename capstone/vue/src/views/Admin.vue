@@ -3,7 +3,7 @@
     <div class="Welcome-User">
       <h2>Welcome Administrator!</h2>
     </div>
-    <div class="component-forms">
+    <div class="announcement-component">
       <latest-announcement />
       <student-points-table />
       <class-points-table />
@@ -31,11 +31,29 @@ export default {
     
 
 <style scoped>
-.container {
+.announcement-component {
+  display: grid;
+  grid-row-gap: 20px;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+  /* padding-left: 600px;
+  padding-right: 600px; */
+  padding-bottom: 200px;
+  /* padding: 200px; */
+  padding-right: 400px;
+  padding-left: 400px;
+}
+
+.rewards-component{
+  background-color: white;
+}
+
+/* .container {
   display: grid;
   align-content: center;
   justify-content: center;
-}
+} */
 
 .admin-home {
   display: grid;
@@ -47,21 +65,21 @@ export default {
   align-content: center;
   padding-left: 00px;
 }
-.submitBtn {
+/* .submitBtn {
   margin: auto;
   display: block;
-}
+} */
 
-.search {
+/* .search {
   grid-area: search;
-}
+} */
 
-img.logo {
+/* img.logo {
   margin: auto;
   display: block;
   width: 200px;
   height: auto;
-}
+} */
 
 h2 {
   display: grid;
@@ -72,32 +90,34 @@ h2 {
   letter-spacing: 2px;
 }
 
-p {
+/* p {
   display: grid;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
-}
+} */
 
+<<<<<<< HEAD
 button {
+=======
+body {
+  background: linear-gradient(
+    360deg,
+    white,
+    rgb(241, 197, 99),
+    rgb(253, 223, 158),
+    white
+  );
+}
+/* button {
+>>>>>>> 6dc6b99f8f63e718e9b975b5fac06ce26a9d6ea0
   padding: 10px;
   margin-left: 20px;
   background-color: white;
   border-radius: 10%;
   border-color: orange;
-}
-
-.component-forms {
-  display: grid;
-  grid-row-gap: 20px;
-  align-content: center;
-  justify-content: center;
-  margin: auto;
-  padding-left: 600px;
-  padding-right: 600px;
-  padding-bottom: 200px;
-}
+} */
 
 /* .Header {
   display: grid;
