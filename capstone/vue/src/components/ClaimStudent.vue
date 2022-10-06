@@ -2,9 +2,13 @@
   <div>
     <form v-on:submit.prevent="addStudent()" action="submit">
       <p>Find your student in our registry to claim them:</p>
-      <select v-model="selectedStudent.studentId" name="studentId" id="studentId">
+      <select
+        v-model="selectedStudent.studentId"
+        name="studentId"
+        id="studentId"
+      >
         <option
-          v-for="student in this.unclaimedStudents"
+          v-for="student in filterStudents"
           v-bind:key="student.id"
           v-bind:value="student.id"
         >
@@ -12,8 +16,8 @@
         </option>
       </select>
       <label for="message"></label>
-      <input v-model="selectedStudent.relation" type="text" name="relation">
-      <button type="submit" >Claim Student</button>
+      <input v-model="selectedStudent.relation" type="text" name="relation" />
+      <button type="submit">Claim Student</button>
     </form>
   </div>
 </template>
@@ -28,8 +32,9 @@ export default {
   },
   data() {
     return {
-      unclaimedStudents: [],
+      allStudents: [],
       claimedStudents: [],
+      claimedStudentIds: [],
       selectedStudent: {
         parentId: this.parentId,
         studentId: "",
@@ -37,47 +42,54 @@ export default {
       },
     };
   },
+  computed: {
+    filterStudents() {
+      let unclaimedStudents = this.allStudents;
+      let claimedStudentIds = this.getClaimedStudentIds();
+      unclaimedStudents = unclaimedStudents.filter(
+        (student) => !claimedStudentIds.includes(student.id)
+      );
+      return unclaimedStudents;
+    },
+  },
   methods: {
-    getUnclaimedStudents() {
-      let studentList = [];
-
+    getStudentsClaimedByThisParentId() {
       ParentService.getStudentsByParentId(this.parentId).then((response) => {
         this.claimedStudents = response.data;
       });
-
+    },
+    getAllStudents() {
       StudentService.getStudentProfiles().then((response) => {
-        studentList = response.data;
-        this.unclaimedStudents = response.data;
+        this.allStudents = response.data;
       });
-
-      if (this.claimedStudents.length > 0) {
-        let filteredStudentList = [];
-        for (let i = 0; i < this.claimedStudents.length; i++) {
-          filteredStudentList = studentList.filter(
-            (student) => student.id !== this.claimedStudents[i].id
-          );
-          this.unclaimedStudents = filteredStudentList;
-          studentList = filteredStudentList;
-          
-        }
-      }
+    },
+    getStudents() {
+      this.getStudentsClaimedByThisParentId();
+      this.getAllStudents();
     },
     addStudent() {
       ParentService.addStudentToParent(this.selectedStudent).then(
         (response) => {
           if (response.status === 201) {
-            console.log(response.status);
-            console.log(this.selectedStudent);
             this.selectedStudent.studentId = "";
             this.selectedStudent.relation = "";
+            this.getStudents();
+            this.getClaimedStudentIds();
           }
         }
       );
-      this.getUnclaimedStudents();
     },
+    getClaimedStudentIds() {
+      this.claimedStudentIds = [];
+      this.claimedStudents.forEach((student) => {
+        this.claimedStudentIds.push(student.id);
+      });
+      return this.claimedStudentIds;
+    },
+    refreshStudentList() {},
   },
   created() {
-    this.getUnclaimedStudents();
+    this.getStudents();
   },
 };
 </script>

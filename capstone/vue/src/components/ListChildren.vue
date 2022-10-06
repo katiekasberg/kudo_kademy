@@ -53,6 +53,9 @@ export default {
   created() {
     this.getChildren();
   },
+  updated() {
+    this.getChildren();
+  },
 };
 </script>
 

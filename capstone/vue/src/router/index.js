@@ -22,6 +22,7 @@ import NewKudoType from "../components/NewKudoType"
 import CreateAnnouncement from "../views/CreateAnnouncement"
 import CreateClass from "../views/CreateClass"
 import ClassManagement from '../views/ClassManagement'
+import KudosManagement from '../views/KudosManagement'
 
 Vue.use(Router)
 
@@ -153,7 +154,7 @@ const router = new Router({
       }
     },
     {
-      path: "/student/",
+      path: "/student",
       name: "student",
       component: Student,
       meta: {
@@ -204,6 +205,14 @@ const router = new Router({
       path: "/manage-classes",
       name: "manage-classes",
       component: ClassManagement,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/manage-kudos",
+      name: "manage-kudos",
+      component: KudosManagement,
       meta: {
         requiresAuth: true
       }

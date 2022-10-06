@@ -65,7 +65,6 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            console.log(response.data.user);
             if (response.data.user.authorities[0].name == "ROLE_PARENT") {
               this.$router.push({ name: "parent" });
             } else if (

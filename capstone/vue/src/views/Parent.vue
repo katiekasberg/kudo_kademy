@@ -1,50 +1,53 @@
 <template>
   <div class="home">
     <!-- <div class="container"> -->
-      <div class="Welcome-User">
-        <h1>Welcome Parent!</h1>
-      </div>
-      <div class="Announcements">
-        <h2>
-          <latest-announcement/>
-        </h2>
-      </div>
-      <div class="View-Report">
+    <div class="Welcome-User">
+      <h1>Welcome Parent!</h1>
+    </div>
+    <div class="Announcements">
+      <h2>
+        <latest-announcement />
+      </h2>
+    </div>
+    <!-- <div class="View-Report">
         <h2>View Student Report</h2>
-        <student-list />
-      </div>
-      <div class="House-Cup">
-        <h2>Leaderboards</h2>
-        <class-points-table />
-        <grade-points-table />
-      </div>
+        
+      </div> -->
+    <div class="House-Cup">
+      <h2 class="leaderboard">Leaderboard</h2>
+      <student-points-table/>
+      <class-points-table />
+      <grade-points-table />
+    </div>
     <!-- </div> -->
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
-import LatestAnnouncement from '../components/LatestAnnouncement.vue';
-import StudentList from "../components/StudentList.vue";
-import ClassPointsTable from '../components/ClassPointsTable.vue';
-import GradePointsTable from '../components/GradePointsTable.vue'
+import LatestAnnouncement from "../components/LatestAnnouncement.vue";
+import ClassPointsTable from "../components/ClassPointsTable.vue";
+import GradePointsTable from "../components/GradePointsTable.vue";
+import StudentPointsTable from '../components/StudentPointsTable.vue';
 
 export default {
-  components: { StudentList, LatestAnnouncement, ClassPointsTable, GradePointsTable},
+  components: { LatestAnnouncement, ClassPointsTable, GradePointsTable, StudentPointsTable },
 };
 </script>
 
 <style scoped>
-
 .home {
   display: grid;
-  grid-template-columns: 0.34fr 1fr;
-  grid-template-areas: 
-  ". Welcome-User"
-  ". Announcements"
-  ". View-Report"
-  ". House-Cup";
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "Welcome-User"
+    "Announcements"
+    "View-Report"
+    "House-Cup";
+  /* justify-items: center; */
   justify-content: space-evenly;
   align-content: center;
+  text-align: center;
   background: linear-gradient(
     360deg,
     white,
@@ -52,46 +55,13 @@ export default {
     rgb(253, 223, 158),
     white
   );
+  padding: 200px;
 }
-/* .container {
-  display: flex;
-  flex-direction: column;
-   */
-  
-  /* grid-template-columns: 1fr 3fr;
-  grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr 1fr; */
-  /* gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "Aside-nav Header "
-    "Aside-nav Welcome-User"
-    "Aside-nav Announcements"
-    "Aside-nav View-Report"
-    "Aside-nav House-Cup"; */
 
-
-/* .Header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "app-name app-name app-name"
-    "logo logo logo"
-    "logo logo logo";
-  grid-area: Header;
-  justify-content: center;
-} */
-
-/* .app-name {
-  grid-area: app-name;
-  justify-items: center;
-} */
-
-/* .logo {
-  grid-area: logo;
-} */
+.leaderboard{
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorange
+}
 
 .Welcome-User {
   grid-area: Welcome-User;
@@ -108,6 +78,36 @@ export default {
 .House-Cup {
   grid-area: House-Cup;
 }
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+   */
+
+/* grid-template-columns: 1fr 3fr;
+  grid-template-rows: 0.7fr 0.2fr 0.7fr 1fr 1fr; */
+/* gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Aside-nav Header "
+    "Aside-nav Welcome-User"
+    "Aside-nav Announcements"
+    "Aside-nav View-Report"
+    "Aside-nav House-Cup"; */
+
+/* .Header {
+  display: grid;
+  justify-content: center;
+} */
+
+/* .app-name {
+  grid-area: app-name;
+  justify-items: center;
+} */
+
+/* .logo {
+  grid-area: logo;
+} */
 
 /* img.logo {
   margin: auto;
@@ -133,33 +133,12 @@ export default {
 } */
 /* p {
   display: grid;
-  align-items: center;
   justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(216, 150, 69);
-} */
+  align-content: center;
+}
 
-/* aside {
-  position: fixed;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-  padding-top: 100%;
-  padding: 10px;
-  width: 15%;
-  float: right;
-  overflow: auto;
-  border-radius: 5px;
-  border-width: 3px;
-  border-color: darkorange;
-  background-color: #ffc83c57;
-  opacity: 100%;
-} */
-
-/* ul {
+.House-Cup {
   display: grid;
-  align-items: center;
-  color: darkorange;
-  justify-items: center;
   justify-content: center;
 } */
 
@@ -168,7 +147,6 @@ export default {
   font-weight: bold;
   border-bottom: 1px solid;
 } */
-
 
 /* button {
   padding: 10px;

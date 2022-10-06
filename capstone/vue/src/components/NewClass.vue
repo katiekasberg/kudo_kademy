@@ -1,7 +1,7 @@
 <template>
   <div>
     <form v-on:submit.prevent action="submit" class="newClassForm">
-    <p>Creat a new Class</p>
+    <p>Create a New Class</p>
     <label for="ClassName">
       Class Name:
       <input type="text" v-model="newClass.name" />

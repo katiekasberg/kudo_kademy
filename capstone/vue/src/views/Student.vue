@@ -7,6 +7,7 @@
       <div class="Announcements"> 
         <latest-announcement />
         <p>Leaderboard</p>
+        <student-points-table/>
         <class-points-table />
         <grade-points-table />
       </div>
@@ -24,12 +25,14 @@ import ClassPointsTable from "../components/ClassPointsTable.vue";
 import GradePointsTable from "../components/GradePointsTable.vue";
 import GradeKudos from "../components/GradeKudos.vue";
 import LatestAnnouncement from "../components/LatestAnnouncement.vue";
+import StudentPointsTable from '../components/StudentPointsTable.vue';
 export default {
   components: {
     ClassPointsTable,
     GradePointsTable,
     GradeKudos,
     LatestAnnouncement,
+    StudentPointsTable,
   },
 };
 </script>
@@ -58,8 +61,5 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
-}
-p{
-
 }
 </style>

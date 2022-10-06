@@ -4,7 +4,7 @@
     <div id="scroll-container">
       <div id="scroll-text">
         <p>{{ this.$store.state.latestAnnouncement.message }}</p>
-        <p>Date: {{ this.$store.state.latestAnnouncement.timeStamp }}</p>
+        <p>Date: {{ formatTimestamp() }}</p>
       </div>
     </div>
   </div>
@@ -27,6 +27,15 @@ export default {
       //     }
       // });
     },
+    formatTimestamp() {
+      const dateToFormat = this.$store.state.latestAnnouncement.timeStamp;
+      const formattedDate = new Date(dateToFormat);
+      return (
+        formattedDate.toLocaleDateString("en-US") +
+        " " +
+        formattedDate.toLocaleTimeString("en-US")
+      );
+    },
   },
   created() {
     this.getLatestAnnouncement();
@@ -46,6 +55,7 @@ export default {
   display: grid;
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
+  text-align: center;
 }
 p {
   display: grid;

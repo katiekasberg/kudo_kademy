@@ -1,8 +1,11 @@
 <template>
-<body>
-  <div>
-    <table>
+
+  <div class="container">
+    <table> 
       <thead>
+        <tr class="header">
+          <th colspan="3">Grade Leaderboard</th>
+        </tr>
         <tr>
           <th>Rank</th>
           <th>Grade</th>
@@ -18,7 +21,7 @@
       </tbody>
     </table>
   </div>
-  </body>
+
 </template>
 
 <script>
@@ -40,20 +43,31 @@ export default {
 </script>
 
 <style scoped>
-body {
+.container {
   display: grid;
   align-items: center;
-  justify-content: center;
+  justify-content: stretch;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(255, 255, 255, 0.657);
-  padding-left: 200px;
-  padding-right: 200px;
+  margin-top:30px;
+  /* padding-left: 200px;
+  padding-right: 200px; */
 }
 tr,
 th,
 td {
   font-family: Arial, Helvetica, sans-serif;
+  font-size:large;
+  font-weight:bold;
   background-color: white;
   border-radius: 5px;
+   border: 2px solid black
 }
+/* p {
+  display: grid;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  padding-left: 50px;
+} */
 </style>

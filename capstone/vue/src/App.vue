@@ -1,6 +1,6 @@
 <template>
   <body>
-    <div id="nav">
+    <div class="nav">
       <nav-bar />
     </div>
     <div id="app">
