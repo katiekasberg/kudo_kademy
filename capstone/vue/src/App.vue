@@ -65,4 +65,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
 }
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
 </style>

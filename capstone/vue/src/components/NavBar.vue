@@ -217,24 +217,27 @@
 
     <div class="home-nav" v-if="$store.state.user.authorities[0] == []">
       <aside>
-      <nav>
-        <ul>
-          <li>
-            <button><a href="/">Home</a></button>
-          </li>
-          <li>
-            <button>
-              <router-link to="/login">Login</router-link>
-            </button>
-          </li>
-          <li>
-            <button><router-link to="/about">About Us</router-link></button>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-     </div>
-
+        <nav>
+          <ul>
+            <li>
+              <router-link v-bind:to="{ name: 'home' }"
+                ><button>Home</button></router-link
+              >
+            </li>
+            <li>
+              <router-link v-bind:to="{ name: 'login' }"
+                ><button>Login</button></router-link
+              >
+            </li>
+            <li>
+              <router-link v-bind:to="{ name: 'about' }"
+                ><button>About Us</button></router-link
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
   </body>
 </template>
 <script>
@@ -257,20 +260,21 @@ button {
   border-radius: 10%;
   border-color: orange;
   width: 150px;
+  font-weight: bold;
+  text-decoration: none;
 }
 aside {
   display: grid;
   position: fixed;
-  border-collapse: separate;
-  justify-items: center;
+  border-collapse: collapse;
 
   height: 100%;
-  width: 275px;
+  width: 250px;
   background-color: #ffc83c57;
+  /* border-right: 1px solid darkorange; */
 }
-a {
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
+html, body{
+  margin: 0;
+  padding: 0;
 }
 </style>

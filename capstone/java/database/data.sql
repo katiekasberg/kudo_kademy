@@ -28,50 +28,50 @@ INSERT INTO users (username,password_hash,role) VALUES ('parent3','$2a$08$UkVvwp
 INSERT INTO users (username,password_hash,role) VALUES ('parent4','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_PARENT');
 
 --admin profiles
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1001, 'Theo', 'Mills', 'admin1@school.com', 'https://i.postimg.cc/Z5qjnKWg/dadphoto-2.jpg');
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1002, 'Linette', 'Putnam', 'admin2@school.com', 'https://i.postimg.cc/qqMSDFnN/pexels-photo-1024311-2.jpg');
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1003, 'JaMarcus', 'Meisner', 'admin3@school.com', 'https://i.postimg.cc/vTNqqZbK/pexels-christina-morillo-1181391-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1001, 'Theo', 'Mills', 'admin1@cypresshill.edu', 'https://i.postimg.cc/Z5qjnKWg/dadphoto-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1002, 'Linette', 'Putnam', 'admin2@cypresshill.edu', 'https://i.postimg.cc/qqMSDFnN/pexels-photo-1024311-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1003, 'JaMarcus', 'Meisner', 'admin3@cypresshill.edu', 'https://i.postimg.cc/vTNqqZbK/pexels-christina-morillo-1181391-2.jpg');
 
 
 --teacher profiles
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1004, 'Lynda', 'Dodson', 'teacher1@school.com', 'https://i.postimg.cc/qvf0kvxx/chemistry-teacher-5499052-960-720-2.jpg' );
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1005, 'Nadia', 'Campana', 'teacher2@school.com', 'https://i.postimg.cc/rm7ZSKmh/woman-613309-960-720-2.jpg');
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1006, 'Fynn', 'Hopkins', 'teacher3@school.com', 'https://i.postimg.cc/MGLJFZHB/allrounder-1232060-960-720-2.jpg');
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1007, 'Brian', 'Smets', 'teacher4@school.com', 'https://i.postimg.cc/xT57ZjFd/pexels-photo-220453-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1004, 'Lynda', 'Dodson', 'teacher1@cypresshill.edu', 'https://i.postimg.cc/qvf0kvxx/chemistry-teacher-5499052-960-720-2.jpg' );
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1005, 'Nadia', 'Campana', 'teacher2@cypresshill.edu', 'https://i.postimg.cc/rm7ZSKmh/woman-613309-960-720-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1006, 'Fynn', 'Hopkins', 'teacher3@cypresshill.edu', 'https://i.postimg.cc/MGLJFZHB/allrounder-1232060-960-720-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1007, 'Brian', 'Smets', 'teacher4@cypresshill.edu', 'https://i.postimg.cc/xT57ZjFd/pexels-photo-220453-2.jpg');
 
 
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1008, 'Isabel', 'Glenn', 'student1@school.com', 'https://i.postimg.cc/ryCTTQXm/girl-2098866-960-720-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1008, 'Isabel', 'Glenn', 'student1@cypresshill.edu', 'https://i.postimg.cc/ryCTTQXm/girl-2098866-960-720-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1008, 1, 2026);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1009, 'Wendy', 'Hargrave', 'student2@school.com', 'https://i.postimg.cc/bwwFKR8K/pexels-antoni-shkraba-6609340-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1009, 'Wendy', 'Hargrave', 'student2@cypresshill.edu', 'https://i.postimg.cc/bwwFKR8K/pexels-antoni-shkraba-6609340-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1009, 1, 2026);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1010, 'Kalum', 'Ortiz', 'student3@school.com', 'https://i.postimg.cc/SQz4PkVW/Screenshot-2022-10-05-161208.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1010, 'Kalum', 'Ortiz', 'student3@cypresshill.edu', 'https://i.postimg.cc/SQz4PkVW/Screenshot-2022-10-05-161208.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1010, 1, 2024);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1011, 'Joseph', 'Farley', 'student4@school.com', 'https://i.postimg.cc/Vk2BD9N9/pexels-andrea-piacquadio-3771091-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1011, 'Joseph', 'Farley', 'student4@cypresshill.edu', 'https://i.postimg.cc/Vk2BD9N9/pexels-andrea-piacquadio-3771091-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1011, 1, 2025);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1012, 'Mariya', 'Mcgrath', 'student5@school.com', 'https://i.postimg.cc/dQ2zTBBy/2-2-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1012, 'Mariya', 'Mcgrath', 'student5@cypresshill.edu', 'https://i.postimg.cc/dQ2zTBBy/2-2-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1012, 1, 2025);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1013, 'Jillian', 'Glenn', 'student6@school.com', 'https://i.postimg.cc/d3WGdrXy/pexels-anastasiya-gepp-1462633-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1013, 'Jillian', 'Glenn', 'student6@cypresshill.edu', 'https://i.postimg.cc/d3WGdrXy/pexels-anastasiya-gepp-1462633-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1013, 1, 2025);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1014, 'Anil', 'Key', 'student7@school.com', 'https://i.postimg.cc/g24r0mCx/boy-2178303-960-720-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1014, 'Anil', 'Key', 'student7@cypresshill.edu', 'https://i.postimg.cc/g24r0mCx/boy-2178303-960-720-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1014, 1, 2024);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1015, 'Tyrique', 'Cline', 'student8@school.com', 'https://i.postimg.cc/kGJwSxJQ/Black-Student-2-600x400-c-default-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1015, 'Tyrique', 'Cline', 'student8@cypresshill.edu', 'https://i.postimg.cc/kGJwSxJQ/Black-Student-2-600x400-c-default-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1015, 1, 2024);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1016, 'Gabriella', 'Morikawa', 'student9@school.com', 'https://i.postimg.cc/KzXH1k3f/5f035f109555c14e62d64982-premed-college-freshman-girl-student-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1016, 'Gabriella', 'Morikawa', 'student9@cypresshill.edu', 'https://i.postimg.cc/KzXH1k3f/5f035f109555c14e62d64982-premed-college-freshman-girl-student-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1016, 1, 2025);
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1017, 'Marianna', 'Millington', 'student10@school.com', 'https://i.postimg.cc/MTxYkyjC/high-shcool-student-2.jpg');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1017, 'Marianna', 'Millington', 'student10@cypresshill.edu', 'https://i.postimg.cc/MTxYkyjC/high-shcool-student-2.jpg');
 INSERT INTO student (id, school_id, graduation_year) VALUES (1017, 1, 2024);
 
 
 
 --parent profiles
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1018, 'Miles', 'Millington', 'parent1@school.com', 'https://i.postimg.cc/nLvhjmwc/istockphoto-1147066751-612x612-2.jpg');
-INSERT INTO parent (id, phone_number, address) VALUES (1018, '(111)111-1111', '1 Address St Town, State 11111');
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1019, 'Kim', 'Millington', 'parent2@school.com', 'https://i.postimg.cc/9FFR6LgP/istockphoto-839128434-612x612-2.jpg');
-INSERT INTO parent (id, phone_number, address) VALUES (1019, '(222)222-2222', '2 Address St Town, State 11111');
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1020, 'Cory', 'Glenn', 'parent3@school.com', 'https://i.postimg.cc/fyZJLyR0/hat-591973-960-720-2.jpg');
-INSERT INTO parent (id, phone_number, address) VALUES (1020, '(222)222-2222', '2 Address St Town, State 11111');
-INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1021, 'Dan', 'Ortiz', 'parent4@school.com', 'https://c.tenor.com/ygmHJkMgfdwAAAAC/ace-ventura-pet-detective.gif');
-INSERT INTO parent (id, phone_number, address) VALUES (1021, '(444)444-4444', '3 Address St Town, State 11111');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1018, 'Miles', 'Millington', 'parent1@cypresshill.edu', 'https://i.postimg.cc/nLvhjmwc/istockphoto-1147066751-612x612-2.jpg');
+INSERT INTO parent (id, phone_number, address) VALUES (1018, '(785)329-5564', '32 Walnut Street, Lebanon, Kansas, 66952');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1019, 'Kim', 'Millington', 'parent2@cypresshill.edu', 'https://i.postimg.cc/9FFR6LgP/istockphoto-839128434-612x612-2.jpg');
+INSERT INTO parent (id, phone_number, address) VALUES (1019, '(785)329-5564', '32 Walnut Street, Lebanon, Kansas, 66952');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1020, 'Cory', 'Glenn', 'parent3@cypresshill.edu', 'https://i.postimg.cc/fyZJLyR0/hat-591973-960-720-2.jpg');
+INSERT INTO parent (id, phone_number, address) VALUES (1020, '(785)329-8872', '58 Maple Street, Lebanon, Kansas, 66952');
+INSERT INTO profile (id, first_name, last_name, email, image) VALUES (1021, 'Dan', 'Ortiz', 'parent4@cypresshill.edu', 'https://c.tenor.com/ygmHJkMgfdwAAAAC/ace-ventura-pet-detective.gif');
+INSERT INTO parent (id, phone_number, address) VALUES (1021, '(785)329-6214', '27 Pine Street, Lebanon, Kansas, 66952');
 
 
 INSERT INTO class_info (name, subject, teacher_id, school_id, description, period, start_time, end_time, school_year) VALUES ('Advanced Math: Trigonometry', 'Math', 1005, 1, 'Advanced Math with Ms. Campana', 'Period 1', '08:00:00', '09:00:00', 2023);
