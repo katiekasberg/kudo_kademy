@@ -57,6 +57,7 @@ img {
   width: 50%;
   justify-items: center;
   justify-content: center;
+
 }
 .box {
   background-color: rgba(255, 255, 255, 0.657);

@@ -3,7 +3,7 @@
     <div>
       <table class="student-list">
 
-        <th colspan="3">Search For Students</th>
+        <th class="head" colspan="3">Search For Students</th>
 
         <tr class="header-table">
           <th>First Name:</th>
@@ -96,13 +96,14 @@ export default {
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   border: black solid 5px;
+  border-radius: 3px;
   
 }
 .header-table{
   text-align: center;
 }
 th {
-  padding-right: 100px;
+  /* padding-right: 100px; */
   text-align: center;
 }
 p {

@@ -85,6 +85,14 @@ export default {
 .newClassForm {
     display:flex;
     flex-direction: column;
+}
+label{
+  display: flex;
+  justify-content: left;
+}
 
+input{
+  display:left;
+  justify-content: right;
 }
 </style>

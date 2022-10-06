@@ -70,5 +70,6 @@ img {
   height: 200px;
   width: 200px;
   image-rendering: auto;
+  padding-top:50px;
 }
 </style>

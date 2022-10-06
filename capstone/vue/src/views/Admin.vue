@@ -50,6 +50,10 @@ export default {
   justify-content: center;
 } */
 
+.head{
+  text-align: center;
+}
+
 .admin-home {
   display: grid;
 }

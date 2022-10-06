@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table>
+    <table class="classes">
       List of Teacher's Classes:
       <tr>
         <th>Name</th>
@@ -53,5 +53,8 @@ export default {
 }
 </script>
 <style>
-
+.classes{
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid black;
+}
 </style>
