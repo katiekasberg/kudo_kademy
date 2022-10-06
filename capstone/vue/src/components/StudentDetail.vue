@@ -1,28 +1,28 @@
 <template>
-  <div class="container">
-    <div id="profile-image">
-      <img v-bind:src="this.$store.state.activeStudentProfile.image" />
-      <!-- <img src="../../resources/profile-icon.png" alt="" /> -->
-    </div>
-    <div class="student-profile">
-      <h1>Student Profile</h1>
-      <div id="profileInfo">
+  <div>
+    <h1>Student Profile</h1>
+    <div class="layout">
+      <div class="info">
         <p id="first-name">
           First Name: {{ this.$store.state.activeStudentProfile.firstName }}
         </p>
         <p id="last-name">
           Last Name: {{ this.$store.state.activeStudentProfile.lastName }}
         </p>
-        <p id="school">
+        <p id="school">School: Cypress Hill</p>
+        <!-- <p id="school">
           School: {{ this.$store.state.activeStudentProfile.schoolId }}
-        </p>
+        </p> -->
         <p id="graduation-year">
-          Class Of {{ this.$store.state.activeStudentProfile.graduationYear }}
+          Class Of
+          {{ this.$store.state.activeStudentProfile.graduationYear }}
         </p>
         <p id="email">
           Email: {{ this.$store.state.activeStudentProfile.email }}
         </p>
       </div>
+      <img v-bind:src="this.$store.state.activeStudentProfile.image" />
+      <!-- <img src="../../resources/profile-icon.png" alt="" /> -->
     </div>
   </div>
 </template>
@@ -54,21 +54,25 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.layout {
   display: flex;
   flex-direction: row;
-  background-color: rgba(255, 255, 255, 0.657);
-  padding-right: 136px;
-  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 100px;
 }
+.info {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  margin: 20px;
+}
+
 img {
-  align-content: flex-start;
   border-radius: 50%;
   justify-content: right;
   align-items: right;
-  margin-left: 50px;
   height: 200px;
   width: 200px;
   image-rendering: auto;
+  padding-top: 50px;
 }
 </style>

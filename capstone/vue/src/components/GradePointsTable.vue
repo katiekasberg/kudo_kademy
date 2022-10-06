@@ -1,10 +1,9 @@
 <template>
   <div class="container">
+    <p colspan="3">Grade Rank</p>
     <table>
       <thead>
-        <tr class="header">
-          <th colspan="3">Grade Rank</th>
-        </tr>
+        <tr class="header"></tr>
         <tr>
           <th>Rank</th>
           <th class="middle">Grade</th>
@@ -42,38 +41,40 @@ export default {
 
 <style scoped>
 .container {
-  display: grid;
+  font-size: large;
+  border-radius: 5px;
   align-items: center;
-  justify-content: stretch;
+  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(255, 255, 255, 0.657);
-  margin-top: 30px;
-  /* padding-left: 200px;
-  padding-right: 200px; */
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: medium;
+  font-weight: normal;
 }
+
 th {
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
   font-weight: bold;
   background-color: white;
-}
-tr,
-td {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
-  font-weight: normal;
-  background-color: white;
   border-radius: 5px;
   border: 2px solid black;
+}
+td {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  text-align: left;
+  background-color: white;
   width: 1500px;
   height: 30px;
   table-layout: fixed;
 }
-/* p {
-  display: grid;
+p {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  padding-left: 50px;
-} */
+  font-weight: bold;
+  font-size: large;
+  border-radius: 5px;
+  background: white;
+  border-color: black;
+}
 </style>

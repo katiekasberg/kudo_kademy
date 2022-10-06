@@ -3,7 +3,7 @@
     <p id="student-points">Current Student Points: {{ this.totalPoints }}</p>
     <table class="list-kudos">
       <tr>
-        <th>Kudo Id</th>
+        <!-- <th>Kudo Id</th> -->
         <th>Awarded By</th>
         <th>Kudo Type:</th>
         <th>Points</th>
@@ -14,7 +14,7 @@
         v-bind:key="kudo.id"
         v-bind:value="kudo.id"
       >
-        <td>{{ kudo.id }}</td>
+        <!-- <td>{{ kudo.id }}</td> -->
         <td>{{ kudo.firstName }} {{ kudo.lastName }}</td>
         <td>{{ kudo.kudoTypeName }}</td>
         <td>{{ kudo.kudoTypeValue }}</td>
@@ -60,21 +60,38 @@ export default {
 </script>
 
 <style scoped>
-.student-kudos {
-  display: flexbox;
-  align-content: center;
-  background-color: rgba(255, 255, 255, 0.657);
-  margin-left: 200px;
-  padding-left: 75px;
+.kudo-list {
+  border: 1px solid black;
+  font-size: large;
+  border-radius: 5px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+  font-size: medium;
+  font-weight: normal;
+}
+p {
+  text-align: center;
+}
+th {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 td {
-  background-color: white;
-}
-tr {
-  background-color: white;
-}
-
-th {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
   background-color: white;
 }
 </style>

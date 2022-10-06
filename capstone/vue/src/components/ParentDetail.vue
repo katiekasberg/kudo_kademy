@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
-    <div id="profile-image">
-      <img v-bind:src="this.$store.state.activeParentProfile.image" />
-    </div>
-    <div class="parent-profile">
-      <h1>Parent Profile</h1>
-      <div id="profileInfo">
+  <div>
+    <h1>Parent Profile</h1>
+    <div class="layout">
+      <div id="info">
+        <br />
         <p id="first-name">
           First Name: {{ this.$store.state.activeParentProfile.firstName }}
         </p>
@@ -13,7 +11,8 @@
           Last Name: {{ this.$store.state.activeParentProfile.lastName }}
         </p>
         <p id="phone-number">
-          Phone Number: {{ this.$store.state.activeParentProfile.phoneNumber }}
+          Phone Number:
+          {{ this.$store.state.activeParentProfile.phoneNumber }}
         </p>
         <p id="address">
           Address: {{ this.$store.state.activeParentProfile.address }}
@@ -22,6 +21,7 @@
           Email: {{ this.$store.state.activeParentProfile.email }}
         </p>
       </div>
+      <img v-bind:src="this.$store.state.activeParentProfile.image" />
     </div>
   </div>
 </template>
@@ -57,22 +57,27 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.layout {
   display: flex;
   flex-direction: row;
-  background-color: rgba(255, 255, 255, 0.657);
-  padding-right: 136px;
-  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 150px;
+  padding-bottom: 100px;
 }
+.info {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  padding-top: 100px;
+  margin: 100px;
+}
+
 img {
-  align-content: flex-start;
   border-radius: 50%;
   justify-content: right;
   align-items: right;
-  margin-left: 50px;
   height: 200px;
   width: 200px;
   image-rendering: auto;
-  padding: 20px;
+  padding-top: 50px;
 }
 </style>

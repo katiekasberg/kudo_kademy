@@ -1,14 +1,9 @@
 <template>
   <div class="container">
+    <p colspan="3">Classroom Rank</p>
     <table class="tableClass">
       <thead>
-        <tr class="header">
-<<<<<<< HEAD
-          <p colspan="3">Classroom Leaderboard</p>
-=======
-          <th colspan="3">Classroom Rank</th>
->>>>>>> 6dc6b99f8f63e718e9b975b5fac06ce26a9d6ea0
-        </tr>
+        <tr class="header"></tr>
         <tr>
           <th>Rank</th>
           <th class="middle">Class</th>
@@ -48,10 +43,10 @@ export default {
 .container {
   display: grid;
   align-items: center;
-  justify-content: stretch;
+  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(255, 255, 255, 0.657);
-  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding-bottom: 20px;
   /* padding-left: 200px;
   padding-right: 200px; */
 }
@@ -81,5 +76,7 @@ p {
   font-size: large;
   align-items: center;
   justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 0px;
 }
 </style>

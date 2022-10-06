@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body class="container">
     <div>
       <table class="my-student">
         <p>My Students</p>
@@ -73,4 +73,22 @@ export default {
 };
 </script>
 <style scoped>
+.container {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-row-gap: 20px;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+}
+
+h1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkorange;
+  letter-spacing: 2px;
+}
 </style>

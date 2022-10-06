@@ -34,7 +34,7 @@
           required
         />
         <router-link class="register" :to="{ name: 'register' }"
-          >Need an account?</router-link
+          ><h1>Need an account?</h1></router-link
         >
         <button type="submit">Sign in</button>
       </form>
@@ -123,8 +123,8 @@ export default {
   letter-spacing: 2px;
 }
 #login {
-  background-color: rgba(255, 255, 255, 0.616);
-  padding-bottom: 200px;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding-bottom: 500px;
   /* padding-left: 200px;
   padding-right: 200px; */
 }
@@ -145,7 +145,16 @@ label {
 }
 
 button {
-  width: 100%;
-  height: 150%;
+  width: 180px;
+}
+h1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  text-decoration: underline;
+  font-size: small;
+  letter-spacing: 2px;
 }
 </style>

@@ -302,9 +302,10 @@ h2 {
 #register {
   margin-left: 10%;
   margin-right: 25%;
-  background-color: rgba(255, 255, 255, 0.616);
+  background-color: rgba(255, 255, 255, 0.25);
   padding-left: 400px;
   padding-right: 400px;
+  padding-bottom: 400px;
 }
 
 .sr-only {
@@ -316,7 +317,7 @@ h2 {
 }
 
 button {
-  height: 150%;
+  width: 180px;
 }
 body {
   padding-left: 800px;

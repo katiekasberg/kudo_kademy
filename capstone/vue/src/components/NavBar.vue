@@ -217,7 +217,6 @@
 
     <div class="home-nav" v-if="$store.state.user.authorities[0] == []">
       <aside>
-<<<<<<< HEAD
         <nav>
           <ul>
             <li>
@@ -229,35 +228,12 @@
               </button>
             </li>
             <li>
-              <button><a href="#">About us</a></button>
-            </li>
-            <li>
-              <button><a href="#">Contact us</a></button>
+              <button><router-link to="/about">About Us</router-link></button>
             </li>
           </ul>
         </nav>
       </aside>
     </div>
-=======
-      <nav>
-        <ul>
-          <li>
-            <button><a href="/">Home</a></button>
-          </li>
-          <li>
-            <button>
-              <router-link to="/login">Login</router-link>
-            </button>
-          </li>
-          <li>
-            <button><router-link to="/about">About Us</router-link></button>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-     </div>
-
->>>>>>> 6dc6b99f8f63e718e9b975b5fac06ce26a9d6ea0
   </body>
 </template>
 <script>

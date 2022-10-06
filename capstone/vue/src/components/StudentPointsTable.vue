@@ -51,10 +51,12 @@ export default {
 }
 
 th {
-  border: 2px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  background-color: white;
   border-radius: 5px;
-
-  text-align: center;
+  border: 2px solid black;
 }
 td {
   padding: 10px;

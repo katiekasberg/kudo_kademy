@@ -1,7 +1,7 @@
 <template>
   <div>
+    <p>Find your student in our registry to claim them:</p>
     <form v-on:submit.prevent="addStudent()" action="submit">
-      <p>Find your student in our registry to claim them:</p>
       <select
         v-model="selectedStudent.studentId"
         name="studentId"
@@ -95,4 +95,26 @@ export default {
 </script>
 
 <style scoped>
+form {
+  padding: 30px;
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  height: 20px;
+}
+select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  height: 25px;
+}
 </style>

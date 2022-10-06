@@ -6,15 +6,11 @@
       </div>
       <div class="Announcements">
         <latest-announcement />
-        <p>Leaderboard</p>
+        <grade-kudos />
+        <p>Leaderboards</p>
         <student-points-table />
         <class-points-table />
         <grade-points-table />
-      </div>
-
-      <div class="Class-points">
-        <h3>Latest Kudos Recognitions in your grade:</h3>
-        <grade-kudos />
       </div>
     </div>
   </body>
@@ -38,7 +34,9 @@ export default {
 </script>
 
 <style scoped>
-body {
+.Announcements {
+  margin-left: 400px;
+  margin-right: 400px;
 }
 .container {
   display: flex;
@@ -54,5 +52,8 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkorange;
   letter-spacing: 2px;
+}
+p {
+  color: darkorange;
 }
 </style>

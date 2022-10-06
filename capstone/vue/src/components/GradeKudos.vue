@@ -1,6 +1,7 @@
 <template>
   <div>
     <table>
+      <p>Most Recent Kudos in Your Grade</p>
       <tr>
         <th>Student</th>
         <th>Type</th>
@@ -53,6 +54,40 @@ export default {
   },
 };
 </script>
-
 <style scoped>
+.container {
+  font-size: large;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: medium;
+  font-weight: normal;
+}
+
+th,
+td {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  text-align: left;
+  background-color: white;
+  width: 250px;
+  height: 30px;
+  table-layout: fixed;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 5px;
+
+  border-color: black;
+}
+table {
+  display: grid;
+  align-content: center;
+}
 </style>

@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h1>Staff Profile</h1>
-    <br />
     <div class="layout">
       <div class="info">
+        <h1>Staff Profile</h1>
+        <br />
+
         <p id="first-name">
           First Name: {{ this.$store.state.activeStaffProfile.firstName }}
         </p>
