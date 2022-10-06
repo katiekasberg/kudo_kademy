@@ -2,13 +2,19 @@
   <body>
     <h1>Welcome Teacher!</h1>
     <latest-announcement/>
+    <student-points-table/>
+    <class-points-table/>
+    <grade-points-table/>
   </body>
 </template>
 
 <script>
+import ClassPointsTable from '../components/ClassPointsTable.vue'
+import GradePointsTable from '../components/GradePointsTable.vue'
 import LatestAnnouncement from '../components/LatestAnnouncement.vue'
+import StudentPointsTable from '../components/StudentPointsTable.vue'
 export default {
-  components: { LatestAnnouncement },
+  components: { LatestAnnouncement, StudentPointsTable, ClassPointsTable, GradePointsTable },
 }
 
 </script>

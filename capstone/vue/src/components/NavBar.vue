@@ -118,7 +118,7 @@
               <button><a href="#">Add/Remove Teacher</a></button>
             </li> -->
             <li>
-              <router-link v-bind:to="{ name: 'newkudotype' }"
+              <router-link v-bind:to="{ name: 'manage-kudos' }"
                 ><button>Create Kudos Categories</button></router-link
               >
             </li>
