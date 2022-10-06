@@ -53,10 +53,6 @@ export default {
   justify-content: space-evenly;
   align-content: center;
   text-align: center;
-<<<<<<< HEAD
-
-  padding: 200px;
-=======
   background: linear-gradient(
     360deg,
     white,
@@ -68,7 +64,6 @@ export default {
   /* padding: 200px; */
   padding-right: 400px;
   padding-left:400px;
->>>>>>> 6dc6b99f8f63e718e9b975b5fac06ce26a9d6ea0
 }
 
 .leaderboard {

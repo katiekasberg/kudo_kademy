@@ -3,11 +3,7 @@
     <table class="tableClass">
       <thead>
         <tr class="header">
-<<<<<<< HEAD
-          <p colspan="3">Classroom Leaderboard</p>
-=======
           <th colspan="3">Classroom Rank</th>
->>>>>>> 6dc6b99f8f63e718e9b975b5fac06ce26a9d6ea0
         </tr>
         <tr>
           <th>Rank</th>

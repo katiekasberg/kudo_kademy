@@ -98,9 +98,6 @@ h2 {
   color: rgb(216, 150, 69);
 } */
 
-<<<<<<< HEAD
-button {
-=======
 body {
   background: linear-gradient(
     360deg,
@@ -111,7 +108,6 @@ body {
   );
 }
 /* button {
->>>>>>> 6dc6b99f8f63e718e9b975b5fac06ce26a9d6ea0
   padding: 10px;
   margin-left: 20px;
   background-color: white;
