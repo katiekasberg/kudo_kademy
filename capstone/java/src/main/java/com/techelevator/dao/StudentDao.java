@@ -17,7 +17,7 @@ public interface StudentDao {
 
     List<StudentProfile> getAllStudentProfiles();
 
-    StudentProfile getAllStudentProfileById(int studentId) throws StudentProfileNotFoundException;
+    StudentProfile getStudentProfileById(int studentId) throws StudentProfileNotFoundException;
 
     List<ClassDetail> getClassesAsStudent(int studentId);
 

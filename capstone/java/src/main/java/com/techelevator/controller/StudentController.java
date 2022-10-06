@@ -29,8 +29,8 @@ public class StudentController {
 
     //get a specific student's profile by student ID
     @RequestMapping(path = "/student-profiles/{studentId}" , method= RequestMethod.GET)
-    public StudentProfile listAllStudentProfiles(@PathVariable int studentId){
-        return studentDao.getAllStudentProfileById(studentId);
+    public StudentProfile getStudentProfileById(@PathVariable int studentId){
+        return studentDao.getStudentProfileById(studentId);
     }
 
     //get a list of classes based on student Id
