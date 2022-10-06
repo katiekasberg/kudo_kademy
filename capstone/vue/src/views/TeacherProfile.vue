@@ -18,6 +18,5 @@ export default {
     CreateClass
 
 <style scoped>
-body {
-}
+
 </style>

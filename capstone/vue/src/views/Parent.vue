@@ -53,17 +53,8 @@ export default {
   justify-content: space-evenly;
   align-content: center;
   text-align: center;
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
-  padding-bottom: 200px;
-  /* padding: 200px; */
-  padding-right: 400px;
-  padding-left:400px;
+
+  padding: 200px;
 }
 
 .leaderboard {

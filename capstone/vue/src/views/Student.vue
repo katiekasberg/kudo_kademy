@@ -38,8 +38,7 @@ export default {
 </script>
 
 <style scoped>
-body {
-}
+
 .container {
   display: flex;
   flex-direction: column;

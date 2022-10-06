@@ -55,6 +55,10 @@ export default {
   justify-content: center;
 } */
 
+.head{
+  text-align: center;
+}
+
 .admin-home {
   display: grid;
 }
@@ -98,22 +102,13 @@ h2 {
   color: rgb(216, 150, 69);
 } */
 
-body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
-}
-/* button {
+button {
   padding: 10px;
   margin-left: 20px;
   background-color: white;
   border-radius: 10%;
   border-color: orange;
-} */
+} 
 
 /* .Header {
   display: grid;
