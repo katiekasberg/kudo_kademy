@@ -38,6 +38,7 @@ export default {
   margin-left: 400px;
   margin-right: 400px;
 }
+
 .container {
   display: flex;
   flex-direction: column;

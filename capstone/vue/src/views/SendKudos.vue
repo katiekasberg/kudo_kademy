@@ -42,8 +42,7 @@ h2 {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
 }
-body {
-}
+
 new-kudos {
   padding-bottom: 200px;
 }

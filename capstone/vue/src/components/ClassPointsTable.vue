@@ -3,7 +3,9 @@
     <p colspan="3">Classroom Rank</p>
     <table class="tableClass">
       <thead>
-        <tr class="header"></tr>
+        <tr class="header">
+          <th colspan="3">Classroom Rank</th>
+        </tr>
         <tr>
           <th>Rank</th>
           <th class="middle">Class</th>
