@@ -66,7 +66,6 @@ public class ParentController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/parent-profile/claim", method = RequestMethod.POST)
     public void assignStudentToParentId(@RequestBody ParentStudent student){
-        System.out.println(student);
         parentDao.addStudentToParent(student);
     }
 

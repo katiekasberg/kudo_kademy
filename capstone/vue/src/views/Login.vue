@@ -74,10 +74,6 @@ export default {
             } else if (response.data.user.authorities[0].name == "ROLE_ADMIN") {
               this.$router.push({ name: "admin" });
             } else {
-              this.$store.commit(
-                "SET_ACTIVE_STUDENT_ID",
-                response.data.user.id
-              );
               this.$router.push({ name: "student" });
             }
           }
