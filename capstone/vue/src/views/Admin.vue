@@ -94,9 +94,12 @@ button {
   align-content: center;
   justify-content: center;
   margin: auto;
-  padding-left: 600px;
-  padding-right: 600px;
-  padding-bottom: 200px;
+  /* padding-left: 600px;
+  padding-right: 600px; */
+    padding-bottom: 200px;
+  /* padding: 200px; */
+  padding-right: 400px;
+  padding-left:400px;
 }
 
 /* .Header {

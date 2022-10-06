@@ -53,7 +53,10 @@ export default {
     rgb(253, 223, 158),
     white
   );
-  padding: 200px;
+  padding-bottom: 200px;
+  /* padding: 200px; */
+  padding-right: 400px;
+  padding-left:400px;
 }
 
 .leaderboard{
