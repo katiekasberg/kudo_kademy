@@ -2,9 +2,9 @@
   <div>
       <table>
           <tr>
-              <th>Name</th>
-              <th>Kudo Type</th>
-              <th>Kudo Description</th>
+              <th>Student</th>
+              <th>Type</th>
+              <th>Description</th>
               <th>Points</th>
           </tr>
           <tr
@@ -15,7 +15,7 @@
               <td>{{kudo.firstName}} {{kudo.lastName}}</td>
               <td>{{kudo.kudoTypeName}}</td>
               <td>{{kudo.kudoTypeDescription}}</td>
-              <td>{{kudo.typeValue}}</td>
+              <td>{{kudo.kudoTypeValue}}</td>
           </tr>
       </table>
   </div>
@@ -34,7 +34,7 @@ export default {
 
     methods: {
         getGraduationYear(){
-            StudentService.getStudentProfileById(this.$store.state.activeStudentId).then((response) => {
+            StudentService.getStudentProfileById(this.$store.state.user.id).then((response) => {
                 this.graduationYear = response.data.graduationYear;
                 this.getKudosByGradYear();
             });
