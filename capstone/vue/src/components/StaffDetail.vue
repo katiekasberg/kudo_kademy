@@ -1,8 +1,8 @@
 <template>
   <div>
+    <h1>Staff Profile</h1>
     <div class="layout">
       <div class="info">
-        <h1>Staff Profile</h1>
         <br />
 
         <p id="first-name">

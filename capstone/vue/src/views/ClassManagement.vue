@@ -22,6 +22,7 @@ export default {
   justify-content: flex-start;
   padding-left: 200px;
   padding-top: 50px;
+  padding-bottom: 300px;
 }
 button {
   display: grid;

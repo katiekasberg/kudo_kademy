@@ -33,12 +33,14 @@ export default {
 <style scoped>
 .announcement-component {
   display: grid;
+  align-content: center;
+  justify-content: center;
   grid-row-gap: 20px;
   align-content: center;
   justify-content: center;
   margin: auto;
-
-  padding-bottom: 200px;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 
 .Welcome-User {

@@ -57,7 +57,7 @@ export default {
   align-items: center;
   justify-content: stretch;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(255, 255, 255, 0.657);
+  background-color: rgba(255, 255, 255, 0.257);
   margin-bottom: 20px;
   margin-top: 100px;
 }

@@ -12,4 +12,7 @@ export default {
 </script>
 
 <style scoped>
+div {
+  padding-bottom: 200px;
+}
 </style>

@@ -12,7 +12,8 @@ export default {
 </script>
 
 <style scoped>
-div{
+div {
   margin-top: 25px;
+  padding-bottom: 200px;
 }
 </style>

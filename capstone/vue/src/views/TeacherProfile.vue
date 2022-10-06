@@ -1,10 +1,8 @@
 <template>
-  <body>
-    <div>
-      <staff-detail v-bind:staffId="parseInt($route.params.id)" />
-      <teacher-classes v-bind:staffId="parseInt($route.params.id)" />
-    </div>
-  </body>
+  <div>
+    <staff-detail v-bind:staffId="parseInt($route.params.id)" />
+    <teacher-classes v-bind:staffId="parseInt($route.params.id)" />
+  </div>
 </template>
 
 <script>

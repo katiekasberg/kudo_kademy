@@ -60,7 +60,7 @@ body {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  padding-bottom: 100px;
+  padding-bottom: 300px;
   margin-top: 100px;
 }
 input {

@@ -12,6 +12,8 @@ export default {
 </script>
 <style scoped>
 body {
-  min-height: auto;
+  min-height: 500px;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding-bottom: 200px;
 }
 </style>

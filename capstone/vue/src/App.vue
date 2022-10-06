@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body class="back-opaque">
     <div class="nav">
       <nav-bar />
     </div>
@@ -50,7 +50,8 @@ a {
   width: auto;
   margin: auto;
 }
-body {
+
+.back-opaque {
   background: linear-gradient(
     360deg,
     rgb(241, 197, 99),
@@ -64,11 +65,18 @@ body {
   background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
-}
-
-html,
-body {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 300px;
   margin: 0;
   padding: 0;
+}
+.back-opaque:before {
+  z-index: -1;
+  position: absolute;
+  height: 25%;
+  content: url(../resources/dis-pretty-schoo.png);
+  opacity: 0.2;
+  background-image: no-repeat;
 }
 </style>

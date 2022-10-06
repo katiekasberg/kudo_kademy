@@ -43,7 +43,6 @@ export default {
 
 <style scoped>
 .kudo-list {
-  border: 1px solid black;
   font-size: large;
   border-radius: 5px;
   display: block;
