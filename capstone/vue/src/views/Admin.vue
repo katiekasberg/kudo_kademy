@@ -3,8 +3,10 @@
     <div class="Welcome-User">
       <h2>Welcome Administrator!</h2>
     </div>
-    <div class="component-forms">
+    <div class="announcement-component">
       <latest-announcement />
+    </div>
+    <div class="rewards-component">
       <rewards />
     </div>
   </body>
@@ -22,11 +24,29 @@ export default {
     
 
 <style scoped>
-.container {
+.announcement-component {
+  display: grid;
+  grid-row-gap: 20px;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+  /* padding-left: 600px;
+  padding-right: 600px; */
+  padding-bottom: 200px;
+  /* padding: 200px; */
+  padding-right: 400px;
+  padding-left: 400px;
+}
+
+.rewards-component{
+  background-color: white;
+}
+
+/* .container {
   display: grid;
   align-content: center;
   justify-content: center;
-}
+} */
 
 .admin-home {
   display: grid;
@@ -38,21 +58,21 @@ export default {
   align-content: center;
   padding-left: 00px;
 }
-.submitBtn {
+/* .submitBtn {
   margin: auto;
   display: block;
-}
+} */
 
-.search {
+/* .search {
   grid-area: search;
-}
+} */
 
-img.logo {
+/* img.logo {
   margin: auto;
   display: block;
   width: 200px;
   height: auto;
-}
+} */
 
 h2 {
   display: grid;
@@ -63,13 +83,13 @@ h2 {
   letter-spacing: 2px;
 }
 
-p {
+/* p {
   display: grid;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(216, 150, 69);
-}
+} */
 
 body {
   background: linear-gradient(
@@ -80,27 +100,13 @@ body {
     white
   );
 }
-button {
+/* button {
   padding: 10px;
   margin-left: 20px;
   background-color: white;
   border-radius: 10%;
   border-color: orange;
-}
-
-.component-forms {
-  display: grid;
-  grid-row-gap: 20px;
-  align-content: center;
-  justify-content: center;
-  margin: auto;
-  /* padding-left: 600px;
-  padding-right: 600px; */
-    padding-bottom: 200px;
-  /* padding: 200px; */
-  padding-right: 400px;
-  padding-left:400px;
-}
+} */
 
 /* .Header {
   display: grid;
