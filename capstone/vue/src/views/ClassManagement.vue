@@ -20,5 +20,11 @@ export default {
   grid-template-columns: 1fr 3fr;
   width: 75%;
   justify-content: flex-start;
+  padding-left: 200px;
+  padding-top: 50px;
+}
+button {
+  display: grid;
+  align-content: center;
 }
 </style>

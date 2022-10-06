@@ -51,20 +51,29 @@ export default {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.657);
+  background-color: rgba(255, 255, 255, 0.25);
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+  font-size: medium;
+  font-weight: normal;
 }
 p {
   text-align: center;
 }
 th {
-  padding-right: 100px;
   border: 1px solid black;
   border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 td {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid black;
   text-align: center;
+  background-color: white;
 }
 </style>

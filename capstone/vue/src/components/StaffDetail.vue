@@ -1,16 +1,21 @@
 <template>
-  <div class="box">
+  <div>
     <h1>Staff Profile</h1>
-    <div>
-      <p id="first-name">
-        First Name: {{ this.$store.state.activeStaffProfile.firstName }}
-      </p>
-      <p id="last-name">
-        Last Name: {{ this.$store.state.activeStaffProfile.lastName }}
-      </p>
-      <p id="email">
-        Email Address: {{ this.$store.state.activeStaffProfile.email }}
-      </p>
+    <br />
+    <div class="layout">
+      <div class="info">
+        <p id="first-name">
+          First Name: {{ this.$store.state.activeStaffProfile.firstName }}
+        </p>
+        <br />
+        <p id="last-name">
+          Last Name: {{ this.$store.state.activeStaffProfile.lastName }}
+        </p>
+        <br />
+        <p id="email">
+          Email Address: {{ this.$store.state.activeStaffProfile.email }}
+        </p>
+      </div>
       <img v-bind:src="this.$store.state.activeStaffProfile.image" />
     </div>
   </div>
@@ -47,27 +52,24 @@ export default {
 </script>
 
 <style scoped>
-.student-profile {
-  display: grid;
-  justify-content: center;
+.layout {
+  display: flex;
+  flex-direction: row;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  margin: 20px;
 }
 
 img {
-  display: grid;
-  width: 50%;
-  justify-items: center;
-  justify-content: center;
-}
-.box {
-  background-color: rgba(255, 255, 255, 0.657);
-}
-img {
   border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  margin-left: 50px;
+  justify-content: right;
+  align-items: right;
   height: 200px;
   width: 200px;
   image-rendering: auto;
+  padding-top: 50px;
 }
 </style>

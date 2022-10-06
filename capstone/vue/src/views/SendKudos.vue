@@ -2,17 +2,18 @@
   <body>
     <div>
       <new-kudos />
-      <rewards/>
+      <rewards />
     </div>
   </body>
 </template>
 
   <script>
 import NewKudos from "../components/NewKudos";
-import Rewards from '../components/Rewards.vue';
+import Rewards from "../components/Rewards.vue";
 export default {
   components: {
-    NewKudos, Rewards
+    NewKudos,
+    Rewards,
   },
 };
 </script>
@@ -42,13 +43,6 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
 }
 new-kudos {
   padding-bottom: 200px;

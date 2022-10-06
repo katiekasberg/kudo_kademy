@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <p>Top Kudos Earners</p>
     <table>
       <thead>
         <tr>
@@ -39,6 +40,38 @@ export default {
 
 <style scoped>
 .container {
-  display: flexbox;
+  font-size: large;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: medium;
+  font-weight: normal;
+}
+
+th {
+  border: 2px solid black;
+  border-radius: 5px;
+
+  text-align: center;
+}
+td {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  text-align: left;
+  background-color: white;
+  width: 1500px;
+  height: 30px;
+  table-layout: fixed;
+}
+p {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 5px;
+  background: white;
+  border-color: black;
 }
 </style>

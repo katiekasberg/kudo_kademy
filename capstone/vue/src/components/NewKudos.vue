@@ -31,14 +31,16 @@
         </label>
 
         <label for="Comments"
-          >Comments:
+          >Comments:<br />
           <input
             v-model="kudo.message"
             type="text"
             id="Comments"
             name="Comments" /><br
         /></label>
-        <button type="submit" v-on:click="saveKudo()">Send</button>
+        <button type="submit" v-on:click="saveKudo()" class="comment-box">
+          Send
+        </button>
       </form>
     </div>
   </body>
@@ -136,16 +138,12 @@ input {
   align-items: center;
   justify-content: center;
   margin: 0px 0px 0px 0px;
+  border-radius: 5px;
 }
-body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
-  padding-bottom: 400px;
+#Comments {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 100px;
 }
 </style>
   

@@ -73,7 +73,9 @@ export default {
               this.$router.push({ name: "teacher" });
             } else if (response.data.user.authorities[0].name == "ROLE_ADMIN") {
               this.$router.push({ name: "admin" });
-            } else if (response.data.user.authorities[0].name == "ROLE_STUDENT"){
+            } else if (
+              response.data.user.authorities[0].name == "ROLE_STUDENT"
+            ) {
               this.$router.push({ name: "student" });
             } else {
               this.$router.push({ name: "home" });
@@ -127,13 +129,6 @@ export default {
   padding-right: 200px; */
 }
 body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
   padding-left: 300px;
   padding-right: 300px;
 }
