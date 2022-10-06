@@ -231,10 +231,7 @@
             </button>
           </li>
           <li>
-            <button><a href="#">About us</a></button>
-          </li>
-          <li>
-            <button><a href="#">Contact us</a></button>
+            <button><router-link to="/about">About Us</router-link></button>
           </li>
         </ul>
       </nav>
