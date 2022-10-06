@@ -61,19 +61,12 @@ export default {
   padding-left: 100px;
   padding-right: 100px;
   margin: 50px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.25);
   height: auto;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
-body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
-}
 p {
   font-weight: bold;
 }

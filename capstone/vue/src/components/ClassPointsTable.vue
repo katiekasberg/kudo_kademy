@@ -3,11 +3,15 @@
     <table class="tableClass">
       <thead>
         <tr class="header">
+<<<<<<< HEAD
+          <p colspan="3">Classroom Leaderboard</p>
+=======
           <th colspan="3">Classroom Rank</th>
+>>>>>>> 6dc6b99f8f63e718e9b975b5fac06ce26a9d6ea0
         </tr>
         <tr>
           <th>Rank</th>
-          <th>Class</th>
+          <th class="middle">Class</th>
           <th>Points</th>
         </tr>
       </thead>
@@ -51,19 +55,31 @@ export default {
   /* padding-left: 200px;
   padding-right: 200px; */
 }
-.header{
+.header {
   border: 0px solid white;
 }
-tr,
-th,
-td {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
+th {
   font-weight: bold;
   background-color: white;
   border-radius: 5px;
   border: 2px solid black;
 }
-
-
+tr,
+td {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: normal;
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 1500px;
+  height: 30px;
+  table-layout: fixed;
+}
+p {
+  font-weight: bold;
+  font-size: large;
+  align-items: center;
+  justify-content: center;
+}
 </style>

@@ -5,21 +5,26 @@
     </div>
     <div class="announcement-component">
       <latest-announcement />
-      <student-points-table/>
-      <class-points-table/>
-      <grade-points-table/>
+      <student-points-table />
+      <class-points-table />
+      <grade-points-table />
     </div>
   </body>
 </template>
 
 <script>
-import ClassPointsTable from '../components/ClassPointsTable.vue';
-import GradePointsTable from '../components/GradePointsTable.vue';
+import ClassPointsTable from "../components/ClassPointsTable.vue";
+import GradePointsTable from "../components/GradePointsTable.vue";
 import LatestAnnouncement from "../components/LatestAnnouncement.vue";
-import StudentPointsTable from '../components/StudentPointsTable.vue';
+import StudentPointsTable from "../components/StudentPointsTable.vue";
 
 export default {
-  components: { LatestAnnouncement, StudentPointsTable, ClassPointsTable, GradePointsTable },
+  components: {
+    LatestAnnouncement,
+    StudentPointsTable,
+    ClassPointsTable,
+    GradePointsTable,
+  },
   name: "home",
 };
 </script>
@@ -97,22 +102,13 @@ h2 {
   color: rgb(216, 150, 69);
 } */
 
-body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
-}
-/* button {
+button {
   padding: 10px;
   margin-left: 20px;
   background-color: white;
   border-radius: 10%;
   border-color: orange;
-} */
+} 
 
 /* .Header {
   display: grid;

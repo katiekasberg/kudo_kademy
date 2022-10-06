@@ -319,13 +319,6 @@ button {
   height: 150%;
 }
 body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
   padding-left: 800px;
   padding-right: 800px;
 }

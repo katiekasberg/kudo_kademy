@@ -19,12 +19,5 @@ export default {
 
 <style scoped>
 body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
 }
 </style>

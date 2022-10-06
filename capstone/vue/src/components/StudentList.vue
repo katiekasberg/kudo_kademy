@@ -2,13 +2,12 @@
   <body>
     <div>
       <table class="student-list">
+        <th colspan="3" class="title">Search For Students</th>
 
-        <th class="head" colspan="3">Search For Students</th>
-
-        <tr class="header-table">
-          <th>First Name:</th>
-          <th>Last Name:</th>
-          <th>Class of</th>
+        <tr>
+          <th class="header-table">First Name:</th>
+          <th class="header-table">Last Name:</th>
+          <th class="header-table">Class of:</th>
         </tr>
         <tr>
           <td class="firstName">
@@ -28,7 +27,9 @@
           v-bind:value="student.id"
           class="col-centered"
         >
-          <td class="col-centered">{{ student.firstName }}</td>
+          <td class="col-centered" id="link-indicate">
+            {{ student.firstName }}
+          </td>
           <td class="col-centered">{{ student.lastName }}</td>
           <td class="col-centered">{{ student.graduationYear }}</td>
         </tr>
@@ -67,8 +68,11 @@ export default {
         );
       }
       if (this.filter.graduationYear != "") {
-        filteredStudents = filteredStudents.filter(
-          (student) => student.graduationYear.toString().includes(this.filter.graduationYear.toString()));
+        filteredStudents = filteredStudents.filter((student) =>
+          student.graduationYear
+            .toString()
+            .includes(this.filter.graduationYear.toString())
+        );
       }
       return filteredStudents;
     },
@@ -79,9 +83,9 @@ export default {
         this.$store.commit("SET_STUDENT_PROFILES", response.data);
       });
     },
-    loadStudentDetail(id){
-      this.$router.push({name:'StudentProfile', params:{id:id}})
-    }
+    loadStudentDetail(id) {
+      this.$router.push({ name: "StudentProfile", params: { id: id } });
+    },
   },
   created() {
     this.getStudentProfiles();
@@ -89,23 +93,25 @@ export default {
 };
 </script>
 <style scoped>
+body {
+  background-color: white;
+}
 .student-list {
-  /* display: grid;
-  align-items: center;
-  justify-content: center; */
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
-  border: black solid 5px;
-  border-radius: 3px;
-  
+  border: black solid 1px;
+  border-radius: 5px;
+  padding: 15px;
 }
-.header-table{
-  text-align: center;
+.header-table {
+  vertical-align: right;
+  color: darkorange;
 }
-th {
-  /* padding-right: 100px; */
-  text-align: center;
+.title {
+  font-size: x-large;
+  padding: none;
 }
+
 p {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
@@ -115,7 +121,6 @@ p {
 .col-centered {
   margin: 0 auto;
   float: none;
-  /* padding-right: 115px; */
 }
 body {
   padding: 10px;
@@ -124,8 +129,11 @@ body {
   color: black;
   border: black 5px;
 }
-.col-centered:hover{
-  color: blue;
+.col-centered:hover {
+  color: darkorange;
   font-weight: bold;
+}
+#link-indicate {
+  text-decoration: underline;
 }
 </style>

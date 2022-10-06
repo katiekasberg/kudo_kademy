@@ -1,14 +1,13 @@
 <template>
-
   <div class="container">
-    <table> 
+    <table>
       <thead>
         <tr class="header">
           <th colspan="3">Grade Rank</th>
         </tr>
         <tr>
           <th>Rank</th>
-          <th>Grade</th>
+          <th class="middle">Grade</th>
           <th>Points</th>
         </tr>
       </thead>
@@ -21,7 +20,6 @@
       </tbody>
     </table>
   </div>
-
 </template>
 
 <script>
@@ -49,19 +47,27 @@ export default {
   justify-content: stretch;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(255, 255, 255, 0.657);
-  margin-top:30px;
+  margin-top: 30px;
   /* padding-left: 200px;
   padding-right: 200px; */
 }
+th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  background-color: white;
+}
 tr,
-th,
 td {
   font-family: Arial, Helvetica, sans-serif;
-  font-size:large;
-  font-weight:bold;
+  font-size: large;
+  font-weight: normal;
   background-color: white;
   border-radius: 5px;
-   border: 2px solid black
+  border: 2px solid black;
+  width: 1500px;
+  height: 30px;
+  table-layout: fixed;
 }
 /* p {
   display: grid;

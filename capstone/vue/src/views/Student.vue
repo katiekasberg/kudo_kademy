@@ -4,14 +4,14 @@
       <div class="Welcome-User">
         <h1>Welcome {{ this.$store.state.activeStudentProfile.firstName }}</h1>
       </div>
-      <div class="Announcements"> 
+      <div class="Announcements">
         <latest-announcement />
         <p>Leaderboard</p>
-        <student-points-table/>
+        <student-points-table />
         <class-points-table />
         <grade-points-table />
       </div>
-      
+
       <div class="Class-points">
         <h3>Latest Kudos Recognitions in your grade:</h3>
         <grade-kudos />
@@ -25,7 +25,7 @@ import ClassPointsTable from "../components/ClassPointsTable.vue";
 import GradePointsTable from "../components/GradePointsTable.vue";
 import GradeKudos from "../components/GradeKudos.vue";
 import LatestAnnouncement from "../components/LatestAnnouncement.vue";
-import StudentPointsTable from '../components/StudentPointsTable.vue';
+import StudentPointsTable from "../components/StudentPointsTable.vue";
 export default {
   components: {
     ClassPointsTable,
@@ -39,13 +39,6 @@ export default {
 
 <style scoped>
 body {
-  background: linear-gradient(
-    360deg,
-    white,
-    rgb(241, 197, 99),
-    rgb(253, 223, 158),
-    white
-  );
 }
 .container {
   display: flex;

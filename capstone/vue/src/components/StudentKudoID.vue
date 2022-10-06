@@ -24,15 +24,12 @@
 <script>
 import kudoService from "../services/KudosService";
 export default {
-  data() {
-  },
+  data() {},
   methods: {
     getKudosByStudentId(studentId) {
-      kudoService
-        .getKudosByStudentId(studentId)
-        .then((response) => {
-          this.studentKudos = response.data;
-        });
+      kudoService.getKudosByStudentId(studentId).then((response) => {
+        this.studentKudos = response.data;
+      });
     },
   },
   created() {
@@ -41,5 +38,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>

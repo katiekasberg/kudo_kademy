@@ -23,7 +23,7 @@
           {{ child.email }}
         </td>
         <td>
-          <img v-bind:src='child.image' height=100 width=100 />
+          <img v-bind:src="child.image" height="100" width="100" />
         </td>
       </tr>
     </table>
@@ -59,5 +59,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>

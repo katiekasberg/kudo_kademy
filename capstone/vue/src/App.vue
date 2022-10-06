@@ -25,7 +25,6 @@ export default {
 
 <style>
 #app {
-  background-color: white;
   display: grid;
   align-content: center;
   justify-content: center;
@@ -37,40 +36,33 @@ h1 {
   align-content: center;
   justify-content: center;
 }
-/* img {
-  display: grid;
-  padding-left: 550px;
-  height: 150px;
-  width: auto;
-} */
 
-/* .nav {
-  display: inline-flex;
-  float: left;
-  align-content: flex-start;
-  align-items: flex-start;
-  justify-content: flex-start;
-  justify-items: flex-start;
-} */
 a {
   text-decoration: none;
   color: black;
   opacity: 100%;
   font-weight: bold;
 }
-.logo{
+.logo {
   display: grid;
   justify-content: center;
   height: 150px;
   width: auto;
-  margin:auto;
+  margin: auto;
 }
-body{
+body {
   background: linear-gradient(
     360deg,
-    white,
     rgb(241, 197, 99),
     rgb(253, 223, 158),
-    white);
+    white,
+    white,
+    white,
+    white,
+    white
+  );
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
 </style>

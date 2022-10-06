@@ -15,7 +15,7 @@
       </div> -->
     <div class="House-Cup">
       <h2 class="leaderboard">Leaderboard</h2>
-      <student-points-table/>
+      <student-points-table />
       <class-points-table />
       <grade-points-table />
     </div>
@@ -28,10 +28,15 @@
 import LatestAnnouncement from "../components/LatestAnnouncement.vue";
 import ClassPointsTable from "../components/ClassPointsTable.vue";
 import GradePointsTable from "../components/GradePointsTable.vue";
-import StudentPointsTable from '../components/StudentPointsTable.vue';
+import StudentPointsTable from "../components/StudentPointsTable.vue";
 
 export default {
-  components: { LatestAnnouncement, ClassPointsTable, GradePointsTable, StudentPointsTable },
+  components: {
+    LatestAnnouncement,
+    ClassPointsTable,
+    GradePointsTable,
+    StudentPointsTable,
+  },
 };
 </script>
 
@@ -48,6 +53,10 @@ export default {
   justify-content: space-evenly;
   align-content: center;
   text-align: center;
+<<<<<<< HEAD
+
+  padding: 200px;
+=======
   background: linear-gradient(
     360deg,
     white,
@@ -59,11 +68,12 @@ export default {
   /* padding: 200px; */
   padding-right: 400px;
   padding-left:400px;
+>>>>>>> 6dc6b99f8f63e718e9b975b5fac06ce26a9d6ea0
 }
 
-.leaderboard{
+.leaderboard {
   font-family: Arial, Helvetica, sans-serif;
-  color: darkorange
+  color: darkorange;
 }
 
 .Welcome-User {
