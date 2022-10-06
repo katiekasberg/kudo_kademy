@@ -9,52 +9,55 @@
         <nav>
           <ul>
             <li>
-              <button><a href="/teacher">Home</a></button>
+              <router-link v-bind:to="{ name: 'teacher' }">
+                <button>Home</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <router-link
-                  :to="{
-                    name: 'TeacherProfile',
-                    params: { id: $store.state.user.id },
-                  }"
-                  >My Profile</router-link
-                >
-              </button>
+              <router-link
+                v-bind:to="{
+                  name: 'TeacherProfile',
+                  params: { id: $store.state.user.id },
+                }"
+              >
+                <button>My Profile</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <router-link to="/SendKudos">Send Kudos</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'SendKudos' }">
+                <button>Give Kudos</button>
+              </router-link>
             </li>
             <!-- <li>
               <button><a href="#">Behavioral Report</a></button>
             </li> -->
             <li>
-              <button><a href="/searchbystudent">Search Students</a></button>
+              <router-link v-bind:to="{ name: 'searchbystudent' }">
+                <button>Search Students</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <a href="/createannouncement">Make Announcements</a>
-              </button>
+              <router-link v-bind:to="{ name: 'createannouncement' }">
+                <button>Make Announcements</button>
+              </router-link>
             </li>
             <li>
-              <router-link to="/newclass"
-                ><button>Create Class</button></router-link
-              >
+              <router-link v-bind:to="{ name: 'newClass' }">
+                <button>Create Class</button>
+              </router-link>
             </li>
             <li>
-              <button>
-                <router-link to="/manage-classes">Manage Classes</router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'manage-classes' }">
+                <button>Manage Classes</button>
+              </router-link>
             </li>
             <!-- <li>
               <button><a href="#">Classes</a></button>
             </li> -->
             <li>
-              <button>
-                <router-link to="/logout"> Logout </router-link>
-              </button>
+              <router-link v-bind:to="{ name: 'logout' }">
+                <button>Logout</button>
+              </router-link>
             </li>
           </ul>
         </nav>
@@ -85,7 +88,7 @@
             </li>
             <li>
               <router-link v-bind:to="{ name: 'SendKudos' }"
-                ><button>Send Kudos</button></router-link
+                ><button>Give Kudos</button></router-link
               >
             </li>
             <!-- <li>
@@ -116,7 +119,7 @@
             </li> -->
             <li>
               <router-link v-bind:to="{ name: 'newkudotype' }"
-                ><button>Set Kudo Values</button></router-link
+                ><button>Create Kudos Categories</button></router-link
               >
             </li>
             <li>
@@ -136,7 +139,7 @@
         <nav>
           <ul>
             <li>
-              <router-link v-bind:to="{ name: 'home' }"
+              <router-link v-bind:to="{ name: 'student' }"
                 ><button>Home</button></router-link
               >
             </li>
@@ -157,7 +160,7 @@
             </li> -->
             <li>
               <router-link v-bind:to="{ name: 'rewards' }"
-                ><button>Kudo Values</button></router-link
+                ><button>Earn Kudos</button></router-link
               >
             </li>
 
@@ -196,7 +199,7 @@
             </li> -->
             <li>
               <router-link v-bind:to="{ name: 'rewards' }"
-                ><button>Kudo Values</button></router-link
+                ><button>Earn Kudos</button></router-link
               >
             </li>
             <!-- <li>

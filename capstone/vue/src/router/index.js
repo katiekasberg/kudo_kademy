@@ -153,7 +153,7 @@ const router = new Router({
       }
     },
     {
-      path: "/student/",
+      path: "/student",
       name: "student",
       component: Student,
       meta: {

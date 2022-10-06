@@ -4,7 +4,7 @@
     <div id="scroll-container">
       <div id="scroll-text">
         <p>{{ this.$store.state.latestAnnouncement.message }}</p>
-        <p>Date: {{ this.$store.state.latestAnnouncement.timeStamp }}</p>
+        <p>Date: {{ formatTimestamp() }}</p>
       </div>
     </div>
   </div>
@@ -26,6 +26,15 @@ export default {
       //         this.$router.push({name: "NotFound"});
       //     }
       // });
+    },
+    formatTimestamp() {
+      const dateToFormat = this.$store.state.latestAnnouncement.timeStamp;
+      const formattedDate = new Date(dateToFormat);
+      return (
+        formattedDate.toLocaleDateString("en-US") +
+        " " +
+        formattedDate.toLocaleTimeString("en-US")
+      );
     },
   },
   created() {
