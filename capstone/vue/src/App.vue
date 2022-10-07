@@ -4,7 +4,7 @@
       <nav-bar />
     </div>
     <div id="app">
-      <h1>School Communication</h1>
+      <h1 class="app-name">Kudo Kademy</h1>
       <img
         class="logo"
         src="../resources/school-icon-9.png"
@@ -78,5 +78,15 @@ a {
   content: url(../resources/dis-pretty-schoo.png);
   opacity: 0.2;
   background-image: no-repeat;
+}
+.app-name {
+  font-size: 100px;
+  font-weight: bold;
+  background: url("https://media.giphy.com/media/t2aAdTgnU9Ie6jvG0W/giphy-downsized-large.gif");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Candara;
+  margin: 0;
+  padding: 0;
 }
 </style>
