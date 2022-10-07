@@ -39,8 +39,8 @@ export default {
   align-content: center;
   justify-content: center;
   margin: auto;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 500px;
+  padding-right: 500px;
 }
 
 .Welcome-User {

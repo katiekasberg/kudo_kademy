@@ -74,7 +74,7 @@ p {
   font-weight: bold;
   font-size: large;
   border-radius: 5px;
-  background: white;
+
   border-color: black;
 }
 </style>

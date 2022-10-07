@@ -13,6 +13,8 @@ export default {
 
 <style scoped>
 div {
+  margin-left: 65px;
+  margin-right: 65px;
   padding-bottom: 200px;
 }
 </style>
