@@ -40,7 +40,7 @@ h1 {
 a {
   text-decoration: none;
   color: black;
-  opacity: 100%;
+  opacity: 1;
   font-weight: bold;
 }
 .logo {

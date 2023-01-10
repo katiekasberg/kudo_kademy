@@ -36,11 +36,11 @@
                 <button>Search Students</button>
               </router-link>
             </li>
-            <li>
+            <!-- <li>
               <router-link v-bind:to="{ name: 'createannouncement' }">
                 <button>Make Announcements</button>
               </router-link>
-            </li>
+            </li> -->
             <li>
               <router-link v-bind:to="{ name: 'newClass' }">
                 <button>Create Class</button>
